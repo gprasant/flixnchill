@@ -54,14 +54,55 @@
                 <tapGestureRecognizer id="jIz-y9-AKb">
                     <connections>
                         <action selector="onImageTapped:" destination="BYZ-38-t0r" id="SVP-4G-a8F"/>
+                        <segue destination="q2W-bi-XA8" kind="modal" identifier="profileSegue" id="Wgi-jZ-1Jz"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="181" y="342"/>
+            <point key="canvasLocation" x="35" y="322"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="fQI-9A-O0C">
+            <objects>
+                <viewController id="q2W-bi-XA8" customClass="ProfileViewController" sceneMemberID="viewController">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="lh8-IJ-f7C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_bar2" id="tEE-KY-5yo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="I5l-1V-MgN" appends="YES" id="CbV-Ws-l9o"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ryan" id="ASg-Zg-nXT">
+                                <rect key="frame" x="0.0" y="70" width="320" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <gestureRecognizers/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="abz-HG-Z3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="I5l-1V-MgN">
+                    <connections>
+                        <action selector="onDismissTapped:" destination="q2W-bi-XA8" id="zp4-df-r4x"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="557" y="118"/>
         </scene>
     </scenes>
     <resources>
         <image name="action_buttons" width="320" height="108"/>
         <image name="nav_bar" width="320" height="65"/>
+        <image name="nav_bar2" width="320" height="65"/>
+        <image name="ryan" width="449" height="514"/>
     </resources>
 </document>

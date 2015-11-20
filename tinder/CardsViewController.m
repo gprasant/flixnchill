@@ -31,11 +31,18 @@
 }
 
 - (IBAction)onImageTapped:(UITapGestureRecognizer *)sender {
-    ProfileViewController *pvc = [[ProfileViewController alloc] init];
+//    ProfileViewController *pvc = [[ProfileViewController alloc] init];
+//    pvc.image = [UIImage imageNamed:@"taylor"];
+//    
+//    [self presentViewController:pvc
+//                       animated:YES
+//                     completion:nil];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UIViewController *destinationVC = [segue destinationViewController];
+    ProfileViewController * pvc = (ProfileViewController *)destinationVC;
     pvc.image = [UIImage imageNamed:@"taylor"];
-    [self presentViewController:pvc
-                       animated:YES
-                     completion:nil];
 }
 
 @end

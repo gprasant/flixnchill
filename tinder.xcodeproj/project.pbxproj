@@ -16,7 +16,6 @@
 		125B84821BFE8B8B000273F7 /* DraggableImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 125B84811BFE8B8B000273F7 /* DraggableImageView.xib */; };
 		125B84851BFE8BF2000273F7 /* DraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B84841BFE8BF2000273F7 /* DraggableImageView.m */; };
 		125B84891BFEB38A000273F7 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B84871BFEB38A000273F7 /* ProfileViewController.m */; };
-		125B848A1BFEB38A000273F7 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 125B84881BFEB38A000273F7 /* ProfileViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		125B84841BFE8BF2000273F7 /* DraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableImageView.m; sourceTree = "<group>"; };
 		125B84861BFEB38A000273F7 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		125B84871BFEB38A000273F7 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		125B84881BFEB38A000273F7 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +80,6 @@
 				125B84841BFE8BF2000273F7 /* DraggableImageView.m */,
 				125B84861BFEB38A000273F7 /* ProfileViewController.h */,
 				125B84871BFEB38A000273F7 /* ProfileViewController.m */,
-				125B84881BFEB38A000273F7 /* ProfileViewController.xib */,
 			);
 			path = tinder;
 			sourceTree = "<group>";
@@ -156,7 +153,6 @@
 				125B847A1BFE8589000273F7 /* LaunchScreen.storyboard in Resources */,
 				125B84771BFE8589000273F7 /* Assets.xcassets in Resources */,
 				125B84821BFE8B8B000273F7 /* DraggableImageView.xib in Resources */,
-				125B848A1BFEB38A000273F7 /* ProfileViewController.xib in Resources */,
 				125B84751BFE8589000273F7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

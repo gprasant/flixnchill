@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tinder/ProfileViewController.m"
-            timestampString = "469678631.183766"
+            timestampString = "469681453.797221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "-setupViews"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "-onDismissTapped:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
