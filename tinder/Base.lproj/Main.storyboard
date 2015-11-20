@@ -18,10 +18,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="action_buttons" id="w2a-Gq-rlq">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="action_buttons" id="w2a-Gq-rlq">
                                 <rect key="frame" x="0.0" y="460" width="320" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="EDP-g8-G3a" appends="YES" id="hFF-MO-7sw"/>
+                                </connections>
                             </imageView>
                             <view contentMode="scaleToFill" id="cuK-bW-1Ut" customClass="DraggableImageView">
                                 <rect key="frame" x="8" y="98" width="304" height="304"/>
@@ -38,6 +42,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="EDP-g8-G3a">
+                    <connections>
+                        <action selector="onBottomImageTapped:" destination="BYZ-38-t0r" id="yhw-CR-R71"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="181" y="342"/>
         </scene>

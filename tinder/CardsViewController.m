@@ -25,5 +25,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)onBottomImageTapped:(UITapGestureRecognizer *)sender {
+    [self.profileImageView reset];
+}
 
 @end

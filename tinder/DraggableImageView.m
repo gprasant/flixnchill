@@ -58,22 +58,34 @@
     if(sender.state == UIGestureRecognizerStateBegan) {
         self.originalCenter = [self.contentView center];
     } else if (sender.state == UIGestureRecognizerStateChanged) {
-
         self.contentView.center = CGPointMake(self.originalCenter.x + translation.x, self.originalCenter.y);
         CGFloat radian = translationX / 5.0 * (M_PI  / 180.0);
-//        self.radian = radian;
-//        NSLog(@"Radian : - %f", radian);
         self.contentView.transform = CGAffineTransformMakeRotation(radian);
-        
     } else if (sender.state == UIGestureRecognizerStateEnded) {
         
-        self.contentView.center = self.originalCenter;
-        self.contentView.transform = CGAffineTransformMakeRotation( -self.radian );
-        self.radian = 0.0;
-        
+        if (translationX > 50) {
+            // move right
+            [UIView animateWithDuration:0.3 animations:^{
+                self.contentView.center = CGPointMake(640, self.originalCenter.y);
+            }];
+        } else if (translationX < -50) {
+            // move left
+            [UIView animateWithDuration:0.3 animations:^{
+                self.contentView.center = CGPointMake(-640, self.originalCenter.y);
+            }];
+        } else {
+            // set back to default position
+            [self reset];
+        }
     }
+    
 }
 
+- (void) reset {
+    self.contentView.center = self.originalCenter;
+    self.contentView.transform = CGAffineTransformMakeRotation( -self.radian );
+    self.radian = 0.0;
+}
 
 
 @end

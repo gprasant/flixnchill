@@ -10,5 +10,5 @@
 
 @interface DraggableImageView : UIView
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
-
+- (void) reset;
 @end
