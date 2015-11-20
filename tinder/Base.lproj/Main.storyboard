@@ -31,7 +31,11 @@
                                 <rect key="frame" x="8" y="98" width="304" height="304"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.93333333330000001" green="0.24289127860000001" blue="0.38950091999999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jIz-y9-AKb" appends="YES" id="0WP-90-ek8"/>
+                                </connections>
                             </view>
                         </subviews>
                         <animations/>
@@ -45,6 +49,11 @@
                 <tapGestureRecognizer id="EDP-g8-G3a">
                     <connections>
                         <action selector="onBottomImageTapped:" destination="BYZ-38-t0r" id="yhw-CR-R71"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="jIz-y9-AKb">
+                    <connections>
+                        <action selector="onImageTapped:" destination="BYZ-38-t0r" id="SVP-4G-a8F"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

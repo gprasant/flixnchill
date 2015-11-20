@@ -8,6 +8,7 @@
 
 #import "CardsViewController.h"
 #import "DraggableImageView.h"
+#import "ProfileViewController.h"
 
 @interface CardsViewController ()
 @property (strong, nonatomic) IBOutlet DraggableImageView *profileImageView;
@@ -18,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.profileImageView.profileImageView.image = [UIImage imageNamed:@"ryan"];
+    self.profileImageView.profileImageView.image = [UIImage imageNamed:@"taylor"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,6 +28,14 @@
 }
 - (IBAction)onBottomImageTapped:(UITapGestureRecognizer *)sender {
     [self.profileImageView reset];
+}
+
+- (IBAction)onImageTapped:(UITapGestureRecognizer *)sender {
+    ProfileViewController *pvc = [[ProfileViewController alloc] init];
+    pvc.image = [UIImage imageNamed:@"taylor"];
+    [self presentViewController:pvc
+                       animated:YES
+                     completion:nil];
 }
 
 @end
