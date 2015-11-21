@@ -13,11 +13,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_bar" id="yli-vO-f9h">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                            </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="action_buttons" id="w2a-Gq-rlq">
                                 <rect key="frame" x="0.0" y="460" width="320" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -37,12 +32,17 @@
                                     <outletCollection property="gestureRecognizers" destination="jIz-y9-AKb" appends="YES" id="0WP-90-ek8"/>
                                 </connections>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_bar" id="yli-vO-f9h">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="profileImageView" destination="cuK-bW-1Ut" id="SLh-Ch-fDy"/>
+                        <outlet property="draggableCard" destination="cuK-bW-1Ut" id="fyI-Mv-amq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -58,7 +58,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="35" y="322"/>
+            <point key="canvasLocation" x="6" y="180"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="fQI-9A-O0C">
@@ -88,6 +88,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
+                    <connections>
+                        <outlet property="profilePictureImageView" destination="ASg-Zg-nXT" id="EBt-4Q-ov1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abz-HG-Z3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="I5l-1V-MgN">
