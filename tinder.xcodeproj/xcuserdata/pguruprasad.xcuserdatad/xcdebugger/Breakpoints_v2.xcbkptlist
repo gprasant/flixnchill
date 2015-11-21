@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tinder/ProfileViewController.m"
-            timestampString = "469681453.797221"
+            timestampString = "469820566.038078"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-onDismissTapped:"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-setupViews"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
