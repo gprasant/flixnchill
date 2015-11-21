@@ -57,7 +57,6 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
 
 - (IBAction)onCardPanned:(UIPanGestureRecognizer *)sender {
     CGPoint translation = [sender translationInView:self];
-    CGPoint velocity = [sender velocityInView:self];
 
     CGFloat translationX = translation.x;
     

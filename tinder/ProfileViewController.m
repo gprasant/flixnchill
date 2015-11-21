@@ -24,12 +24,22 @@
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)onDismissTapped:(UITapGestureRecognizer *)sender {
-    [self dismissViewControllerAnimated:NO completion:nil];
-}
-
 -(void) setupViews {
     [self.profilePictureImageView setImage:self.image];
 }
 
+#pragma mark - BEGIN Gesture recognizers
+
+- (IBAction)onDoneTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)onNopeTapped:(UITapGestureRecognizer *)sender {
+    NSLog(@"ProfileViewController:Nope tapped");
+}
+
+- (IBAction)onLikeTapped:(UITapGestureRecognizer *)sender {
+    NSLog(@"ProfileViewController:Like tapped");
+}
+#pragma mark - END Gesture recognizers
 @end

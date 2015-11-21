@@ -12,6 +12,13 @@
 
 @interface CardsViewController ()
 @property (strong, nonatomic) IBOutlet DraggableImageView *draggableCard;
+
+@property (weak, nonatomic) IBOutlet UIImageView *settingsButton;
+@property (weak, nonatomic) IBOutlet UIImageView *messagesButton;
+@property (weak, nonatomic) IBOutlet UIImageView *nopeButton;
+@property (weak, nonatomic) IBOutlet UIImageView *infoButton;
+@property (weak, nonatomic) IBOutlet UIImageView *heartButton;
+
 @end
 
 @implementation CardsViewController
@@ -26,18 +33,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)onBottomImageTapped:(UITapGestureRecognizer *)sender {
-    [self.draggableCard reset];
-}
-
-- (IBAction)onImageTapped:(UITapGestureRecognizer *)sender {
-//    ProfileViewController *pvc = [[ProfileViewController alloc] init];
-//    pvc.image = [UIImage imageNamed:@"taylor"];
-//    
-//    [self presentViewController:pvc
-//                       animated:YES
-//                     completion:nil];
-}
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UIViewController *destinationVC = [segue destinationViewController];
@@ -45,4 +40,31 @@
     pvc.image = [UIImage imageNamed:@"taylor"];
 }
 
+#pragma mark - Gesture recognizers
+
+- (IBAction)onResetTapped:(UITapGestureRecognizer *)sender {
+    [self.draggableCard reset];
+}
+
+- (IBAction)onSettingsButtonTapped:(UITapGestureRecognizer *)sender {
+    NSLog(@"CardsViewController:Settings tapped");
+}
+
+- (IBAction)onMessagesTapped:(UITapGestureRecognizer *)sender {
+    NSLog(@"CardsViewController:Messages tapped");
+}
+
+- (IBAction)onNopeButtonTapped:(UITapGestureRecognizer *)sender {
+    NSLog(@"CardsViewController:Nope tapped");
+}
+
+- (IBAction)onInfoButtonTapped:(UITapGestureRecognizer *)sender {
+    NSLog(@"CardsViewController:Info tapped");
+}
+
+- (IBAction)onLikeTapped:(UITapGestureRecognizer *)sender {
+    NSLog(@"CardsViewController:Like tapped");
+}
+
+#pragma mark - END Gesture recognizers
 @end
