@@ -42,7 +42,7 @@
 
 #pragma mark - Gesture recognizers
 
-- (IBAction)onBottomImageTapped:(UITapGestureRecognizer *)sender {
+- (IBAction)onResetTapped:(UITapGestureRecognizer *)sender {
     [self.draggableCard reset];
 }
 
