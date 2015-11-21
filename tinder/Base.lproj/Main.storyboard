@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--Cards View Controller-->
@@ -101,6 +102,7 @@
                 <tapGestureRecognizer id="DZ9-27-TGH">
                     <connections>
                         <action selector="onMessagesTapped:" destination="BYZ-38-t0r" id="0f4-N4-vQg"/>
+                        <segue destination="pPO-en-aF9" kind="modal" identifier="chatsViewSegue" id="TZr-UW-wAc"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="ogN-In-GTK">
@@ -120,7 +122,7 @@
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="ny1-gX-khI">
                     <connections>
-                        <segue destination="q2W-bi-XA8" kind="modal" id="e7y-Cu-RwE"/>
+                        <segue destination="q2W-bi-XA8" kind="modal" identifier="profileViewSegue" id="e7y-Cu-RwE"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer numberOfTouchesRequired="2" id="OVz-yd-zz6">
@@ -203,10 +205,93 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="570" y="94"/>
+            <point key="canvasLocation" x="595" y="-246"/>
+        </scene>
+        <!--Chats View Controller-->
+        <scene sceneID="HTy-fg-3lY">
+            <objects>
+                <viewController id="pPO-en-aF9" customClass="ChatsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GBM-E5-WGc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="9rL-jL-TaO">
+                                <rect key="frame" x="0.0" y="60" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" rowHeight="66" id="PDf-kE-aFS">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PDf-kE-aFS" id="wO4-mt-bFe">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taylor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M8I-n9-N1K">
+                                                    <rect key="frame" x="70" y="8" width="196" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward" id="o3i-Jp-8Em">
+                                                    <rect key="frame" x="292" y="21" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="taylor" id="gFf-mG-8P1">
+                                                    <rect key="frame" x="8" y="11" width="40" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                </imageView>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" id="Gxr-bN-ZLo">
+                                <rect key="frame" x="11" y="32" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1k8-Oc-vJk" appends="YES" id="8cg-DN-fkl"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G8X-W7-FN4">
+                                <rect key="frame" x="138" y="31" width="45" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XAo-ds-Gou"/>
+                    <connections>
+                        <outlet property="chatsTableView" destination="9rL-jL-TaO" id="Znr-hi-Pbk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KkL-fI-ub4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1k8-Oc-vJk">
+                    <connections>
+                        <action selector="onBackTapped:" destination="pPO-en-aF9" id="K3R-Sn-Pcf"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="608" y="52"/>
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="32" height="32"/>
+        <image name="forward" width="32" height="32"/>
         <image name="info_button" width="118" height="117"/>
         <image name="like_button" width="196" height="196"/>
         <image name="messages_button" width="56" height="50"/>
@@ -215,6 +300,7 @@
         <image name="nope_button" width="196" height="196"/>
         <image name="ryan" width="449" height="514"/>
         <image name="settings_button" width="53" height="52"/>
+        <image name="taylor" width="484" height="320"/>
         <image name="tinder_logo" width="156" height="59"/>
     </resources>
 </document>
