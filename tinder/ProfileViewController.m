@@ -37,7 +37,7 @@
 }
 */
 - (IBAction)onDismissTapped:(UITapGestureRecognizer *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 -(void) setupViews {
