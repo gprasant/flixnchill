@@ -149,10 +149,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Login with Facebook"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login" id="MyR-wy-k25">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="MyR-wy-k25">
                                 <rect key="frame" x="0.0" y="68" width="320" height="345"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                         </subviews>
                         <animations/>
@@ -161,6 +162,7 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="84p-cY-TRW" id="gaX-cm-cbO"/>
+                        <outlet property="placeHolderImageView" destination="MyR-wy-k25" id="WBo-u9-SG7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiK-Ct-HMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -367,7 +369,6 @@
         <image name="forward" width="32" height="32"/>
         <image name="info_button" width="118" height="117"/>
         <image name="like_button" width="196" height="196"/>
-        <image name="login" width="53" height="52"/>
         <image name="messages_button" width="56" height="50"/>
         <image name="nav_like_button" width="68" height="68"/>
         <image name="nav_nope_button" width="68" height="68"/>

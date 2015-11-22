@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		062258F0A1BD8AB11E3E3B1815357988 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE05200BE493FA733007A709E5AD2B07 /* QuartzCore.framework */; };
+		2DBEC7BF142147EC2EB66E9428444670 /* FLAnimatedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BB9B7155FE4CADB5242FD5722787F91 /* FLAnimatedImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34AE6EE9360CA0D32BAAC84B94E0D29A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3495B48D62610363AE17C4AD780977C7 /* MobileCoreServices.framework */; };
+		3D258E9A843C52C991E5E9455CB8DB51 /* FLAnimatedImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 55767096BE87757FDDF2D7EEC1AD8A43 /* FLAnimatedImage-dummy.m */; };
+		6DF6EB8F7E7738D44FD3BEC9321646C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E5294576BD1BC9CE982B47126F4260 /* Foundation.framework */; };
+		AB5E80218B841C79963B69C7FB5B6378 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABF07265077712B554510291F694C21 /* FLAnimatedImage.m */; };
+		C2596CDB92D59D7FC5505505B68FD55C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2DB9BC11B88D63B256C673DEC5E1DF7 /* CoreGraphics.framework */; };
+		CEE9181BBE7A8166AB4830E2EFE2C0A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E5294576BD1BC9CE982B47126F4260 /* Foundation.framework */; };
+		EE7FC098E42D97C634C3CD83CA5FFEE5 /* Pods-tinder-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD4520CFAF20B57023E777666BB7F5 /* Pods-tinder-dummy.m */; };
+		F5872852E80C246A0B2FC6DBCD6A1633 /* FLAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E8949D2A7BA18082B562868BC42AC04 /* FLAnimatedImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5C01AC5B350E12C063267A3FE002E5C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6FFF24C795EA1D18193DAB41DDC9F5 /* ImageIO.framework */; };
+		F82338CC3F882FAA29C161219E124753 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FD2691E6ED5CB6E39BCAF591340EB9 /* FLAnimatedImageView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F8DF5433CC621DBCDB13C28CD1770990 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A79BA86DB198181905CBBFC1F1E6701;
+			remoteInfo = FLAnimatedImage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09E5294576BD1BC9CE982B47126F4260 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		0ABF07265077712B554510291F694C21 /* FLAnimatedImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FLAnimatedImage.m; path = FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImage.m; sourceTree = "<group>"; };
+		0C5BA29C84B52AE3DB5B976CF24BBDA5 /* FLAnimatedImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FLAnimatedImage.xcconfig; sourceTree = "<group>"; };
+		14987EF76A9D87ADA66F02E5FFF42EA3 /* libPods-tinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3495B48D62610363AE17C4AD780977C7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		3BB9B7155FE4CADB5242FD5722787F91 /* FLAnimatedImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLAnimatedImage.h; path = FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImage.h; sourceTree = "<group>"; };
+		4411B56486AD30D48D6576AE0134C39B /* Pods-tinder-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tinder-acknowledgements.plist"; sourceTree = "<group>"; };
+		460AFD29E3CE6DB01B1A850A62773D91 /* Pods-tinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tinder.debug.xcconfig"; sourceTree = "<group>"; };
+		4EBF15649D5A3A2829AA3D7965A29061 /* Pods-tinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tinder.release.xcconfig"; sourceTree = "<group>"; };
+		55767096BE87757FDDF2D7EEC1AD8A43 /* FLAnimatedImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FLAnimatedImage-dummy.m"; sourceTree = "<group>"; };
+		55EF073D9E26008847FAB883C19726E8 /* libFLAnimatedImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFLAnimatedImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E8949D2A7BA18082B562868BC42AC04 /* FLAnimatedImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLAnimatedImageView.h; path = FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImageView.h; sourceTree = "<group>"; };
+		76FD2691E6ED5CB6E39BCAF591340EB9 /* FLAnimatedImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FLAnimatedImageView.m; path = FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImageView.m; sourceTree = "<group>"; };
+		8B4E347B0A69CDEAD49BF8CA85B12D08 /* Pods-tinder-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tinder-resources.sh"; sourceTree = "<group>"; };
+		8DFD4520CFAF20B57023E777666BB7F5 /* Pods-tinder-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tinder-dummy.m"; sourceTree = "<group>"; };
+		8EBF3DFF87B1E2FB7A263872B2BAE1B5 /* FLAnimatedImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FLAnimatedImage-prefix.pch"; sourceTree = "<group>"; };
+		9D6FFF24C795EA1D18193DAB41DDC9F5 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		A46EA009CCC17278FEDE7FAB177DFC1C /* Pods-tinder-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tinder-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E504265C8CBF11D64A705E45711DA7C1 /* Pods-tinder-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tinder-frameworks.sh"; sourceTree = "<group>"; };
+		EE05200BE493FA733007A709E5AD2B07 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		F2DB9BC11B88D63B256C673DEC5E1DF7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		456E3D8CBA16CC53451C696545611E92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2596CDB92D59D7FC5505505B68FD55C /* CoreGraphics.framework in Frameworks */,
+				6DF6EB8F7E7738D44FD3BEC9321646C3 /* Foundation.framework in Frameworks */,
+				F5C01AC5B350E12C063267A3FE002E5C /* ImageIO.framework in Frameworks */,
+				34AE6EE9360CA0D32BAAC84B94E0D29A /* MobileCoreServices.framework in Frameworks */,
+				062258F0A1BD8AB11E3E3B1815357988 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59685476752D5E0DDB34FA8725647122 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEE9181BBE7A8166AB4830E2EFE2C0A1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16E01C8BBA632AFCA96782C30C76CF01 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C5BA29C84B52AE3DB5B976CF24BBDA5 /* FLAnimatedImage.xcconfig */,
+				55767096BE87757FDDF2D7EEC1AD8A43 /* FLAnimatedImage-dummy.m */,
+				8EBF3DFF87B1E2FB7A263872B2BAE1B5 /* FLAnimatedImage-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FLAnimatedImage";
+			sourceTree = "<group>";
+		};
+		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A0D2E4458CB87D128AC420E9C9A5AE1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		56738C3A6535F8705497A3B4ACCE6BA2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				992A260C640E6DB5662155C2285FBDC0 /* FLAnimatedImage */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		619AF5E4F3168E1C541028CC5CA1FFE3 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BDB3ED7BC9BF949DCF1EC5D2B8ED012C /* Pods-tinder */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
+				56738C3A6535F8705497A3B4ACCE6BA2 /* Pods */,
+				A452939D597485085B12DCC03D3C5033 /* Products */,
+				619AF5E4F3168E1C541028CC5CA1FFE3 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8A0D2E4458CB87D128AC420E9C9A5AE1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F2DB9BC11B88D63B256C673DEC5E1DF7 /* CoreGraphics.framework */,
+				09E5294576BD1BC9CE982B47126F4260 /* Foundation.framework */,
+				9D6FFF24C795EA1D18193DAB41DDC9F5 /* ImageIO.framework */,
+				3495B48D62610363AE17C4AD780977C7 /* MobileCoreServices.framework */,
+				EE05200BE493FA733007A709E5AD2B07 /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		992A260C640E6DB5662155C2285FBDC0 /* FLAnimatedImage */ = {
+			isa = PBXGroup;
+			children = (
+				3BB9B7155FE4CADB5242FD5722787F91 /* FLAnimatedImage.h */,
+				0ABF07265077712B554510291F694C21 /* FLAnimatedImage.m */,
+				6E8949D2A7BA18082B562868BC42AC04 /* FLAnimatedImageView.h */,
+				76FD2691E6ED5CB6E39BCAF591340EB9 /* FLAnimatedImageView.m */,
+				16E01C8BBA632AFCA96782C30C76CF01 /* Support Files */,
+			);
+			path = FLAnimatedImage;
+			sourceTree = "<group>";
+		};
+		A452939D597485085B12DCC03D3C5033 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55EF073D9E26008847FAB883C19726E8 /* libFLAnimatedImage.a */,
+				14987EF76A9D87ADA66F02E5FFF42EA3 /* libPods-tinder.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BDB3ED7BC9BF949DCF1EC5D2B8ED012C /* Pods-tinder */ = {
+			isa = PBXGroup;
+			children = (
+				A46EA009CCC17278FEDE7FAB177DFC1C /* Pods-tinder-acknowledgements.markdown */,
+				4411B56486AD30D48D6576AE0134C39B /* Pods-tinder-acknowledgements.plist */,
+				8DFD4520CFAF20B57023E777666BB7F5 /* Pods-tinder-dummy.m */,
+				E504265C8CBF11D64A705E45711DA7C1 /* Pods-tinder-frameworks.sh */,
+				8B4E347B0A69CDEAD49BF8CA85B12D08 /* Pods-tinder-resources.sh */,
+				460AFD29E3CE6DB01B1A850A62773D91 /* Pods-tinder.debug.xcconfig */,
+				4EBF15649D5A3A2829AA3D7965A29061 /* Pods-tinder.release.xcconfig */,
+			);
+			name = "Pods-tinder";
+			path = "Target Support Files/Pods-tinder";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F6746889C4A73BAD8B783E1DD0879CBF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DBEC7BF142147EC2EB66E9428444670 /* FLAnimatedImage.h in Headers */,
+				F5872852E80C246A0B2FC6DBCD6A1633 /* FLAnimatedImageView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1A79BA86DB198181905CBBFC1F1E6701 /* FLAnimatedImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CCD7F601F55B0AB6E88DCCFF6374DB5 /* Build configuration list for PBXNativeTarget "FLAnimatedImage" */;
+			buildPhases = (
+				BA051833E256E1799D7759FE76438EDC /* Sources */,
+				456E3D8CBA16CC53451C696545611E92 /* Frameworks */,
+				F6746889C4A73BAD8B783E1DD0879CBF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FLAnimatedImage;
+			productName = FLAnimatedImage;
+			productReference = 55EF073D9E26008847FAB883C19726E8 /* libFLAnimatedImage.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		2B93FD101CA6DF93BCCE6F11C2DBBCD3 /* Pods-tinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C739A3661F04C3F28F6801F37E2721EC /* Build configuration list for PBXNativeTarget "Pods-tinder" */;
+			buildPhases = (
+				74535D519C2CE56B58886A1C1E30044B /* Sources */,
+				59685476752D5E0DDB34FA8725647122 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FC3AC25E1C1C090EC25FF558B3F8F54 /* PBXTargetDependency */,
+			);
+			name = "Pods-tinder";
+			productName = "Pods-tinder";
+			productReference = 14987EF76A9D87ADA66F02E5FFF42EA3 /* libPods-tinder.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = A452939D597485085B12DCC03D3C5033 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A79BA86DB198181905CBBFC1F1E6701 /* FLAnimatedImage */,
+				2B93FD101CA6DF93BCCE6F11C2DBBCD3 /* Pods-tinder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		74535D519C2CE56B58886A1C1E30044B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE7FC098E42D97C634C3CD83CA5FFEE5 /* Pods-tinder-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA051833E256E1799D7759FE76438EDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D258E9A843C52C991E5E9455CB8DB51 /* FLAnimatedImage-dummy.m in Sources */,
+				AB5E80218B841C79963B69C7FB5B6378 /* FLAnimatedImage.m in Sources */,
+				F82338CC3F882FAA29C161219E124753 /* FLAnimatedImageView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0FC3AC25E1C1C090EC25FF558B3F8F54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FLAnimatedImage;
+			target = 1A79BA86DB198181905CBBFC1F1E6701 /* FLAnimatedImage */;
+			targetProxy = F8DF5433CC621DBCDB13C28CD1770990 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		41CA2457E3C142E7633EA3A221310D72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 460AFD29E3CE6DB01B1A850A62773D91 /* Pods-tinder.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		78CFFF4B395DC8E1641457CB043395B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EBF15649D5A3A2829AA3D7965A29061 /* Pods-tinder.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A8D9CB03E525E0E3B945931B1732B69A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C5BA29C84B52AE3DB5B976CF24BBDA5 /* FLAnimatedImage.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FLAnimatedImage/FLAnimatedImage-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B14AF75C5CEF244B065304A03868A02D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C5BA29C84B52AE3DB5B976CF24BBDA5 /* FLAnimatedImage.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FLAnimatedImage/FLAnimatedImage-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
+				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CCD7F601F55B0AB6E88DCCFF6374DB5 /* Build configuration list for PBXNativeTarget "FLAnimatedImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8D9CB03E525E0E3B945931B1732B69A /* Debug */,
+				B14AF75C5CEF244B065304A03868A02D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C739A3661F04C3F28F6801F37E2721EC /* Build configuration list for PBXNativeTarget "Pods-tinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41CA2457E3C142E7633EA3A221310D72 /* Debug */,
+				78CFFF4B395DC8E1641457CB043395B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
