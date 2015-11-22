@@ -82,26 +82,15 @@
 		125B84691BFE8589000273F7 /* tinder */ = {
 			isa = PBXGroup;
 			children = (
+				12D362F41C028B4F002DE422 /* Views */,
+				12D362F31C028B2F002DE422 /* Controllers */,
 				125B846D1BFE8589000273F7 /* AppDelegate.h */,
 				125B846E1BFE8589000273F7 /* AppDelegate.m */,
-				125B84701BFE8589000273F7 /* CardsViewController.h */,
-				125B84711BFE8589000273F7 /* CardsViewController.m */,
 				125B84731BFE8589000273F7 /* Main.storyboard */,
 				125B84761BFE8589000273F7 /* Assets.xcassets */,
 				125B84781BFE8589000273F7 /* LaunchScreen.storyboard */,
 				125B847B1BFE8589000273F7 /* Info.plist */,
 				125B846A1BFE8589000273F7 /* Supporting Files */,
-				125B84811BFE8B8B000273F7 /* DraggableImageView.xib */,
-				125B84831BFE8BF1000273F7 /* DraggableImageView.h */,
-				125B84841BFE8BF2000273F7 /* DraggableImageView.m */,
-				125B84861BFEB38A000273F7 /* ProfileViewController.h */,
-				125B84871BFEB38A000273F7 /* ProfileViewController.m */,
-				12142B331C012CE700F2C737 /* ChatsViewController.h */,
-				12142B341C012CE700F2C737 /* ChatsViewController.m */,
-				12142B361C013C7400F2C737 /* SettingsViewController.h */,
-				12142B371C013C7400F2C737 /* SettingsViewController.m */,
-				12BFCB301C01410D00E27107 /* LoginViewController.h */,
-				12BFCB311C01410D00E27107 /* LoginViewController.m */,
 			);
 			path = tinder;
 			sourceTree = "<group>";
@@ -112,6 +101,33 @@
 				125B846B1BFE8589000273F7 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		12D362F31C028B2F002DE422 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				125B84701BFE8589000273F7 /* CardsViewController.h */,
+				125B84711BFE8589000273F7 /* CardsViewController.m */,
+				125B84861BFEB38A000273F7 /* ProfileViewController.h */,
+				125B84871BFEB38A000273F7 /* ProfileViewController.m */,
+				12142B331C012CE700F2C737 /* ChatsViewController.h */,
+				12142B341C012CE700F2C737 /* ChatsViewController.m */,
+				12142B361C013C7400F2C737 /* SettingsViewController.h */,
+				12142B371C013C7400F2C737 /* SettingsViewController.m */,
+				12BFCB301C01410D00E27107 /* LoginViewController.h */,
+				12BFCB311C01410D00E27107 /* LoginViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		12D362F41C028B4F002DE422 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				125B84811BFE8B8B000273F7 /* DraggableImageView.xib */,
+				125B84831BFE8BF1000273F7 /* DraggableImageView.h */,
+				125B84841BFE8BF2000273F7 /* DraggableImageView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		511929D131DE070D0AB0F7D2 /* Frameworks */ = {
