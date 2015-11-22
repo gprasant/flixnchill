@@ -35,9 +35,13 @@
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    UIViewController *destinationVC = [segue destinationViewController];
-    ProfileViewController * pvc = (ProfileViewController *)destinationVC;
-    pvc.image = [UIImage imageNamed:@"taylor"];
+    if ([segue.identifier isEqual: @"profileViewSegue"]) {
+        UIViewController *destinationVC = [segue destinationViewController];
+        ProfileViewController * pvc = (ProfileViewController *)destinationVC;
+        pvc.image = [UIImage imageNamed:@"taylor"];
+    } else if ([segue.identifier isEqual: @"chatsViewSegue"]) {
+    
+    }
 }
 
 #pragma mark - Gesture recognizers
