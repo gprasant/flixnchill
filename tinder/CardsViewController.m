@@ -10,6 +10,8 @@
 #import "DraggableImageView.h"
 #import "ProfileViewController.h"
 
+#import <Parse/Parse.h>
+
 @interface CardsViewController ()
 @property (strong, nonatomic) IBOutlet DraggableImageView *draggableCard;
 
@@ -27,6 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.draggableCard.profileImageView.image = [UIImage imageNamed:@"taylor"];
+//    [self testParseMessage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,4 +74,11 @@
 }
 
 #pragma mark - END Gesture recognizers
+
+//- (void) testParseMessage {
+//    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+//    testObject[@"message"] = @"Starbucks lovers";
+//    [testObject saveInBackground];
+//}
+
 @end
