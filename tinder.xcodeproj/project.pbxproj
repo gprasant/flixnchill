@@ -18,6 +18,7 @@
 		125B84821BFE8B8B000273F7 /* DraggableImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 125B84811BFE8B8B000273F7 /* DraggableImageView.xib */; };
 		125B84851BFE8BF2000273F7 /* DraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B84841BFE8BF2000273F7 /* DraggableImageView.m */; };
 		125B84891BFEB38A000273F7 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B84871BFEB38A000273F7 /* ProfileViewController.m */; };
+		12BFCB321C01410D00E27107 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BFCB311C01410D00E27107 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		125B84841BFE8BF2000273F7 /* DraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableImageView.m; sourceTree = "<group>"; };
 		125B84861BFEB38A000273F7 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		125B84871BFEB38A000273F7 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		12BFCB301C01410D00E27107 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		12BFCB311C01410D00E27107 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,8 @@
 				12142B341C012CE700F2C737 /* ChatsViewController.m */,
 				12142B361C013C7400F2C737 /* SettingsViewController.h */,
 				12142B371C013C7400F2C737 /* SettingsViewController.m */,
+				12BFCB301C01410D00E27107 /* LoginViewController.h */,
+				12BFCB311C01410D00E27107 /* LoginViewController.m */,
 			);
 			path = tinder;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12BFCB321C01410D00E27107 /* LoginViewController.m in Sources */,
 				12142B351C012CE700F2C737 /* ChatsViewController.m in Sources */,
 				125B84721BFE8589000273F7 /* CardsViewController.m in Sources */,
 				125B846F1BFE8589000273F7 /* AppDelegate.m in Sources */,
