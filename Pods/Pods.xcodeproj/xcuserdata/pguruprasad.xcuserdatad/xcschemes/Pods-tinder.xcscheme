@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'DD93824A73AD028D25114037'
+               BlueprintIdentifier = '76841CF8B9F52737CBB0D6E6'
                BlueprintName = 'Pods-tinder'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-tinder.a'>

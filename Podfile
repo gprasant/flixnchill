@@ -5,5 +5,6 @@ platform :ios, '8.0'
 
 target 'tinder' do
   pod 'FLAnimatedImage', '~> 1.0'
+  pod 'Parse'
 end
 
