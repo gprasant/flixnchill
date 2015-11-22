@@ -97,6 +97,7 @@
                 <tapGestureRecognizer id="AQV-Bl-QMV">
                     <connections>
                         <action selector="onSettingsButtonTapped:" destination="BYZ-38-t0r" id="J6t-Wh-YJg"/>
+                        <segue destination="j9i-iR-JBu" kind="modal" id="dqY-5M-fMB"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="DZ9-27-TGH">
@@ -267,7 +268,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -287,6 +288,45 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="608" y="52"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="yJA-uh-lYV">
+            <objects>
+                <viewController id="j9i-iR-JBu" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l5k-lt-WzY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" id="2wT-de-2Ur">
+                                <rect key="frame" x="8" y="28" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1Nl-BI-lV9" appends="YES" id="udC-bn-bvG"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n8R-9t-VcO">
+                                <rect key="frame" x="128" y="27" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hek-qb-140" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1Nl-BI-lV9">
+                    <connections>
+                        <action selector="onBackTapped:" destination="j9i-iR-JBu" id="J0q-4Y-JdT"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="595" y="301"/>
         </scene>
     </scenes>
     <resources>

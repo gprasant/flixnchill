@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		12142B351C012CE700F2C737 /* ChatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12142B341C012CE700F2C737 /* ChatsViewController.m */; };
+		12142B381C013C7400F2C737 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12142B371C013C7400F2C737 /* SettingsViewController.m */; };
 		125B846C1BFE8589000273F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B846B1BFE8589000273F7 /* main.m */; };
 		125B846F1BFE8589000273F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B846E1BFE8589000273F7 /* AppDelegate.m */; };
 		125B84721BFE8589000273F7 /* CardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B84711BFE8589000273F7 /* CardsViewController.m */; };
@@ -22,6 +23,8 @@
 /* Begin PBXFileReference section */
 		12142B331C012CE700F2C737 /* ChatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatsViewController.h; sourceTree = "<group>"; };
 		12142B341C012CE700F2C737 /* ChatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatsViewController.m; sourceTree = "<group>"; };
+		12142B361C013C7400F2C737 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		12142B371C013C7400F2C737 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		125B84671BFE8589000273F7 /* tinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		125B846B1BFE8589000273F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		125B846D1BFE8589000273F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 				125B84871BFEB38A000273F7 /* ProfileViewController.m */,
 				12142B331C012CE700F2C737 /* ChatsViewController.h */,
 				12142B341C012CE700F2C737 /* ChatsViewController.m */,
+				12142B361C013C7400F2C737 /* SettingsViewController.h */,
+				12142B371C013C7400F2C737 /* SettingsViewController.m */,
 			);
 			path = tinder;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				125B84851BFE8BF2000273F7 /* DraggableImageView.m in Sources */,
 				125B846C1BFE8589000273F7 /* main.m in Sources */,
 				125B84891BFEB38A000273F7 /* ProfileViewController.m in Sources */,
+				12142B381C013C7400F2C737 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
