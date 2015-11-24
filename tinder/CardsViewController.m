@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.draggableCard.profileImageView.image = [UIImage imageNamed:@"taylor"];
+    self.draggableCard.profileImageView.image = [UIImage imageNamed:@"jessica"];
 //    [self testParseMessage];
 }
 
@@ -41,7 +41,7 @@
     if ([segue.identifier isEqual: @"profileViewSegue"]) {
         UIViewController *destinationVC = [segue destinationViewController];
         ProfileViewController * pvc = (ProfileViewController *)destinationVC;
-        pvc.image = [UIImage imageNamed:@"taylor"];
+        pvc.image = [UIImage imageNamed:@"jessica"];
     } else if ([segue.identifier isEqual: @"chatsViewSegue"]) {
     
     }

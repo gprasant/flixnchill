@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "LoginViewController.h"
+#import "CardsViewController.h"
 
 @interface AppDelegate ()
 
@@ -27,7 +30,22 @@
 
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-
+	
+	[[FBSDKApplicationDelegate sharedInstance] application:application
+							 didFinishLaunchingWithOptions:launchOptions];
+	
+	if (![FBSDKAccessToken currentAccessToken]) {
+		NSLog(@"User not logged in");
+		// Programitically present login view controller.
+		
+		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+		LoginViewController *loginVC = (LoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+		self.window.rootViewController = loginVC;
+		[self.window makeKeyAndVisible];
+	} else {
+		NSLog(@"User logged in with usedID = %@", [[FBSDKAccessToken currentAccessToken] userID]);
+	}
+	
     return YES;
 }
 
@@ -47,10 +65,28 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+	[FBSDKAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+	//Core facebook login
+- (BOOL)application:(UIApplication *)application
+			openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+		 annotation:(id)annotation {
+	// Dismiss login view controller
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	CardsViewController *cardsVC = (CardsViewController *)[storyboard instantiateViewControllerWithIdentifier:@"CardsViewController"];
+	self.window.rootViewController = cardsVC;
+	[self.window makeKeyAndVisible];
+	
+	return [[FBSDKApplicationDelegate sharedInstance] application:application
+														  openURL:url
+												sourceApplication:sourceApplication
+													   annotation:annotation];
 }
 
 @end
