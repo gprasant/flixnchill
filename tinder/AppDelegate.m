@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "LoginViewController.h"
+#import "CardsViewController.h"
 
 @interface AppDelegate ()
 
@@ -36,6 +38,12 @@
 		NSLog(@"User not logged in");
 		// Programitically present login view controller.
 		
+		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+		LoginViewController *loginVC = (LoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+		self.window.rootViewController = loginVC;
+		[self.window makeKeyAndVisible];
+	} else {
+		NSLog(@"User logged in with usedID = %@", [[FBSDKAccessToken currentAccessToken] userID]);
 	}
 	
     return YES;
@@ -69,11 +77,16 @@
 			openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
 		 annotation:(id)annotation {
+	// Dismiss login view controller
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	CardsViewController *cardsVC = (CardsViewController *)[storyboard instantiateViewControllerWithIdentifier:@"CardsViewController"];
+	self.window.rootViewController = cardsVC;
+	[self.window makeKeyAndVisible];
+	
 	return [[FBSDKApplicationDelegate sharedInstance] application:application
 														  openURL:url
 												sourceApplication:sourceApplication
 													   annotation:annotation];
-	// Dismiss login view controller
 }
 
 @end
