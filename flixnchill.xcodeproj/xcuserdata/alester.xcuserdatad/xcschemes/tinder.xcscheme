@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "125B84661BFE8589000273F7"
-               BuildableName = "tinder.app"
-               BlueprintName = "tinder"
+               BuildableName = "flixnchill.app"
+               BlueprintName = "flixnchill"
                ReferencedContainer = "container:flixnchill.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "125B84661BFE8589000273F7"
-            BuildableName = "tinder.app"
-            BlueprintName = "tinder"
+            BuildableName = "flixnchill.app"
+            BlueprintName = "flixnchill"
             ReferencedContainer = "container:flixnchill.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

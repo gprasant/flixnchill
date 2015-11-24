@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		028E245E66960905837A6E81 /* libPods-tinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB7A4E5A512FB46FBCAB231 /* libPods-tinder.a */; };
+		0546CDCF1C05106800355B48 /* taylorHeart.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0546CDCE1C05106800355B48 /* taylorHeart.gif */; settings = {ASSET_TAGS = (); }; };
 		055AE7F81C03DDDE00798915 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055AE7F71C03DDDE00798915 /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
 		055AE7FB1C03DDF200798915 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055AE7F91C03DDF200798915 /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
 		055AE7FC1C03DDF200798915 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055AE7FA1C03DDF200798915 /* FBSDKShareKit.framework */; settings = {ASSET_TAGS = (); }; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0546CDCE1C05106800355B48 /* taylorHeart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = taylorHeart.gif; path = "Tinder Assets/taylorHeart.gif"; sourceTree = "<group>"; };
 		055AE7F71C03DDDE00798915 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		055AE7F91C03DDF200798915 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		055AE7FA1C03DDF200798915 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -70,9 +72,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0546CDCB1C050C6700355B48 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
 		125B845E1BFE8589000273F7 = {
 			isa = PBXGroup;
 			children = (
+				0546CDCE1C05106800355B48 /* taylorHeart.gif */,
 				125B84691BFE8589000273F7 /* tinder */,
 				125B84681BFE8589000273F7 /* Products */,
 				550C282D8000863A96D4FBA1 /* Pods */,
@@ -91,6 +101,7 @@
 		125B84691BFE8589000273F7 /* tinder */ = {
 			isa = PBXGroup;
 			children = (
+				0546CDCB1C050C6700355B48 /* Library */,
 				12D362F41C028B4F002DE422 /* Views */,
 				12D362F31C028B2F002DE422 /* Controllers */,
 				125B846D1BFE8589000273F7 /* AppDelegate.h */,
@@ -222,6 +233,7 @@
 			files = (
 				125B847A1BFE8589000273F7 /* LaunchScreen.storyboard in Resources */,
 				125B84771BFE8589000273F7 /* Assets.xcassets in Resources */,
+				0546CDCF1C05106800355B48 /* taylorHeart.gif in Resources */,
 				125B84821BFE8B8B000273F7 /* DraggableImageView.xib in Resources */,
 				125B84751BFE8589000273F7 /* Main.storyboard in Resources */,
 			);

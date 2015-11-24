@@ -28,7 +28,16 @@
 
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-
+	
+	[[FBSDKApplicationDelegate sharedInstance] application:application
+							 didFinishLaunchingWithOptions:launchOptions];
+	
+	if (![FBSDKAccessToken currentAccessToken]) {
+		NSLog(@"User not logged in");
+		// Programitically present login view controller.
+		
+	}
+	
     return YES;
 }
 
@@ -48,6 +57,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+	[FBSDKAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -63,6 +73,7 @@
 														  openURL:url
 												sourceApplication:sourceApplication
 													   annotation:annotation];
+	// Dismiss login view controller
 }
 
 @end

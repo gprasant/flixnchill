@@ -8,7 +8,6 @@
 
 #import "LoginViewController.h"
 #import "FLAnimatedImage.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
@@ -41,11 +40,10 @@
 }
 
 -(void) addTaylorGIF {
-    NSURL *gifURL = [NSURL URLWithString:@"https://i.imgur.com/uvd1NPW.gif"];
-    FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:[NSData dataWithContentsOfURL: gifURL]];
     FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
-    
-    imageView.animatedImage = image;
+	FLAnimatedImage *manWalkingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"taylorHeart" ofType:@"gif"]]];
+
+    imageView.animatedImage = manWalkingImage;
     imageView.frame = self.placeHolderImageView.frame;
     [self.view addSubview:imageView];
 }
