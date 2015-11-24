@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "FLAnimatedImage.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
@@ -21,6 +22,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setupViews];
+	FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+	loginButton.center = self.loginButton.center;
+	[self.view addSubview:loginButton];
+	_fbLoginButton.readPermissions =
+	@[@"public_profile", @"email", @"user_friends"];
 }
 
 - (void)didReceiveMemoryWarning {
