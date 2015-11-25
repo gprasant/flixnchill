@@ -18,10 +18,10 @@
 		125B0C041C05492000987D30 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 125B0C031C05492000987D30 /* Info.plist */; };
 		125B0C061C05492D00987D30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 125B0C051C05492D00987D30 /* Assets.xcassets */; };
 		125B0C081C05498000987D30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B0C071C05498000987D30 /* main.m */; };
-		125B0C091C054B2D00987D30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B846D1BFE8589000273F7 /* AppDelegate.m */; };
 		125B0C101C054C8B00987D30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125B0C0C1C054C8B00987D30 /* Main.storyboard */; };
 		125B0C111C054C8B00987D30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125B0C0E1C054C8B00987D30 /* LaunchScreen.storyboard */; };
 		125B0C131C0550ED00987D30 /* taylorHeart.gif in Resources */ = {isa = PBXBuildFile; fileRef = 125B0C121C0550ED00987D30 /* taylorHeart.gif */; };
+		125B0C151C05537C00987D30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B0C141C05537C00987D30 /* AppDelegate.m */; };
 		A53ECE82159ADF71582E5680 /* libPods-flixnchill.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55ADC3ACE91F63E33786B639 /* libPods-flixnchill.a */; };
 /* End PBXBuildFile section */
 
@@ -47,9 +47,9 @@
 		125B0C0D1C054C8B00987D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = flixnchill/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		125B0C0F1C054C8B00987D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = flixnchill/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		125B0C121C0550ED00987D30 /* taylorHeart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = taylorHeart.gif; path = "flixnchill assets/taylorHeart.gif"; sourceTree = "<group>"; };
+		125B0C141C05537C00987D30 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = flixnchill/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		125B84671BFE8589000273F7 /* flixnchill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flixnchill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		125B846B1BFE8589000273F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		125B846D1BFE8589000273F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../flixnchill/AppDelegate.m; sourceTree = "<group>"; };
 		55ADC3ACE91F63E33786B639 /* libPods-flixnchill.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flixnchill.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97FCE4F5AFA3CF984770BD1 /* Pods-flixnchill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flixnchill.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flixnchill/Pods-flixnchill.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +123,7 @@
 		125B84691BFE8589000273F7 /* flixnchill */ = {
 			isa = PBXGroup;
 			children = (
+				125B0C141C05537C00987D30 /* AppDelegate.m */,
 				125B0C0C1C054C8B00987D30 /* Main.storyboard */,
 				125B0C0E1C054C8B00987D30 /* LaunchScreen.storyboard */,
 				125B0C071C05498000987D30 /* main.m */,
@@ -131,7 +132,6 @@
 				125B0BFD1C0548F400987D30 /* Views */,
 				125B0BED1C05489B00987D30 /* Controllers */,
 				0546CDCB1C050C6700355B48 /* Library */,
-				125B846D1BFE8589000273F7 /* AppDelegate.m */,
 				125B846A1BFE8589000273F7 /* Supporting Files */,
 			);
 			name = flixnchill;
@@ -289,8 +289,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				125B0C091C054B2D00987D30 /* AppDelegate.m in Sources */,
 				125B0BF81C0548C800987D30 /* SettingsViewController.m in Sources */,
+				125B0C151C05537C00987D30 /* AppDelegate.m in Sources */,
 				125B0BF91C0548C800987D30 /* ProfileViewController.m in Sources */,
 				125B0BFB1C0548C800987D30 /* ChatsViewController.m in Sources */,
 				125B0BFC1C0548C800987D30 /* CardsViewController.m in Sources */,
