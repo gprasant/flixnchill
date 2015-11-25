@@ -21,6 +21,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setupViews];
+	FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+	loginButton.center = self.loginButton.center;
+	[self.view addSubview:loginButton];
+	_fbLoginButton.readPermissions =
+	@[@"public_profile", @"email", @"user_friends"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,11 +40,10 @@
 }
 
 -(void) addTaylorGIF {
-    NSURL *gifURL = [NSURL URLWithString:@"https://i.imgur.com/uvd1NPW.gif"];
-    FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:[NSData dataWithContentsOfURL: gifURL]];
     FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
-    
-    imageView.animatedImage = image;
+	FLAnimatedImage *manWalkingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"taylorHeart" ofType:@"gif"]]];
+
+    imageView.animatedImage = manWalkingImage;
     imageView.frame = self.placeHolderImageView.frame;
     [self.view addSubview:imageView];
 }

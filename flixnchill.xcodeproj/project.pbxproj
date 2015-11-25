@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		028E245E66960905837A6E81 /* libPods-tinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB7A4E5A512FB46FBCAB231 /* libPods-tinder.a */; };
+		0546CDCF1C05106800355B48 /* taylorHeart.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0546CDCE1C05106800355B48 /* taylorHeart.gif */; settings = {ASSET_TAGS = (); }; };
 		12142B351C012CE700F2C737 /* ChatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12142B341C012CE700F2C737 /* ChatsViewController.m */; };
 		12142B381C013C7400F2C737 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12142B371C013C7400F2C737 /* SettingsViewController.m */; };
 		125B846C1BFE8589000273F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B846B1BFE8589000273F7 /* main.m */; };
@@ -20,15 +20,17 @@
 		125B84851BFE8BF2000273F7 /* DraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B84841BFE8BF2000273F7 /* DraggableImageView.m */; };
 		125B84891BFEB38A000273F7 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B84871BFEB38A000273F7 /* ProfileViewController.m */; };
 		12BFCB321C01410D00E27107 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BFCB311C01410D00E27107 /* LoginViewController.m */; };
+		A53ECE82159ADF71582E5680 /* libPods-flixnchill.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55ADC3ACE91F63E33786B639 /* libPods-flixnchill.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0ED28466A1B84371EF780376 /* Pods-tinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-tinder/Pods-tinder.release.xcconfig"; sourceTree = "<group>"; };
+		0546CDCE1C05106800355B48 /* taylorHeart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = taylorHeart.gif; path = "Tinder Assets/taylorHeart.gif"; sourceTree = "<group>"; };
+		0ED28466A1B84371EF780376 /* Pods-flixnchill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flixnchill.release.xcconfig"; path = "Pods/Target Support Files/Pods-flixnchill/Pods-flixnchill.release.xcconfig"; sourceTree = "<group>"; };
 		12142B331C012CE700F2C737 /* ChatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatsViewController.h; sourceTree = "<group>"; };
 		12142B341C012CE700F2C737 /* ChatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatsViewController.m; sourceTree = "<group>"; };
 		12142B361C013C7400F2C737 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		12142B371C013C7400F2C737 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		125B84671BFE8589000273F7 /* tinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		125B84671BFE8589000273F7 /* flixnchill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flixnchill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		125B846B1BFE8589000273F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		125B846D1BFE8589000273F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		125B846E1BFE8589000273F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,8 +47,8 @@
 		125B84871BFEB38A000273F7 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		12BFCB301C01410D00E27107 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		12BFCB311C01410D00E27107 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		B97FCE4F5AFA3CF984770BD1 /* Pods-tinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tinder/Pods-tinder.debug.xcconfig"; sourceTree = "<group>"; };
-		BAB7A4E5A512FB46FBCAB231 /* libPods-tinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55ADC3ACE91F63E33786B639 /* libPods-flixnchill.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flixnchill.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B97FCE4F5AFA3CF984770BD1 /* Pods-flixnchill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flixnchill.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flixnchill/Pods-flixnchill.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,17 +56,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				028E245E66960905837A6E81 /* libPods-tinder.a in Frameworks */,
+				A53ECE82159ADF71582E5680 /* libPods-flixnchill.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0546CDCB1C050C6700355B48 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
 		125B845E1BFE8589000273F7 = {
 			isa = PBXGroup;
 			children = (
-				125B84691BFE8589000273F7 /* tinder */,
+				0546CDCE1C05106800355B48 /* taylorHeart.gif */,
+				125B84691BFE8589000273F7 /* flixnchill */,
 				125B84681BFE8589000273F7 /* Products */,
 				550C282D8000863A96D4FBA1 /* Pods */,
 				511929D131DE070D0AB0F7D2 /* Frameworks */,
@@ -74,14 +84,15 @@
 		125B84681BFE8589000273F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				125B84671BFE8589000273F7 /* tinder.app */,
+				125B84671BFE8589000273F7 /* flixnchill.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		125B84691BFE8589000273F7 /* tinder */ = {
+		125B84691BFE8589000273F7 /* flixnchill */ = {
 			isa = PBXGroup;
 			children = (
+				0546CDCB1C050C6700355B48 /* Library */,
 				12D362F41C028B4F002DE422 /* Views */,
 				12D362F31C028B2F002DE422 /* Controllers */,
 				125B846D1BFE8589000273F7 /* AppDelegate.h */,
@@ -92,6 +103,7 @@
 				125B847B1BFE8589000273F7 /* Info.plist */,
 				125B846A1BFE8589000273F7 /* Supporting Files */,
 			);
+			name = flixnchill;
 			path = tinder;
 			sourceTree = "<group>";
 		};
@@ -133,7 +145,7 @@
 		511929D131DE070D0AB0F7D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BAB7A4E5A512FB46FBCAB231 /* libPods-tinder.a */,
+				55ADC3ACE91F63E33786B639 /* libPods-flixnchill.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,8 +153,8 @@
 		550C282D8000863A96D4FBA1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B97FCE4F5AFA3CF984770BD1 /* Pods-tinder.debug.xcconfig */,
-				0ED28466A1B84371EF780376 /* Pods-tinder.release.xcconfig */,
+				B97FCE4F5AFA3CF984770BD1 /* Pods-flixnchill.debug.xcconfig */,
+				0ED28466A1B84371EF780376 /* Pods-flixnchill.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -150,9 +162,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		125B84661BFE8589000273F7 /* tinder */ = {
+		125B84661BFE8589000273F7 /* flixnchill */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 125B847E1BFE8589000273F7 /* Build configuration list for PBXNativeTarget "tinder" */;
+			buildConfigurationList = 125B847E1BFE8589000273F7 /* Build configuration list for PBXNativeTarget "flixnchill" */;
 			buildPhases = (
 				75974285ABC7E3DAEA318D10 /* Check Pods Manifest.lock */,
 				125B84631BFE8589000273F7 /* Sources */,
@@ -165,9 +177,9 @@
 			);
 			dependencies = (
 			);
-			name = tinder;
+			name = flixnchill;
 			productName = tinder;
-			productReference = 125B84671BFE8589000273F7 /* tinder.app */;
+			productReference = 125B84671BFE8589000273F7 /* flixnchill.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -185,7 +197,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 125B84621BFE8589000273F7 /* Build configuration list for PBXProject "tinder" */;
+			buildConfigurationList = 125B84621BFE8589000273F7 /* Build configuration list for PBXProject "flixnchill" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -198,7 +210,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				125B84661BFE8589000273F7 /* tinder */,
+				125B84661BFE8589000273F7 /* flixnchill */,
 			);
 		};
 /* End PBXProject section */
@@ -210,6 +222,7 @@
 			files = (
 				125B847A1BFE8589000273F7 /* LaunchScreen.storyboard in Resources */,
 				125B84771BFE8589000273F7 /* Assets.xcassets in Resources */,
+				0546CDCF1C05106800355B48 /* taylorHeart.gif in Resources */,
 				125B84821BFE8B8B000273F7 /* DraggableImageView.xib in Resources */,
 				125B84751BFE8589000273F7 /* Main.storyboard in Resources */,
 			);
@@ -230,7 +243,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tinder/Pods-tinder-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-flixnchill/Pods-flixnchill-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		75974285ABC7E3DAEA318D10 /* Check Pods Manifest.lock */ = {
@@ -260,7 +273,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tinder/Pods-tinder-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-flixnchill/Pods-flixnchill-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -387,32 +400,44 @@
 		};
 		125B847F1BFE8589000273F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B97FCE4F5AFA3CF984770BD1 /* Pods-tinder.debug.xcconfig */;
+			baseConfigurationReference = B97FCE4F5AFA3CF984770BD1 /* Pods-flixnchill.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = tinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.tinder;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.flixnchill;
+				PRODUCT_NAME = flixnchill;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		125B84801BFE8589000273F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0ED28466A1B84371EF780376 /* Pods-tinder.release.xcconfig */;
+			baseConfigurationReference = 0ED28466A1B84371EF780376 /* Pods-flixnchill.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = tinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.tinder;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.flixnchill;
+				PRODUCT_NAME = flixnchill;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		125B84621BFE8589000273F7 /* Build configuration list for PBXProject "tinder" */ = {
+		125B84621BFE8589000273F7 /* Build configuration list for PBXProject "flixnchill" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				125B847C1BFE8589000273F7 /* Debug */,
@@ -421,7 +446,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		125B847E1BFE8589000273F7 /* Build configuration list for PBXNativeTarget "tinder" */ = {
+		125B847E1BFE8589000273F7 /* Build configuration list for PBXNativeTarget "flixnchill" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				125B847F1BFE8589000273F7 /* Debug */,
