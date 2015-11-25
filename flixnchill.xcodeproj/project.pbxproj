@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0546CDCF1C05106800355B48 /* taylorHeart.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0546CDCE1C05106800355B48 /* taylorHeart.gif */; };
 		125B0BEC1C05482100987D30 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 125B0BEB1C05482100987D30 /* Default-568h@2x.png */; };
 		125B0BF81C0548C800987D30 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B0BEE1C0548C800987D30 /* SettingsViewController.m */; };
 		125B0BF91C0548C800987D30 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B0BF01C0548C800987D30 /* ProfileViewController.m */; };
@@ -22,11 +21,11 @@
 		125B0C091C054B2D00987D30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B846D1BFE8589000273F7 /* AppDelegate.m */; };
 		125B0C101C054C8B00987D30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125B0C0C1C054C8B00987D30 /* Main.storyboard */; };
 		125B0C111C054C8B00987D30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125B0C0E1C054C8B00987D30 /* LaunchScreen.storyboard */; };
+		125B0C131C0550ED00987D30 /* taylorHeart.gif in Resources */ = {isa = PBXBuildFile; fileRef = 125B0C121C0550ED00987D30 /* taylorHeart.gif */; };
 		A53ECE82159ADF71582E5680 /* libPods-flixnchill.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55ADC3ACE91F63E33786B639 /* libPods-flixnchill.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0546CDCE1C05106800355B48 /* taylorHeart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = taylorHeart.gif; path = "Tinder Assets/taylorHeart.gif"; sourceTree = "<group>"; };
 		0ED28466A1B84371EF780376 /* Pods-flixnchill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flixnchill.release.xcconfig"; path = "Pods/Target Support Files/Pods-flixnchill/Pods-flixnchill.release.xcconfig"; sourceTree = "<group>"; };
 		125B0BEB1C05482100987D30 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		125B0BEE1C0548C800987D30 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = flixnchill/SettingsViewController.m; sourceTree = SOURCE_ROOT; };
@@ -47,6 +46,7 @@
 		125B0C071C05498000987D30 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = flixnchill/main.m; sourceTree = SOURCE_ROOT; };
 		125B0C0D1C054C8B00987D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = flixnchill/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		125B0C0F1C054C8B00987D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = flixnchill/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		125B0C121C0550ED00987D30 /* taylorHeart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = taylorHeart.gif; path = "flixnchill assets/taylorHeart.gif"; sourceTree = "<group>"; };
 		125B84671BFE8589000273F7 /* flixnchill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flixnchill.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		125B846B1BFE8589000273F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		125B846D1BFE8589000273F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../flixnchill/AppDelegate.m; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 		125B845E1BFE8589000273F7 = {
 			isa = PBXGroup;
 			children = (
+				125B0C121C0550ED00987D30 /* taylorHeart.gif */,
 				125B0BEB1C05482100987D30 /* Default-568h@2x.png */,
-				0546CDCE1C05106800355B48 /* taylorHeart.gif */,
 				125B84691BFE8589000273F7 /* flixnchill */,
 				125B84681BFE8589000273F7 /* Products */,
 				550C282D8000863A96D4FBA1 /* Pods */,
@@ -225,11 +225,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				125B0C011C05490600987D30 /* DraggableImageView.xib in Resources */,
-				0546CDCF1C05106800355B48 /* taylorHeart.gif in Resources */,
 				125B0BEC1C05482100987D30 /* Default-568h@2x.png in Resources */,
 				125B0C101C054C8B00987D30 /* Main.storyboard in Resources */,
 				125B0C111C054C8B00987D30 /* LaunchScreen.storyboard in Resources */,
 				125B0C061C05492D00987D30 /* Assets.xcassets in Resources */,
+				125B0C131C0550ED00987D30 /* taylorHeart.gif in Resources */,
 				125B0C041C05492000987D30 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
