@@ -47,6 +47,9 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     UINib *nib = [UINib nibWithNibName:@"DraggableImageView" bundle:nil];
     [nib instantiateWithOwner:self options:nil];
     self.contentView.frame = self.bounds;
+    // add border
+    self.contentView.layer.borderColor = [[UIColor blackColor] CGColor];
+    self.contentView.layer.borderWidth = 1.0f;
     self.originalCenter = [self.contentView center];
     [self addSubview:self.contentView];
     // Hide the like and nope initially
@@ -63,7 +66,7 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     if(sender.state == UIGestureRecognizerStateBegan) {
         
     } else if (sender.state == UIGestureRecognizerStateChanged) {
-        self.contentView.center = CGPointMake(self.originalCenter.x + translation.x, self.originalCenter.y);
+        self.contentView.center = CGPointMake(self.originalCenter.x + translation.x, self.originalCenter.y + translation.y);
         CGFloat radian = translationX / 5.0 * (M_PI  / 180.0);
         self.contentView.transform = CGAffineTransformMakeRotation(radian);
         // show like and nope labels
