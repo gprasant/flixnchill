@@ -10,5 +10,8 @@
 
 @interface DraggableImageView : UIView
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ageLabel;
+@property (weak, nonatomic) IBOutlet UILabel *taglineLabel;
 - (void) reset;
 @end
