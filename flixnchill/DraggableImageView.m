@@ -10,6 +10,8 @@
 
 @interface DraggableImageView ()
 
+
+
 @property (strong, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UILabel *likeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nopeLabel;
@@ -79,12 +81,12 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     } else if (sender.state == UIGestureRecognizerStateEnded) {
         
         if (translationX > 100) {
-            // move right
+            // swipe right
             [UIView animateWithDuration:0.3 animations:^{
                 self.contentView.center = CGPointMake(640, self.originalCenter.y);
             }];
         } else if (translationX < -100) {
-            // move left
+            // swipe left
             [UIView animateWithDuration:0.3 animations:^{
                 self.contentView.center = CGPointMake(-640, self.originalCenter.y);
             }];

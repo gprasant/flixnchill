@@ -9,10 +9,15 @@
 #import "CardsViewController.h"
 #import "DraggableImageView.h"
 #import "ProfileViewController.h"
-
+#import "FlixNChillClient.h"
+#import "PotentialMatch.h"
 #import <Parse/Parse.h>
+#import "UIImageView+AFNetworking.h"
 
 @interface CardsViewController ()
+
+@property (strong, nonatomic) NSArray *matchCandidatesArray;
+
 @property (strong, nonatomic) IBOutlet DraggableImageView *draggableCard;
 
 @property (weak, nonatomic) IBOutlet UIImageView *settingsButton;
@@ -29,7 +34,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.draggableCard.profileImageView.image = [UIImage imageNamed:@"jessica"];
-//    [self testParseMessage];
+    
+    // Test parse network call
+    NSDictionary *d = [[NSDictionary alloc] init];
+    [[FlixNChillClient sharedInstance] getMatchCandidatesWithParams: d completion:^(NSArray *candidates, NSError *error) {
+        NSMutableArray *matchCandidatesArray = [NSMutableArray array];
+        if (!error) {
+            for (PFObject *o in candidates) {
+                [matchCandidatesArray addObject:[[PotentialMatch alloc] initFromDictionary: o]];
+            }
+            self.matchCandidatesArray = matchCandidatesArray;
+            [self fillUpCard: [matchCandidatesArray firstObject]];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,10 +92,12 @@
 
 #pragma mark - END Gesture recognizers
 
-//- (void) testParseMessage {
-//    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-//    testObject[@"message"] = @"Starbucks lovers";
-//    [testObject saveInBackground];
-//}
+- (void) fillUpCard: (PotentialMatch *)match {
+    NSURL *photoURL = [NSURL URLWithString:match.photoUrlString];
+    [self.draggableCard.profileImageView setImageWithURL: photoURL];
+    self.draggableCard.nameLabel.text = [NSString stringWithFormat:@"%@ ,", match.name ];
+    self.draggableCard.ageLabel.text = [match.age stringValue];
+    self.draggableCard.taglineLabel.text = match.tagline;
+}
 
 @end
