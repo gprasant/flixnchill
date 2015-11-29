@@ -13,5 +13,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *taglineLabel;
+
 - (void) reset;
+-(void) swipeRight;
+-(void) swipeLeft;
 @end

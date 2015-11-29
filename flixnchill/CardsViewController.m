@@ -80,6 +80,7 @@
 
 - (IBAction)onNopeButtonTapped:(UITapGestureRecognizer *)sender {
     NSLog(@"CardsViewController:Nope tapped");
+    [self.draggableCard swipeLeft];
 }
 
 - (IBAction)onInfoButtonTapped:(UITapGestureRecognizer *)sender {
@@ -88,6 +89,7 @@
 
 - (IBAction)onLikeTapped:(UITapGestureRecognizer *)sender {
     NSLog(@"CardsViewController:Like tapped");
+    [self.draggableCard swipeRight];
 }
 
 #pragma mark - END Gesture recognizers

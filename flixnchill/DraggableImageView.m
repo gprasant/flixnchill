@@ -50,8 +50,8 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     [nib instantiateWithOwner:self options:nil];
     self.contentView.frame = self.bounds;
     // add border
-    self.contentView.layer.borderColor = [[UIColor blackColor] CGColor];
-    self.contentView.layer.borderWidth = 1.0f;
+//    self.contentView.layer.borderColor = [[UIColor blackColor] CGColor];
+//    self.contentView.layer.borderWidth = 1.0f;
     self.originalCenter = [self.contentView center];
     [self addSubview:self.contentView];
     // Hide the like and nope initially
@@ -81,21 +81,29 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     } else if (sender.state == UIGestureRecognizerStateEnded) {
         
         if (translationX > 100) {
-            // swipe right
-            [UIView animateWithDuration:0.3 animations:^{
-                self.contentView.center = CGPointMake(640, self.originalCenter.y);
-            }];
+            [self swipeRight];
         } else if (translationX < -100) {
-            // swipe left
-            [UIView animateWithDuration:0.3 animations:^{
-                self.contentView.center = CGPointMake(-640, self.originalCenter.y);
-            }];
+            [self swipeLeft];
         } else {
             // set back to default position
             [self reset];
         }
     }
     
+}
+
+- (void) swipeLeft {
+    // swipe left
+    [UIView animateWithDuration:0.3 animations:^{
+        self.contentView.center = CGPointMake(-640, self.originalCenter.y);
+    }];
+}
+
+-(void) swipeRight {
+    // swipe right
+    [UIView animateWithDuration:0.3 animations:^{
+        self.contentView.center = CGPointMake(640, self.originalCenter.y);
+    }];
 }
 
 - (void) reset {
