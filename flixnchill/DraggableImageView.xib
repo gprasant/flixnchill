@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
@@ -17,54 +17,58 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleAspectFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="304" height="371"/>
+            <rect key="frame" x="0.0" y="0.0" width="304" height="373"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="gpt-eJ-sF1">
+                <imageView clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gpt-eJ-sF1">
                     <rect key="frame" x="0.0" y="0.0" width="304" height="304"/>
-                    <autoresizingMask key="autoresizingMask"/>
                     <animations/>
                     <color key="backgroundColor" red="0.4339984655380249" green="0.90789788961410522" blue="0.37291216850280762" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="304" id="1Y7-9n-iU8"/>
+                        <constraint firstAttribute="height" constant="304" id="Vhd-G6-SbW"/>
+                    </constraints>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="gi1-re-7gs" appends="YES" id="EWH-QO-ehu"/>
                     </connections>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIKE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wvv-DA-aVr">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIKE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvv-DA-aVr">
                     <rect key="frame" x="-50" y="24" width="102" height="60"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Nm8-t0-Et0"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
                     <color key="textColor" red="0.21960784310000001" green="0.75686274509999996" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOPE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mES-T8-AQs">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOPE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mES-T8-AQs">
                     <rect key="frame" x="249" y="24" width="133" height="60"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="zYD-4k-e8O"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
                     <color key="textColor" red="0.94117647059999998" green="0.32156862749999998" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taylor ," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MZu-3J-Yxc">
-                    <rect key="frame" x="8" y="312" width="78" height="24"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taylor ," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZu-3J-Yxc">
+                    <rect key="frame" x="8" y="312" width="62" height="22"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z9o-30-dTl">
-                    <rect key="frame" x="74" y="315" width="21" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9o-30-dTl">
+                    <rect key="frame" x="78" y="312" width="21" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Singer, songwriter at Big Machine Records" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Twf-k3-q7J">
-                    <rect key="frame" x="8" y="335" width="324" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Singer, songwriter at Big Machine Records" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Twf-k3-q7J">
+                    <rect key="frame" x="8" y="335" width="286" height="18"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -73,8 +77,24 @@
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="z9o-30-dTl" firstAttribute="centerY" secondItem="MZu-3J-Yxc" secondAttribute="centerY" id="7pg-Jy-pea"/>
+                <constraint firstItem="Twf-k3-q7J" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="CBm-MP-qBH"/>
+                <constraint firstItem="gpt-eJ-sF1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="DbX-n0-BhJ"/>
+                <constraint firstAttribute="trailing" secondItem="mES-T8-AQs" secondAttribute="trailing" constant="-78" id="HZ4-5z-Nxs"/>
+                <constraint firstItem="gpt-eJ-sF1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ik4-wH-HtS"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Twf-k3-q7J" secondAttribute="bottom" constant="8" id="Wqb-fL-07C"/>
+                <constraint firstItem="Twf-k3-q7J" firstAttribute="top" secondItem="MZu-3J-Yxc" secondAttribute="bottom" constant="1" id="ZGJ-DS-E60"/>
+                <constraint firstItem="wvv-DA-aVr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="Zs0-Py-sOo"/>
+                <constraint firstItem="wvv-DA-aVr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-50" id="bOY-NJ-qb4"/>
+                <constraint firstItem="mES-T8-AQs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="pQz-Mg-Ghv"/>
+                <constraint firstItem="z9o-30-dTl" firstAttribute="leading" secondItem="MZu-3J-Yxc" secondAttribute="trailing" constant="8" id="rVW-Fv-3Ga"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="z9o-30-dTl" secondAttribute="trailing" constant="8" id="sM6-8H-hPt"/>
+                <constraint firstItem="MZu-3J-Yxc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="uku-sl-1RH"/>
+                <constraint firstItem="MZu-3J-Yxc" firstAttribute="top" secondItem="gpt-eJ-sF1" secondAttribute="bottom" constant="8" id="zHI-b6-5J6"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="449" y="381.5"/>
+            <point key="canvasLocation" x="449" y="382.5"/>
         </view>
         <panGestureRecognizer minimumNumberOfTouches="1" id="gi1-re-7gs">
             <connections>
