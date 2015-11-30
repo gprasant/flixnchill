@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PFObject.h"
 
 @interface PotentialMatch : NSObject
 
@@ -18,6 +19,6 @@
 @property (strong, nonatomic) NSString *photoUrlString;
 
 //methods
--(id) initFromDictionary:(NSDictionary *)dictionary;
+-(id) initFromPFObject:(PFObject *)dictionary;
 
 @end

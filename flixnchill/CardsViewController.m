@@ -13,12 +13,14 @@
 #import "PotentialMatch.h"
 #import <Parse/Parse.h>
 #import "UIImageView+AFNetworking.h"
+#import "NSMutableArray+Stack.h"
 
 @interface CardsViewController ()
 
-@property (strong, nonatomic) NSArray *matchCandidatesArray;
+@property (strong, nonatomic) NSMutableArray *matchCandidatesArray;
 
 @property (strong, nonatomic) IBOutlet DraggableImageView *draggableCard;
+@property (weak, nonatomic) IBOutlet DraggableImageView *draggableCardBehind;
 
 @property (weak, nonatomic) IBOutlet UIImageView *settingsButton;
 @property (weak, nonatomic) IBOutlet UIImageView *messagesButton;
@@ -32,8 +34,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    self.draggableCard.profileImageView.image = [UIImage imageNamed:@"jessica"];
     
     // Test parse network call
     NSDictionary *d = [[NSDictionary alloc] init];
@@ -41,12 +41,13 @@
         NSMutableArray *matchCandidatesArray = [NSMutableArray array];
         if (!error) {
             for (PFObject *o in candidates) {
-                [matchCandidatesArray addObject:[[PotentialMatch alloc] initFromDictionary: o]];
+                [matchCandidatesArray addObject:[[PotentialMatch alloc] initFromPFObject: o]];
             }
             self.matchCandidatesArray = matchCandidatesArray;
-            [self fillUpCard: [matchCandidatesArray firstObject]];
+            [self initSubViews];
         }
     }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,12 +95,11 @@
 
 #pragma mark - END Gesture recognizers
 
-- (void) fillUpCard: (PotentialMatch *)match {
-    NSURL *photoURL = [NSURL URLWithString:match.photoUrlString];
-    [self.draggableCard.profileImageView setImageWithURL: photoURL];
-    self.draggableCard.nameLabel.text = [NSString stringWithFormat:@"%@ ,", match.name ];
-    self.draggableCard.ageLabel.text = [match.age stringValue];
-    self.draggableCard.taglineLabel.text = match.tagline;
+-(void) initSubViews {
+    PotentialMatch *cardData = [self.matchCandidatesArray pop];
+    [self.draggableCard bindWithData: cardData];
+    cardData = [self.matchCandidatesArray pop];
+    [self.draggableCardBehind bindWithData:cardData];
+    
 }
-
 @end

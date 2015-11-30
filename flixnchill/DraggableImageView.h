@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PotentialMatch.h"
 
 @interface DraggableImageView : UIView
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
@@ -14,7 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *ageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *taglineLabel;
 
-- (void) reset;
+-(void) reset;
 -(void) swipeRight;
 -(void) swipeLeft;
+-(void) bindWithData: (PotentialMatch *) data;
 @end

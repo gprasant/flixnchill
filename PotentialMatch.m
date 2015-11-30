@@ -7,10 +7,11 @@
 //
 
 #import "PotentialMatch.h"
+#import "PFObject.h"
 
 @implementation PotentialMatch
 
--(id) initFromDictionary:(NSDictionary *)dictionary {
+-(id) initFromPFObject:(PFObject *)dictionary {
     if(self = [super init]) {
         self.name = dictionary[@"Name"];
         self.sex = dictionary[@"Sex"];

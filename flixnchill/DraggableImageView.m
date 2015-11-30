@@ -7,6 +7,7 @@
 //
 
 #import "DraggableImageView.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface DraggableImageView ()
 
@@ -27,22 +28,17 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
 
 
 -(id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
+    if (self = [super initWithCoder:aDecoder]) {
         [self initSubviews];
     }
-    
     return self;
 }
 
 -(id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
+    if (self = [super initWithFrame:frame]) {
         [self initSubviews];
     }
-    
     return self;
-
 }
 
 -(void) initSubviews {
@@ -97,6 +93,7 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     // swipe left
     [UIView animateWithDuration:0.3 animations:^{
         self.contentView.center = CGPointMake(-640, self.originalCenter.y);
+        [self setHidden: YES];
     }];
 }
 
@@ -104,6 +101,7 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     // swipe right
     [UIView animateWithDuration:0.3 animations:^{
         self.contentView.center = CGPointMake(640, self.originalCenter.y);
+        [self setHidden:YES];
     }];
 }
 
@@ -113,7 +111,15 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     self.contentView.transform = CGAffineTransformMakeRotation( -self.radian );
     self.radian = 0.0;
     // hide the like and nope labels
-    self.likeLabel.alpha = self.nopeLabel.alpha = 0;
+    [self setHidden:NO];
+}
+
+- (void) bindWithData:(PotentialMatch *)data {
+    NSURL *photoURL = [NSURL URLWithString:data.photoUrlString];
+    [self.profileImageView setImageWithURL: photoURL];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@ ,", data.name ];
+    self.ageLabel.text = [data.age stringValue];
+    self.taglineLabel.text = data.tagline;
 }
 
 @end

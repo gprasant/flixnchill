@@ -76,7 +76,7 @@
                 </label>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="z9o-30-dTl" firstAttribute="centerY" secondItem="MZu-3J-Yxc" secondAttribute="centerY" id="7pg-Jy-pea"/>
                 <constraint firstItem="Twf-k3-q7J" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="CBm-MP-qBH"/>

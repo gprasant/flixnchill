@@ -12,6 +12,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" id="wjn-MY-3Cr" customClass="DraggableImageView">
+                                <rect key="frame" x="8" y="73" width="304" height="373"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                            </view>
                             <view contentMode="scaleToFill" id="cuK-bW-1Ut" customClass="DraggableImageView">
                                 <rect key="frame" x="8" y="73" width="304" height="373"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -20,7 +27,6 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ny1-gX-khI" appends="YES" id="tzS-h0-YOq"/>
-                                    <outletCollection property="gestureRecognizers" destination="OVz-yd-zz6" appends="YES" id="8OC-Vw-x5r"/>
                                 </connections>
                             </view>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_button" id="uOC-ce-GPd">
@@ -36,6 +42,10 @@
                                 <rect key="frame" x="120" y="25" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="OVz-yd-zz6" appends="YES" id="Afi-ec-6Xb"/>
+                                </connections>
                             </imageView>
                             <view contentMode="scaleToFill" id="ict-RC-yKW">
                                 <rect key="frame" x="0.0" y="64" width="320" height="1"/>
@@ -85,6 +95,7 @@
                     </view>
                     <connections>
                         <outlet property="draggableCard" destination="cuK-bW-1Ut" id="fyI-Mv-amq"/>
+                        <outlet property="draggableCardBehind" destination="wjn-MY-3Cr" id="DYN-26-Qz6"/>
                         <outlet property="heartButton" destination="kD1-a5-JkQ" id="eNd-71-8oc"/>
                         <outlet property="infoButton" destination="eFj-md-SbC" id="IBO-jp-NJv"/>
                         <outlet property="messagesButton" destination="IHS-Kd-I0d" id="J4t-Py-6Fb"/>
