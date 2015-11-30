@@ -7,8 +7,12 @@
 //
 
 #import "DraggableImageView.h"
+#import "UIImageView+AFNetworking.h"
+#import "NSMutableArray+Stack.h"
 
 @interface DraggableImageView ()
+
+
 
 @property (strong, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UILabel *likeLabel;
@@ -25,22 +29,17 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
 
 
 -(id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
+    if (self = [super initWithCoder:aDecoder]) {
         [self initSubviews];
     }
-    
     return self;
 }
 
 -(id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
+    if (self = [super initWithFrame:frame]) {
         [self initSubviews];
     }
-    
     return self;
-
 }
 
 -(void) initSubviews {
@@ -48,8 +47,9 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     [nib instantiateWithOwner:self options:nil];
     self.contentView.frame = self.bounds;
     // add border
-    self.contentView.layer.borderColor = [[UIColor blackColor] CGColor];
+    self.contentView.layer.borderColor = [[UIColor grayColor] CGColor];
     self.contentView.layer.borderWidth = 1.0f;
+    [self.contentView.layer setCornerRadius:10.0f];
     self.originalCenter = [self.contentView center];
     [self addSubview:self.contentView];
     // Hide the like and nope initially
@@ -79,15 +79,9 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     } else if (sender.state == UIGestureRecognizerStateEnded) {
         
         if (translationX > 100) {
-            // move right
-            [UIView animateWithDuration:0.3 animations:^{
-                self.contentView.center = CGPointMake(640, self.originalCenter.y);
-            }];
+            [self swipeRight];
         } else if (translationX < -100) {
-            // move left
-            [UIView animateWithDuration:0.3 animations:^{
-                self.contentView.center = CGPointMake(-640, self.originalCenter.y);
-            }];
+            [self swipeLeft];
         } else {
             // set back to default position
             [self reset];
@@ -96,13 +90,42 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     
 }
 
+- (void) swipeLeft {
+    // swipe left
+    [UIView animateWithDuration:0.3 animations:^{
+        self.contentView.center = CGPointMake(-640, self.originalCenter.y);
+    }];
+    [self reset];
+    [self bindWithNextMatch];
+}
+
+-(void) swipeRight {
+    // swipe right
+    [UIView animateWithDuration:0.3 animations:^{
+        self.contentView.center = CGPointMake(640, self.originalCenter.y);
+    }];
+    [self reset];
+    [self bindWithNextMatch];
+}
+
 - (void) reset {
     // center the image and display it in line with the device frame
     self.contentView.center = self.originalCenter;
     self.contentView.transform = CGAffineTransformMakeRotation( -self.radian );
     self.radian = 0.0;
     // hide the like and nope labels
-    self.likeLabel.alpha = self.nopeLabel.alpha = 0;
+    self.likeLabel.alpha = 0.0;
+    self.nopeLabel.alpha = 0.0;
+}
+
+- (void) bindWithNextMatch {
+    self.currentMatch = [self.matchCandidatesArray pop];
+    
+    NSURL *photoURL = [NSURL URLWithString:self.currentMatch.photoUrlString];
+    [self.profileImageView setImageWithURL: photoURL];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@ ,", self.currentMatch.name ];
+    self.ageLabel.text = [self.currentMatch.age stringValue];
+    self.taglineLabel.text = self.currentMatch.tagline;
 }
 
 @end

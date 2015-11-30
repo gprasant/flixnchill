@@ -22,6 +22,9 @@
 		125B0C111C054C8B00987D30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125B0C0E1C054C8B00987D30 /* LaunchScreen.storyboard */; };
 		125B0C131C0550ED00987D30 /* taylorHeart.gif in Resources */ = {isa = PBXBuildFile; fileRef = 125B0C121C0550ED00987D30 /* taylorHeart.gif */; };
 		125B0C151C05537C00987D30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B0C141C05537C00987D30 /* AppDelegate.m */; };
+		12CDD2651C0A26E500C54CF0 /* PotentialMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CDD2641C0A26E500C54CF0 /* PotentialMatch.m */; };
+		12CDD2691C0A7CE500C54CF0 /* FlixNChillClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CDD2681C0A7CE500C54CF0 /* FlixNChillClient.m */; };
+		12CDD26D1C0BB30E00C54CF0 /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CDD26C1C0BB30E00C54CF0 /* NSMutableArray+Stack.m */; };
 		A53ECE82159ADF71582E5680 /* libPods-flixnchill.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55ADC3ACE91F63E33786B639 /* libPods-flixnchill.a */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +52,12 @@
 		125B0C121C0550ED00987D30 /* taylorHeart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = taylorHeart.gif; path = "flixnchill assets/taylorHeart.gif"; sourceTree = "<group>"; };
 		125B0C141C05537C00987D30 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = flixnchill/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		125B84671BFE8589000273F7 /* flixnchill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flixnchill.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		125B846B1BFE8589000273F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		12CDD2631C0A26E500C54CF0 /* PotentialMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PotentialMatch.h; sourceTree = SOURCE_ROOT; };
+		12CDD2641C0A26E500C54CF0 /* PotentialMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PotentialMatch.m; sourceTree = SOURCE_ROOT; };
+		12CDD2671C0A7CE500C54CF0 /* FlixNChillClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlixNChillClient.h; sourceTree = SOURCE_ROOT; };
+		12CDD2681C0A7CE500C54CF0 /* FlixNChillClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlixNChillClient.m; sourceTree = SOURCE_ROOT; };
+		12CDD26B1C0BB30E00C54CF0 /* NSMutableArray+Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Stack.h"; sourceTree = SOURCE_ROOT; };
+		12CDD26C1C0BB30E00C54CF0 /* NSMutableArray+Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Stack.m"; sourceTree = SOURCE_ROOT; };
 		55ADC3ACE91F63E33786B639 /* libPods-flixnchill.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flixnchill.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97FCE4F5AFA3CF984770BD1 /* Pods-flixnchill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flixnchill.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flixnchill/Pods-flixnchill.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +131,9 @@
 		125B84691BFE8589000273F7 /* flixnchill */ = {
 			isa = PBXGroup;
 			children = (
+				12CDD26A1C0BB2DB00C54CF0 /* Categories */,
+				12CDD2661C0A7CC200C54CF0 /* Network */,
+				12CDD2621C0A26B400C54CF0 /* Models */,
 				125B0C141C05537C00987D30 /* AppDelegate.m */,
 				125B0C0C1C054C8B00987D30 /* Main.storyboard */,
 				125B0C0E1C054C8B00987D30 /* LaunchScreen.storyboard */,
@@ -141,9 +152,35 @@
 		125B846A1BFE8589000273F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				125B846B1BFE8589000273F7 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		12CDD2621C0A26B400C54CF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				12CDD2631C0A26E500C54CF0 /* PotentialMatch.h */,
+				12CDD2641C0A26E500C54CF0 /* PotentialMatch.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		12CDD2661C0A7CC200C54CF0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				12CDD2671C0A7CE500C54CF0 /* FlixNChillClient.h */,
+				12CDD2681C0A7CE500C54CF0 /* FlixNChillClient.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		12CDD26A1C0BB2DB00C54CF0 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				12CDD26B1C0BB30E00C54CF0 /* NSMutableArray+Stack.h */,
+				12CDD26C1C0BB30E00C54CF0 /* NSMutableArray+Stack.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		511929D131DE070D0AB0F7D2 /* Frameworks */ = {
@@ -294,8 +331,11 @@
 				125B0BF91C0548C800987D30 /* ProfileViewController.m in Sources */,
 				125B0BFB1C0548C800987D30 /* ChatsViewController.m in Sources */,
 				125B0BFC1C0548C800987D30 /* CardsViewController.m in Sources */,
+				12CDD2691C0A7CE500C54CF0 /* FlixNChillClient.m in Sources */,
 				125B0C021C05490600987D30 /* DraggableImageView.m in Sources */,
 				125B0C081C05498000987D30 /* main.m in Sources */,
+				12CDD26D1C0BB30E00C54CF0 /* NSMutableArray+Stack.m in Sources */,
+				12CDD2651C0A26E500C54CF0 /* PotentialMatch.m in Sources */,
 				125B0BFA1C0548C800987D30 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

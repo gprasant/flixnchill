@@ -9,10 +9,15 @@
 #import "CardsViewController.h"
 #import "DraggableImageView.h"
 #import "ProfileViewController.h"
-
+#import "FlixNChillClient.h"
+#import "PotentialMatch.h"
 #import <Parse/Parse.h>
+#import "UIImageView+AFNetworking.h"
 
 @interface CardsViewController ()
+
+@property (strong, nonatomic) NSMutableArray *matchCandidatesArray;
+
 @property (strong, nonatomic) IBOutlet DraggableImageView *draggableCard;
 
 @property (weak, nonatomic) IBOutlet UIImageView *settingsButton;
@@ -27,9 +32,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    self.draggableCard.profileImageView.image = [UIImage imageNamed:@"jessica"];
-//    [self testParseMessage];
+    
+    // Test parse network call
+    NSDictionary *d = [[NSDictionary alloc] init];
+    [[FlixNChillClient sharedInstance] getMatchCandidatesWithParams: d completion:^(NSArray *candidates, NSError *error) {
+        NSMutableArray *matchCandidatesArray = [NSMutableArray array];
+        if (!error) {
+            for (PFObject *o in candidates) {
+                [matchCandidatesArray addObject:[[PotentialMatch alloc] initFromPFObject: o]];
+            }
+            self.draggableCard.matchCandidatesArray = matchCandidatesArray;
+            [self initSubViews];
+        }
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,6 +79,7 @@
 
 - (IBAction)onNopeButtonTapped:(UITapGestureRecognizer *)sender {
     NSLog(@"CardsViewController:Nope tapped");
+    [self.draggableCard swipeLeft];
 }
 
 - (IBAction)onInfoButtonTapped:(UITapGestureRecognizer *)sender {
@@ -71,14 +88,12 @@
 
 - (IBAction)onLikeTapped:(UITapGestureRecognizer *)sender {
     NSLog(@"CardsViewController:Like tapped");
+    [self.draggableCard swipeRight];
 }
 
 #pragma mark - END Gesture recognizers
 
-//- (void) testParseMessage {
-//    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-//    testObject[@"message"] = @"Starbucks lovers";
-//    [testObject saveInBackground];
-//}
-
+-(void) initSubViews {
+    [self.draggableCard bindWithNextMatch];
+}
 @end

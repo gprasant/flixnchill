@@ -4,10 +4,11 @@ platform :ios, '8.0'
 # use_frameworks!
 
 target 'flixnchill' do
-  pod 'FLAnimatedImage', '~> 1.0'
-  pod 'Parse'
-  pod 'FBSDKCoreKit' 
-  pod 'FBSDKLoginKit'
-  pod 'FBSDKShareKit'
+    pod 'AFNetworking'
+    pod 'FLAnimatedImage', '~> 1.0'
+    pod 'Parse'
+    pod 'FBSDKCoreKit'
+    pod 'FBSDKLoginKit'
+    pod 'FBSDKShareKit'
 end
 
