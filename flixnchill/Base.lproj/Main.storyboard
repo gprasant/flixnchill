@@ -12,13 +12,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="wjn-MY-3Cr" customClass="DraggableImageView">
-                                <rect key="frame" x="8" y="73" width="304" height="373"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
-                            </view>
                             <view contentMode="scaleToFill" id="cuK-bW-1Ut" customClass="DraggableImageView">
                                 <rect key="frame" x="8" y="73" width="304" height="373"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -95,7 +88,6 @@
                     </view>
                     <connections>
                         <outlet property="draggableCard" destination="cuK-bW-1Ut" id="fyI-Mv-amq"/>
-                        <outlet property="draggableCardBehind" destination="wjn-MY-3Cr" id="DYN-26-Qz6"/>
                         <outlet property="heartButton" destination="kD1-a5-JkQ" id="eNd-71-8oc"/>
                         <outlet property="infoButton" destination="eFj-md-SbC" id="IBO-jp-NJv"/>
                         <outlet property="messagesButton" destination="IHS-Kd-I0d" id="J4t-Py-6Fb"/>
@@ -271,7 +263,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PDf-kE-aFS" id="wO4-mt-bFe">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jessica" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M8I-n9-N1K">

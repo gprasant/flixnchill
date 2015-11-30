@@ -15,8 +15,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *ageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *taglineLabel;
 
+@property (strong, nonatomic) PotentialMatch *currentMatch;
+@property (strong, nonatomic) PotentialMatch *nextMatch;
+@property (strong, nonatomic) NSMutableArray *matchCandidatesArray;
+
 -(void) reset;
 -(void) swipeRight;
 -(void) swipeLeft;
--(void) bindWithData: (PotentialMatch *) data;
+-(void) bindWithNextMatch;
 @end

@@ -8,6 +8,7 @@
 
 #import "DraggableImageView.h"
 #import "UIImageView+AFNetworking.h"
+#import "NSMutableArray+Stack.h"
 
 @interface DraggableImageView ()
 
@@ -93,16 +94,20 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     // swipe left
     [UIView animateWithDuration:0.3 animations:^{
         self.contentView.center = CGPointMake(-640, self.originalCenter.y);
-        [self setHidden: YES];
     }];
+    self.currentMatch = self.nextMatch;
+    [self reset];
+    [self bindWithNextMatch];
 }
 
 -(void) swipeRight {
     // swipe right
     [UIView animateWithDuration:0.3 animations:^{
         self.contentView.center = CGPointMake(640, self.originalCenter.y);
-        [self setHidden:YES];
     }];
+    self.currentMatch = self.nextMatch;
+    [self reset];
+    [self bindWithNextMatch];
 }
 
 - (void) reset {
@@ -111,15 +116,18 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     self.contentView.transform = CGAffineTransformMakeRotation( -self.radian );
     self.radian = 0.0;
     // hide the like and nope labels
-    [self setHidden:NO];
+    self.likeLabel.alpha = 0.0;
+    self.nopeLabel.alpha = 0.0;
 }
 
-- (void) bindWithData:(PotentialMatch *)data {
-    NSURL *photoURL = [NSURL URLWithString:data.photoUrlString];
+- (void) bindWithNextMatch {
+    self.currentMatch = [self.matchCandidatesArray pop];
+    
+    NSURL *photoURL = [NSURL URLWithString:self.currentMatch.photoUrlString];
     [self.profileImageView setImageWithURL: photoURL];
-    self.nameLabel.text = [NSString stringWithFormat:@"%@ ,", data.name ];
-    self.ageLabel.text = [data.age stringValue];
-    self.taglineLabel.text = data.tagline;
+    self.nameLabel.text = [NSString stringWithFormat:@"%@ ,", self.currentMatch.name ];
+    self.ageLabel.text = [self.currentMatch.age stringValue];
+    self.taglineLabel.text = self.currentMatch.tagline;
 }
 
 @end

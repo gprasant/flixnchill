@@ -13,14 +13,12 @@
 #import "PotentialMatch.h"
 #import <Parse/Parse.h>
 #import "UIImageView+AFNetworking.h"
-#import "NSMutableArray+Stack.h"
 
 @interface CardsViewController ()
 
 @property (strong, nonatomic) NSMutableArray *matchCandidatesArray;
 
 @property (strong, nonatomic) IBOutlet DraggableImageView *draggableCard;
-@property (weak, nonatomic) IBOutlet DraggableImageView *draggableCardBehind;
 
 @property (weak, nonatomic) IBOutlet UIImageView *settingsButton;
 @property (weak, nonatomic) IBOutlet UIImageView *messagesButton;
@@ -43,7 +41,7 @@
             for (PFObject *o in candidates) {
                 [matchCandidatesArray addObject:[[PotentialMatch alloc] initFromPFObject: o]];
             }
-            self.matchCandidatesArray = matchCandidatesArray;
+            self.draggableCard.matchCandidatesArray = matchCandidatesArray;
             [self initSubViews];
         }
     }];
@@ -96,10 +94,6 @@
 #pragma mark - END Gesture recognizers
 
 -(void) initSubViews {
-    PotentialMatch *cardData = [self.matchCandidatesArray pop];
-    [self.draggableCard bindWithData: cardData];
-    cardData = [self.matchCandidatesArray pop];
-    [self.draggableCardBehind bindWithData:cardData];
-    
+    [self.draggableCard bindWithNextMatch];
 }
 @end
