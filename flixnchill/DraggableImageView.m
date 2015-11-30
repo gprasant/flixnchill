@@ -95,7 +95,6 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     [UIView animateWithDuration:0.3 animations:^{
         self.contentView.center = CGPointMake(-640, self.originalCenter.y);
     }];
-    self.currentMatch = self.nextMatch;
     [self reset];
     [self bindWithNextMatch];
 }
@@ -105,7 +104,6 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     [UIView animateWithDuration:0.3 animations:^{
         self.contentView.center = CGPointMake(640, self.originalCenter.y);
     }];
-    self.currentMatch = self.nextMatch;
     [self reset];
     [self bindWithNextMatch];
 }

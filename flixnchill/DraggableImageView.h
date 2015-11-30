@@ -16,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *taglineLabel;
 
 @property (strong, nonatomic) PotentialMatch *currentMatch;
-@property (strong, nonatomic) PotentialMatch *nextMatch;
 @property (strong, nonatomic) NSMutableArray *matchCandidatesArray;
 
 -(void) reset;
