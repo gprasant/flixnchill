@@ -34,18 +34,18 @@
 	[[FBSDKApplicationDelegate sharedInstance] application:application
 							 didFinishLaunchingWithOptions:launchOptions];
 
-// Uncomment after FB login is made persistant.
-//	if (![FBSDKAccessToken currentAccessToken]) {
-//		NSLog(@"User not logged in");
-//		// Programitically present login view controller.
-//		
-//		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//		LoginViewController *loginVC = (LoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-//		self.window.rootViewController = loginVC;
-//		[self.window makeKeyAndVisible];
-//	} else {
-//		NSLog(@"User logged in with usedID = %@", [[FBSDKAccessToken currentAccessToken] userID]);
-//	}
+
+	if (![FBSDKAccessToken currentAccessToken]) {
+		NSLog(@"User not logged in");
+		// Programitically present login view controller.
+		
+		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+		LoginViewController *loginVC = (LoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+		self.window.rootViewController = loginVC;
+		[self.window makeKeyAndVisible];
+	} else {
+		NSLog(@"User logged in with usedID = %@", [[FBSDKAccessToken currentAccessToken] userID]);
+	}
 	
     return YES;
 }
