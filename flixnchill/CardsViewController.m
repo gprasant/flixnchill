@@ -47,7 +47,7 @@
             [self initSubViews];
         }
     }];
-    
+	[self.view bringSubviewToFront:self.draggableCard];
 }
 
 - (void)didReceiveMemoryWarning {
