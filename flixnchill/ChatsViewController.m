@@ -16,11 +16,11 @@
 @implementation ChatsViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	[super viewDidLoad];
+	// Do any additional setup after loading the view.
 	UIColor *netflixRed = [UIColor colorWithRed:(185/255.0) green:(9/255.0) blue:(11/255.0) alpha:1] ;
 	self.view.backgroundColor = netflixRed;
-    [self setupTableView];
+	[self setupTableView];
 }
 
 - (void)didReceiveMemoryWarning {
