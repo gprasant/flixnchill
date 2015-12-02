@@ -23,7 +23,6 @@
                 <imageView clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gpt-eJ-sF1">
                     <rect key="frame" x="0.0" y="0.0" width="304" height="304"/>
                     <animations/>
-                    <color key="backgroundColor" red="0.4339984655380249" green="0.90789788961410522" blue="0.37291216850280762" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="width" constant="304" id="1Y7-9n-iU8"/>
