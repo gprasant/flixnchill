@@ -99,4 +99,5 @@
 -(void) initSubViews {
     [self.draggableCard bindWithNextMatch];
 }
+
 @end

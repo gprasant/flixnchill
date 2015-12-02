@@ -10,6 +10,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "UIImageView+AFNetworking.h"
+#import "User.h"
 
 
 @interface SettingsViewController ()
@@ -29,37 +30,10 @@
 	// Optional: Place the button in the center of your view.
 	loginButton.center = self.view.center;
 	[self.view addSubview:loginButton];
-	NSString *userId = [[FBSDKAccessToken currentAccessToken] userID];
-	NSLog(@"User logged in with usedID = %@", [[FBSDKAccessToken currentAccessToken] userID]);
-	NSDictionary *params = @{@"fields": @"name"};
-	
-	FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
-								  initWithGraphPath:userId
-								  parameters:params
-								  HTTPMethod:@"GET"];
-	[request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
-										  id result,
-										  NSError *error) {
-		NSLog(@"Success");
-		NSDictionary *data = (NSDictionary *)result;
-		self.userNameLabel.text = [data objectForKey:@"name"];
-	}];
-	
-	NSString *userPicture = [userId stringByAppendingString:@"/picture"];
-	NSDictionary *imageParams = @{@"height": @160, @"width": @160, @"type": @"square", @"redirect": @0};
-	FBSDKGraphRequest *imageRequest = [[FBSDKGraphRequest alloc]
-								  initWithGraphPath:userPicture
-								  parameters:imageParams
-								  HTTPMethod:@"GET"];
-	[imageRequest startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
-										  id result,
-										  NSError *error) {
-		NSLog(@"Got image");
-		NSDictionary *imageData = (NSDictionary *)result;
-		NSURL *url = [NSURL URLWithString:[[imageData objectForKey:@"data"] objectForKey:@"url"]];
-		[self.profileImageView setImageWithURL:url];
-	}];
-	
+	User *user = [User currentUser];
+	NSURL *url = [NSURL URLWithString:user.profileImageUrl];
+	[self.profileImageView setImageWithURL:url];
+	self.userNameLabel.text = user.name;
 }
 
 

@@ -7,6 +7,10 @@
 //
 
 #import "ChatsViewController.h"
+#import "PotentialMatch.h"
+#import "User.h"
+#import "ChatTableViewCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface ChatsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *chatsTableView;
@@ -40,12 +44,15 @@
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+	return [[[User currentUser] matches] count];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatCell"];
-    return cell;
+    ChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatCell"];
+	PotentialMatch *match = [[[User currentUser] matches] objectAtIndex:indexPath.row];
+	cell.nameLabel.text = match.name;
+	[cell.matchImageView setImageWithURL:[NSURL URLWithString:match.photoUrlString]];
+	return cell;
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
