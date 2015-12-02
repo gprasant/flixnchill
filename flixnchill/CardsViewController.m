@@ -59,7 +59,8 @@
     if ([segue.identifier isEqual: @"profileViewSegue"]) {
         UIViewController *destinationVC = [segue destinationViewController];
         ProfileViewController * pvc = (ProfileViewController *)destinationVC;
-        pvc.image = [UIImage imageNamed:@"jessica"];
+		pvc.image = self.draggableCard.profileImageView.image;
+		pvc.user = self.draggableCard.currentMatch;
     } else if ([segue.identifier isEqual: @"chatsViewSegue"]) {
     
     }

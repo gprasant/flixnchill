@@ -49,7 +49,6 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
 	// add border
 	self.contentView.layer.borderColor = [[UIColor grayColor] CGColor];
 	self.contentView.layer.borderWidth = 1.0f;
-	[self.contentView.layer setCornerRadius:10.0f];
 	self.originalCenter = [self.contentView center];
 	[self addSubview:self.contentView];
 	// Hide the like and nope initially

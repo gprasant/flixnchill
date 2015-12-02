@@ -10,6 +10,8 @@
 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profilePictureImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameAgeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *taglineLabel;
 
 @end
 
@@ -20,6 +22,8 @@
 	UIColor *netflixRed = [UIColor colorWithRed:(185/255.0) green:(9/255.0) blue:(11/255.0) alpha:1] ;
 	self.view.backgroundColor = netflixRed;
     [self setupViews];
+	self.nameAgeLabel.text = [NSString stringWithFormat:@"%@, %@", self.user.name, self.user.age];
+	self.taglineLabel.text = self.user.tagline;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,7 +37,7 @@
 #pragma mark - BEGIN Gesture recognizers
 
 - (IBAction)onDoneTapped:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (IBAction)onNopeTapped:(UITapGestureRecognizer *)sender {
