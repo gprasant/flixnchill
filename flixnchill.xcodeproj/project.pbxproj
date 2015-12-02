@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05EDC5C01C0FAAB600592F92 /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EDC5B71C0FAAB600592F92 /* ChatTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		05EDC5C31C0FAAB600592F92 /* PotentialMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EDC5BE1C0FAAB600592F92 /* PotentialMatch.m */; settings = {ASSET_TAGS = (); }; };
+		05EDC5C51C0FAB2600592F92 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EDC5C41C0FAB2600592F92 /* User.m */; settings = {ASSET_TAGS = (); }; };
 		125B0BEC1C05482100987D30 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 125B0BEB1C05482100987D30 /* Default-568h@2x.png */; };
 		125B0BF81C0548C800987D30 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B0BEE1C0548C800987D30 /* SettingsViewController.m */; };
 		125B0BF91C0548C800987D30 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B0BF01C0548C800987D30 /* ProfileViewController.m */; };
@@ -22,13 +25,19 @@
 		125B0C111C054C8B00987D30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125B0C0E1C054C8B00987D30 /* LaunchScreen.storyboard */; };
 		125B0C131C0550ED00987D30 /* taylorHeart.gif in Resources */ = {isa = PBXBuildFile; fileRef = 125B0C121C0550ED00987D30 /* taylorHeart.gif */; };
 		125B0C151C05537C00987D30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B0C141C05537C00987D30 /* AppDelegate.m */; };
-		12CDD2651C0A26E500C54CF0 /* PotentialMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CDD2641C0A26E500C54CF0 /* PotentialMatch.m */; };
 		12CDD2691C0A7CE500C54CF0 /* FlixNChillClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CDD2681C0A7CE500C54CF0 /* FlixNChillClient.m */; };
 		12CDD26D1C0BB30E00C54CF0 /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CDD26C1C0BB30E00C54CF0 /* NSMutableArray+Stack.m */; };
 		A53ECE82159ADF71582E5680 /* libPods-flixnchill.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55ADC3ACE91F63E33786B639 /* libPods-flixnchill.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05EDC5B61C0FAAB600592F92 /* ChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatTableViewCell.h; path = flixnchill/ChatTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		05EDC5B71C0FAAB600592F92 /* ChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatTableViewCell.m; path = flixnchill/ChatTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		05EDC5B81C0FAAB600592F92 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = flixnchill/User.h; sourceTree = SOURCE_ROOT; };
+		05EDC5B91C0FAAB600592F92 /* PotentialMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PotentialMatch.h; path = flixnchill/PotentialMatch.h; sourceTree = SOURCE_ROOT; };
+		05EDC5BE1C0FAAB600592F92 /* PotentialMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PotentialMatch.m; path = flixnchill/PotentialMatch.m; sourceTree = SOURCE_ROOT; };
+		05EDC5BF1C0FAAB600592F92 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = flixnchill/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		05EDC5C41C0FAB2600592F92 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = flixnchill/User.m; sourceTree = SOURCE_ROOT; };
 		0ED28466A1B84371EF780376 /* Pods-flixnchill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flixnchill.release.xcconfig"; path = "Pods/Target Support Files/Pods-flixnchill/Pods-flixnchill.release.xcconfig"; sourceTree = "<group>"; };
 		125B0BEB1C05482100987D30 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		125B0BEE1C0548C800987D30 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = flixnchill/SettingsViewController.m; sourceTree = SOURCE_ROOT; };
@@ -52,8 +61,6 @@
 		125B0C121C0550ED00987D30 /* taylorHeart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = taylorHeart.gif; path = "flixnchill assets/taylorHeart.gif"; sourceTree = "<group>"; };
 		125B0C141C05537C00987D30 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = flixnchill/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		125B84671BFE8589000273F7 /* flixnchill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flixnchill.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		12CDD2631C0A26E500C54CF0 /* PotentialMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PotentialMatch.h; sourceTree = SOURCE_ROOT; };
-		12CDD2641C0A26E500C54CF0 /* PotentialMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PotentialMatch.m; sourceTree = SOURCE_ROOT; };
 		12CDD2671C0A7CE500C54CF0 /* FlixNChillClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlixNChillClient.h; sourceTree = SOURCE_ROOT; };
 		12CDD2681C0A7CE500C54CF0 /* FlixNChillClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlixNChillClient.m; sourceTree = SOURCE_ROOT; };
 		12CDD26B1C0BB30E00C54CF0 /* NSMutableArray+Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Stack.h"; sourceTree = SOURCE_ROOT; };
@@ -84,6 +91,7 @@
 		125B0BED1C05489B00987D30 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				05EDC5BF1C0FAAB600592F92 /* AppDelegate.h */,
 				125B0BEE1C0548C800987D30 /* SettingsViewController.m */,
 				125B0BEF1C0548C800987D30 /* SettingsViewController.h */,
 				125B0BF01C0548C800987D30 /* ProfileViewController.m */,
@@ -101,6 +109,8 @@
 		125B0BFD1C0548F400987D30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				05EDC5B61C0FAAB600592F92 /* ChatTableViewCell.h */,
+				05EDC5B71C0FAAB600592F92 /* ChatTableViewCell.m */,
 				125B0BFE1C05490600987D30 /* DraggableImageView.xib */,
 				125B0BFF1C05490600987D30 /* DraggableImageView.m */,
 				125B0C001C05490600987D30 /* DraggableImageView.h */,
@@ -159,8 +169,10 @@
 		12CDD2621C0A26B400C54CF0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				12CDD2631C0A26E500C54CF0 /* PotentialMatch.h */,
-				12CDD2641C0A26E500C54CF0 /* PotentialMatch.m */,
+				05EDC5B91C0FAAB600592F92 /* PotentialMatch.h */,
+				05EDC5BE1C0FAAB600592F92 /* PotentialMatch.m */,
+				05EDC5C41C0FAB2600592F92 /* User.m */,
+				05EDC5B81C0FAAB600592F92 /* User.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -326,16 +338,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05EDC5C31C0FAAB600592F92 /* PotentialMatch.m in Sources */,
 				125B0BF81C0548C800987D30 /* SettingsViewController.m in Sources */,
 				125B0C151C05537C00987D30 /* AppDelegate.m in Sources */,
 				125B0BF91C0548C800987D30 /* ProfileViewController.m in Sources */,
 				125B0BFB1C0548C800987D30 /* ChatsViewController.m in Sources */,
+				05EDC5C51C0FAB2600592F92 /* User.m in Sources */,
+				05EDC5C01C0FAAB600592F92 /* ChatTableViewCell.m in Sources */,
 				125B0BFC1C0548C800987D30 /* CardsViewController.m in Sources */,
 				12CDD2691C0A7CE500C54CF0 /* FlixNChillClient.m in Sources */,
 				125B0C021C05490600987D30 /* DraggableImageView.m in Sources */,
 				125B0C081C05498000987D30 /* main.m in Sources */,
 				12CDD26D1C0BB30E00C54CF0 /* NSMutableArray+Stack.m in Sources */,
-				12CDD2651C0A26E500C54CF0 /* PotentialMatch.m in Sources */,
 				125B0BFA1C0548C800987D30 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

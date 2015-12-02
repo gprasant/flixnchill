@@ -274,7 +274,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" rowHeight="66" id="PDf-kE-aFS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" rowHeight="66" id="PDf-kE-aFS" customClass="ChatTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="320" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PDf-kE-aFS" id="wO4-mt-bFe">
@@ -304,6 +304,10 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="matchImageView" destination="gFf-mG-8P1" id="JUY-cw-hhR"/>
+                                            <outlet property="nameLabel" destination="M8I-n9-N1K" id="fnv-6S-Kmc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

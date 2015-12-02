@@ -9,6 +9,7 @@
 #import "DraggableImageView.h"
 #import "UIImageView+AFNetworking.h"
 #import "NSMutableArray+Stack.h"
+#import "User.h"
 
 @interface DraggableImageView ()
 
@@ -101,6 +102,7 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
 
 -(void) swipeRight {
     // swipe right
+	[self match:self.currentMatch];
     [UIView animateWithDuration:0.3 animations:^{
         self.contentView.center = CGPointMake(640, self.originalCenter.y);
     }];
@@ -126,6 +128,11 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     self.nameLabel.text = [NSString stringWithFormat:@"%@ ,", self.currentMatch.name ];
     self.ageLabel.text = [self.currentMatch.age stringValue];
     self.taglineLabel.text = self.currentMatch.tagline;
+}
+
+-(void) match:(PotentialMatch *) new {
+	User *user = [User currentUser];
+	[user addMatch:new];
 }
 
 @end

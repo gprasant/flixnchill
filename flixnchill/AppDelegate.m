@@ -11,6 +11,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "LoginViewController.h"
 #import "CardsViewController.h"
+#import "User.h"
 
 @interface AppDelegate ()
 
@@ -43,8 +44,12 @@
 		LoginViewController *loginVC = (LoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
 		self.window.rootViewController = loginVC;
 		[self.window makeKeyAndVisible];
+	
 	} else {
 		NSLog(@"User logged in with usedID = %@", [[FBSDKAccessToken currentAccessToken] userID]);
+
+		User *user = [self setUpFacebookUser];
+		[User setCurrentUser:user];
 	}
 	
     return YES;
@@ -73,21 +78,63 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-	//Core facebook login
 - (BOOL)application:(UIApplication *)application
 			openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
 		 annotation:(id)annotation {
 	// Dismiss login view controller
+	BOOL setup = [[FBSDKApplicationDelegate sharedInstance] application:application
+														  openURL:url
+													  sourceApplication:sourceApplication
+													   annotation:annotation];
+	if(setup){
+		[self startStandardView];
+		User *user = [self setUpFacebookUser];
+		[User setCurrentUser:user];
+	}
+	return setup;
+}
+
+- (void)startStandardView{
 	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 	CardsViewController *cardsVC = (CardsViewController *)[storyboard instantiateViewControllerWithIdentifier:@"CardsViewController"];
 	self.window.rootViewController = cardsVC;
 	[self.window makeKeyAndVisible];
+}
+
+- (User *)setUpFacebookUser{
+	User *user = [[User alloc] init];
+	NSString *userId = [[FBSDKAccessToken currentAccessToken] userID];
+	NSLog(@"User logged in with usedID = %@", [[FBSDKAccessToken currentAccessToken] userID]);
+	NSDictionary *params = @{@"fields": @"name"};
 	
-	return [[FBSDKApplicationDelegate sharedInstance] application:application
-														  openURL:url
-												sourceApplication:sourceApplication
-													   annotation:annotation];
+	FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+								  initWithGraphPath:userId
+								  parameters:params
+								  HTTPMethod:@"GET"];
+	[request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+										  id result,
+										  NSError *error) {
+		NSLog(@"Success");
+		NSDictionary *data = (NSDictionary *)result;
+		user.name = [data objectForKey:@"name"];
+	}];
+	
+	NSString *userPicture = [userId stringByAppendingString:@"/picture"];
+	NSDictionary *imageParams = @{@"height": @160, @"width": @160, @"type": @"square", @"redirect": @0};
+	FBSDKGraphRequest *imageRequest = [[FBSDKGraphRequest alloc]
+									   initWithGraphPath:userPicture
+									   parameters:imageParams
+									   HTTPMethod:@"GET"];
+	[imageRequest startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+											   id result,
+											   NSError *error) {
+		NSLog(@"Got image");
+		NSDictionary *imageData = (NSDictionary *)result;
+		user.profileImageUrl =[[imageData objectForKey:@"data"] objectForKey:@"url"];
+	}];
+	
+	return user;
 }
 
 @end
