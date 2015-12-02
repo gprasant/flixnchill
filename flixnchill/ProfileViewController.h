@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PotentialMatch.h"
 
 @interface ProfileViewController : UIViewController
 @property UIImage *image;
+@property PotentialMatch *user;
 @end
