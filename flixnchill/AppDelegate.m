@@ -12,8 +12,11 @@
 #import "LoginViewController.h"
 #import "CardsViewController.h"
 #import "User.h"
+#import <PubNub/PubNub.h>
 
 @interface AppDelegate ()
+
+@property (nonatomic) PubNub *client;
 
 @end
 
@@ -21,37 +24,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // [Optional] Power your app with Local Datastore. For more info, go to
-    // https://parse.com/docs/ios_guide#localdatastore/iOS
-    [Parse enableLocalDatastore];
+    [self setupParseLibWithLaunchOptions:launchOptions];
     
-    // Initialize Parse.
-    [Parse setApplicationId:@"R4ERGRZtP4Y2sehfMcEqbGRKKD3C2aqcTxwJ2JkG"
-                  clientKey:@"tKFdIIDQXFtjT4E0CjVLPjnNqfJJnw9Y3MTqnwOO"];
-
-    // [Optional] Track statistics around application opens.
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [self setupFacebookLibWithApplication:application
+                            LaunchOptions:launchOptions];
+    
+    [self setupPubNubLib];
 	
-	[[FBSDKApplicationDelegate sharedInstance] application:application
-							 didFinishLaunchingWithOptions:launchOptions];
-
-
-	if (![FBSDKAccessToken currentAccessToken]) {
-		NSLog(@"User not logged in");
-		// Programitically present login view controller.
 		
-		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-		LoginViewController *loginVC = (LoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-		self.window.rootViewController = loginVC;
-		[self.window makeKeyAndVisible];
-	
-	} else {
-		NSLog(@"User logged in with usedID = %@", [[FBSDKAccessToken currentAccessToken] userID]);
-
-		User *user = [self setUpFacebookUser];
-		[User setCurrentUser:user];
-	}
-	
     return YES;
 }
 
@@ -137,4 +117,110 @@
 	return user;
 }
 
+# pragma mark - Client Libs
+
+-(void) setupParseLibWithLaunchOptions: (NSDictionary *)launchOptions {
+    // [Optional] Power your app with Local Datastore. For more info, go to
+    // https://parse.com/docs/ios_guide#localdatastore/iOS
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"R4ERGRZtP4Y2sehfMcEqbGRKKD3C2aqcTxwJ2JkG"
+                  clientKey:@"tKFdIIDQXFtjT4E0CjVLPjnNqfJJnw9Y3MTqnwOO"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+}
+
+-(void) setupFacebookLibWithApplication:(UIApplication *)application
+                          LaunchOptions:(NSDictionary *)launchOptions {
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    
+    
+    if (![FBSDKAccessToken currentAccessToken]) {
+        NSLog(@"User not logged in");
+        // Programitically present login view controller.
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        LoginViewController *loginVC = (LoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        self.window.rootViewController = loginVC;
+        [self.window makeKeyAndVisible];
+        
+    } else {
+        NSLog(@"User logged in with usedID = %@", [[FBSDKAccessToken currentAccessToken] userID]);
+        
+        User *user = [self setUpFacebookUser];
+        [User setCurrentUser:user];
+    }
+
+}
+
+-(void) setupPubNubLib {
+    PNConfiguration *config = [PNConfiguration configurationWithPublishKey:@"demo" subscribeKey:@"demo"];
+    self.client = [PubNub clientWithConfiguration:config];
+    [self.client addListener: self];
+    [self.client subscribeToChannels: @[@"my_channel"] withPresence: YES];
+}
+
+- (void)client:(PubNub *)client didReceiveMessage:(PNMessageResult *)message {
+    
+    // Handle new message stored in message.data.message
+    if (message.data.actualChannel) {
+        
+        // Message has been received on channel group stored in
+        // message.data.subscribedChannel
+    }
+    else {
+        
+        // Message has been received on channel stored in
+        // message.data.subscribedChannel
+    }
+    NSLog(@"Received message: %@ on channel %@ at %@", message.data.message,
+          message.data.subscribedChannel, message.data.timetoken);
+}
+
+- (void)client:(PubNub *)client didReceiveStatus:(PNSubscribeStatus *)status {
+    
+    if (status.category == PNUnexpectedDisconnectCategory) {
+        // This event happens when radio / connectivity is lost
+    }
+    
+    else if (status.category == PNConnectedCategory) {
+        
+        // Connect event. You can do stuff like publish, and know you'll get it.
+        // Or just use the connected event to confirm you are subscribed for
+        // UI / internal notifications, etc
+        
+        [self.client publish: @"Hello from the PubNub Objective-C SDK" toChannel: @"my_channel"
+              withCompletion:^(PNPublishStatus *status) {
+                  
+                  // Check whether request successfully completed or not.
+                  if (!status.isError) {
+                      
+                      // Message successfully published to specified channel.
+                  }
+                  // Request processing failed.
+                  else {
+                      
+                      // Handle message publish error. Check 'category' property to find out possible issue
+                      // because of which request did fail.
+                      //
+                      // Request can be resent using: [status retry];
+                  }
+              }];
+    }
+    else if (status.category == PNReconnectedCategory) {
+        
+        // Happens as part of our regular operation. This event happens when
+        // radio / connectivity is lost, then regained.
+    }
+    else if (status.category == PNDecryptionErrorCategory) {
+        
+        // Handle messsage decryption error. Probably client configured to
+        // encrypt messages and on live data feed it received plain text.
+    }
+}
+
+# pragma mark - END Client Libs
 @end

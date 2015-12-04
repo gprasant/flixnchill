@@ -4,6 +4,7 @@ platform :ios, '8.0'
 # use_frameworks!
 
 target 'flixnchill' do
+    pod 'PubNub', '~> 4.0'
     pod 'AFNetworking'
     pod 'FLAnimatedImage', '~> 1.0'
     pod 'Parse'
