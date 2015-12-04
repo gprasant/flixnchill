@@ -7,6 +7,7 @@
 //
 
 #import "ChatViewController.h"
+#import "PubNubClient.h"
 
 @interface ChatViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *chatWithLabel;
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    PubNubClient *pnClient = [PubNubClient sharedInstance];
 }
 
 - (void)didReceiveMemoryWarning {
