@@ -11,7 +11,6 @@
 
 @interface PubNubClient () <PNObjectEventListener>
 
-@property (strong, nonatomic) PubNub *client;
 
 @end
 
@@ -48,6 +47,19 @@
           message.data.subscribedChannel, message.data.timetoken);
 }
 
+-(void) sendMessage: (NSString *)messageText {
+    NSLog(@"Attempting Message Send : %@", messageText);
+
+    [self publish: messageText
+        toChannel:@"my_channel"
+   storeInHistory:YES
+   withCompletion:^(PNPublishStatus *status) {
+       if (!status.isError) {
+           NSLog(@"Successfully sent message");
+       }
+   }];
+
+}
 
 
 @end

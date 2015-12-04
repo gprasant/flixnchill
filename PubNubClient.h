@@ -11,4 +11,5 @@
 
 @interface PubNubClient : PubNub
 + (PubNubClient *)sharedInstance;
+-(void) sendMessage: (NSString *)messageText;
 @end

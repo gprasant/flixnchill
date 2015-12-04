@@ -43,9 +43,9 @@
 }
 
 - (IBAction)sendButtonTapped:(id)sender {
-    NSString *text = self.chatTextField.text;
-    NSLog (@"Got text : %@", text);
+    NSString *messageText = self.chatTextField.text;
     self.chatTextField.text = @"";
+    [[PubNubClient sharedInstance] sendMessage:messageText];
 }
 
 @end
