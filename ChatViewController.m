@@ -9,10 +9,11 @@
 #import "ChatViewController.h"
 #import "PubNubClient.h"
 
-@interface ChatViewController ()
+@interface ChatViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *chatWithLabel;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UITextField *chatTextField;
+@property (weak, nonatomic) IBOutlet UITableView *messagesTableView;
 
 @end
 
@@ -21,7 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    PubNubClient *pnClient = [PubNubClient sharedInstance];
+    [self setupTableView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,5 +49,27 @@
     self.chatTextField.text = @"";
     [[PubNubClient sharedInstance] sendMessage:messageText];
 }
+
+#pragma mark TableView methods
+-(void) setupTableView {
+    self.messagesTableView.dataSource = self;
+    self.messagesTableView.delegate = self;
+    UINib *messageCell = [UINib nibWithNibName:@"MessageCell" bundle:nil];
+    [self.messagesTableView registerNib:messageCell forCellReuseIdentifier:@"MessageCell"];
+}
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 3;
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
+    return cell;
+}
+#pragma mark END TableView methods
 
 @end

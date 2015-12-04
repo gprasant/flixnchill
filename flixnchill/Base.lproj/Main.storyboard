@@ -393,6 +393,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" id="r0n-Wl-5pn">
+                                <rect key="frame" x="0.0" y="52" width="320" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ay4-Nl-N0V">
+                                <rect key="frame" x="0.0" y="52" width="320" height="444"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -400,6 +412,7 @@
                     <connections>
                         <outlet property="chatTextField" destination="neX-Wu-YSz" id="woI-Lw-Ken"/>
                         <outlet property="chatWithLabel" destination="K06-s7-pLX" id="pU9-SQ-d6Z"/>
+                        <outlet property="messagesTableView" destination="ay4-Nl-N0V" id="2Vc-dY-y6j"/>
                         <outlet property="sendButton" destination="9IJ-4x-4lD" id="zjO-JW-3xN"/>
                     </connections>
                 </viewController>

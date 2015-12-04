@@ -27,6 +27,8 @@
 		125B0C151C05537C00987D30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B0C141C05537C00987D30 /* AppDelegate.m */; };
 		127DBE061C10071E0059AB73 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 127DBE051C10071E0059AB73 /* ChatViewController.m */; };
 		129A82261C1142FA00C92933 /* PubNubClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 129A82251C1142FA00C92933 /* PubNubClient.m */; };
+		129A822A1C115DD600C92933 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 129A82281C115DD600C92933 /* MessageCell.m */; };
+		129A822B1C115DD600C92933 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 129A82291C115DD600C92933 /* MessageCell.xib */; };
 		12CDD2691C0A7CE500C54CF0 /* FlixNChillClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CDD2681C0A7CE500C54CF0 /* FlixNChillClient.m */; };
 		12CDD26D1C0BB30E00C54CF0 /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CDD26C1C0BB30E00C54CF0 /* NSMutableArray+Stack.m */; };
 		A53ECE82159ADF71582E5680 /* libPods-flixnchill.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55ADC3ACE91F63E33786B639 /* libPods-flixnchill.a */; };
@@ -67,6 +69,9 @@
 		127DBE051C10071E0059AB73 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = SOURCE_ROOT; };
 		129A82241C1142FA00C92933 /* PubNubClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PubNubClient.h; sourceTree = SOURCE_ROOT; };
 		129A82251C1142FA00C92933 /* PubNubClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubNubClient.m; sourceTree = SOURCE_ROOT; };
+		129A82271C115DD600C92933 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = SOURCE_ROOT; };
+		129A82281C115DD600C92933 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = SOURCE_ROOT; };
+		129A82291C115DD600C92933 /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = SOURCE_ROOT; };
 		12CDD2671C0A7CE500C54CF0 /* FlixNChillClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlixNChillClient.h; sourceTree = SOURCE_ROOT; };
 		12CDD2681C0A7CE500C54CF0 /* FlixNChillClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlixNChillClient.m; sourceTree = SOURCE_ROOT; };
 		12CDD26B1C0BB30E00C54CF0 /* NSMutableArray+Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Stack.h"; sourceTree = SOURCE_ROOT; };
@@ -122,6 +127,9 @@
 				125B0BFE1C05490600987D30 /* DraggableImageView.xib */,
 				125B0BFF1C05490600987D30 /* DraggableImageView.m */,
 				125B0C001C05490600987D30 /* DraggableImageView.h */,
+				129A82271C115DD600C92933 /* MessageCell.h */,
+				129A82281C115DD600C92933 /* MessageCell.m */,
+				129A82291C115DD600C92933 /* MessageCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -288,6 +296,7 @@
 				125B0C101C054C8B00987D30 /* Main.storyboard in Resources */,
 				125B0C111C054C8B00987D30 /* LaunchScreen.storyboard in Resources */,
 				125B0C061C05492D00987D30 /* Assets.xcassets in Resources */,
+				129A822B1C115DD600C92933 /* MessageCell.xib in Resources */,
 				125B0C131C0550ED00987D30 /* taylorHeart.gif in Resources */,
 				125B0C041C05492000987D30 /* Info.plist in Resources */,
 			);
@@ -361,6 +370,7 @@
 				125B0C021C05490600987D30 /* DraggableImageView.m in Sources */,
 				125B0C081C05498000987D30 /* main.m in Sources */,
 				12CDD26D1C0BB30E00C54CF0 /* NSMutableArray+Stack.m in Sources */,
+				129A822A1C115DD600C92933 /* MessageCell.m in Sources */,
 				127DBE061C10071E0059AB73 /* ChatViewController.m in Sources */,
 				125B0BFA1C0548C800987D30 /* LoginViewController.m in Sources */,
 			);
