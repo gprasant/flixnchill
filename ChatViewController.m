@@ -20,10 +20,11 @@
 @implementation ChatViewController
 
 - (void)viewDidLoad {
+    [self setupTableView];
+    [self setupViews];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setupTableView];
-    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,6 +49,10 @@
     NSString *messageText = self.chatTextField.text;
     self.chatTextField.text = @"";
     [[PubNubClient sharedInstance] sendMessage:messageText];
+}
+
+-(void) setupViews {
+    self.chatWithLabel.text = self.chatWith.name;
 }
 
 #pragma mark TableView methods

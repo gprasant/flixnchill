@@ -313,7 +313,7 @@
                                         <connections>
                                             <outlet property="matchImageView" destination="gFf-mG-8P1" id="JUY-cw-hhR"/>
                                             <outlet property="nameLabel" destination="M8I-n9-N1K" id="fnv-6S-Kmc"/>
-                                            <segue destination="1Ig-kk-dB9" kind="modal" id="ojh-g3-UIP"/>
+                                            <segue destination="1Ig-kk-dB9" kind="modal" identifier="chatSegue" id="ojh-g3-UIP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -386,7 +386,7 @@
                                     <action selector="sendButtonTapped:" destination="1Ig-kk-dB9" eventType="touchUpInside" id="EG9-dt-Zlh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taylor10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K06-s7-pLX">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHAT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K06-s7-pLX">
                                 <rect key="frame" x="120" y="20" width="100" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>

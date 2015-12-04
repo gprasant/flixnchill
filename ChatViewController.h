@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PotentialMatch.h"
 
 @interface ChatViewController : UIViewController
+
+@property (strong, nonatomic) PotentialMatch *chatWith;
 
 @end

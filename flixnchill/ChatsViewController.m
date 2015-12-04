@@ -7,6 +7,7 @@
 //
 
 #import "ChatsViewController.h"
+#import "ChatViewController.h"
 #import "PotentialMatch.h"
 #import "User.h"
 #import "ChatTableViewCell.h"
@@ -15,6 +16,7 @@
 @interface ChatsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *chatsTableView;
 
+@property (strong, nonatomic) PotentialMatch *selectedUser;
 @end
 
 @implementation ChatsViewController
@@ -34,6 +36,13 @@
 
 - (IBAction)onBackTapped:(UITapGestureRecognizer *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqual:@"chatSegue"] ) {
+        ChatViewController *vc = (ChatViewController *)[segue destinationViewController];
+        vc.chatWith = self.selectedUser;
+    }
 }
 
 
@@ -56,6 +65,8 @@
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.selectedUser = [[[User currentUser] matches] objectAtIndex:indexPath.row];
+//    present ChatViewController here 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
