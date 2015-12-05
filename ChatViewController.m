@@ -59,6 +59,7 @@
     self.messagesTableView.delegate = self;
     UINib *messageCell = [UINib nibWithNibName:@"MessageCell" bundle:nil];
     [self.messagesTableView registerNib:messageCell forCellReuseIdentifier:@"MessageCell"];
+    self.messagesTableView.estimatedRowHeight = 100.0f;
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -76,7 +77,15 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
-    cell.messageLabel.text = self.messages[indexPath.row];
+    NSDictionary *message = self.messages[indexPath.row];
+    if ([message[@"author"] isEqualToString:[User currentUser].name]) {
+        cell.otherPersonMessageLabel.text = @"";
+        cell.myMessageLabel.text = message[@"text"];
+    } else {
+        cell.myMessageLabel.text = @"";
+        cell.otherPersonMessageLabel.text = message[@"text"];
+    }
+    
     return cell;
 }
 
@@ -96,11 +105,13 @@
 }
 
 - (void)client:(PubNub *)client didReceiveMessage:(PNMessageResult *)message {
-    // Handle new message stored in message.data.message
-    NSString *messageCellText = [NSString stringWithFormat:@"%@: %@", message.data.message[@"author"], message.data.message[@"text"]];
-    [self.messages addObject:messageCellText];
+    [self.messages addObject:message.data.message];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.messages.count - 1) inSection:0];
-    [self.messagesTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+    UITableViewRowAnimation direction = UITableViewRowAnimationLeft; // Left by default. Change if needed
+    if ([message.data.message[@"author"] isEqualToString: [User currentUser].name]) {
+        direction = UITableViewRowAnimationRight;
+    }
+    [self.messagesTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:direction];
     [self scrollTableToBottom];
     // should use messagesTableView reloadRowsAtIndexPaths: ... method
     NSLog(@"Received message: %@ on channel %@ at %@", message.data.message,
