@@ -12,8 +12,11 @@
 #import "LoginViewController.h"
 #import "CardsViewController.h"
 #import "User.h"
+#import <PubNub/PubNub.h>
 
 @interface AppDelegate ()
+
+@property (nonatomic) PubNub *client;
 
 @end
 
@@ -21,37 +24,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // [Optional] Power your app with Local Datastore. For more info, go to
-    // https://parse.com/docs/ios_guide#localdatastore/iOS
-    [Parse enableLocalDatastore];
+    [self setupParseLibWithLaunchOptions:launchOptions];
     
-    // Initialize Parse.
-    [Parse setApplicationId:@"R4ERGRZtP4Y2sehfMcEqbGRKKD3C2aqcTxwJ2JkG"
-                  clientKey:@"tKFdIIDQXFtjT4E0CjVLPjnNqfJJnw9Y3MTqnwOO"];
-
-    // [Optional] Track statistics around application opens.
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [self setupFacebookLibWithApplication:application
+                            LaunchOptions:launchOptions];
+    
+//    [self setupPubNubLib];
 	
-	[[FBSDKApplicationDelegate sharedInstance] application:application
-							 didFinishLaunchingWithOptions:launchOptions];
-
-
-	if (![FBSDKAccessToken currentAccessToken]) {
-		NSLog(@"User not logged in");
-		// Programitically present login view controller.
 		
-		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-		LoginViewController *loginVC = (LoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-		self.window.rootViewController = loginVC;
-		[self.window makeKeyAndVisible];
-	
-	} else {
-		NSLog(@"User logged in with usedID = %@", [[FBSDKAccessToken currentAccessToken] userID]);
-
-		User *user = [self setUpFacebookUser];
-		[User setCurrentUser:user];
-	}
-	
     return YES;
 }
 
@@ -137,4 +117,44 @@
 	return user;
 }
 
+# pragma mark - Client Libs
+
+-(void) setupParseLibWithLaunchOptions: (NSDictionary *)launchOptions {
+    // [Optional] Power your app with Local Datastore. For more info, go to
+    // https://parse.com/docs/ios_guide#localdatastore/iOS
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"R4ERGRZtP4Y2sehfMcEqbGRKKD3C2aqcTxwJ2JkG"
+                  clientKey:@"tKFdIIDQXFtjT4E0CjVLPjnNqfJJnw9Y3MTqnwOO"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+}
+
+-(void) setupFacebookLibWithApplication:(UIApplication *)application
+                          LaunchOptions:(NSDictionary *)launchOptions {
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    
+    
+    if (![FBSDKAccessToken currentAccessToken]) {
+        NSLog(@"User not logged in");
+        // Programitically present login view controller.
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        LoginViewController *loginVC = (LoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        self.window.rootViewController = loginVC;
+        [self.window makeKeyAndVisible];
+        
+    } else {
+        NSLog(@"User logged in with usedID = %@", [[FBSDKAccessToken currentAccessToken] userID]);
+        
+        User *user = [self setUpFacebookUser];
+        [User setCurrentUser:user];
+    }
+
+}
+
+# pragma mark - END Client Libs
 @end

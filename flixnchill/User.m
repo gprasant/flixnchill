@@ -7,6 +7,7 @@
 //
 
 #import "User.h"
+#import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 
@@ -21,6 +22,7 @@
 - (id)init {
 	self = [super init];
 	self.matches = [[NSMutableArray alloc] init];
+    [self addTestMatch]; // add taylor10 as a match always for testing chat
 	return self;
 }
 
@@ -43,6 +45,16 @@ static User *_currentUser = nil;
 	[self.matches addObject:match];
 }
 
-
+-(void) addTestMatch {
+    // Fetch ParseObject with Id for taylor10
+    PFQuery *q = [PFQuery queryWithClassName:@"PotentialMatches"];
+    [q getObjectInBackgroundWithId:@"NFCM2RTK2c"
+                             block:^(PFObject * _Nullable object, NSError * _Nullable error) {
+                                 if (!error) {
+                                     PotentialMatch *taylor10 = [[PotentialMatch alloc] initFromPFObject:object];
+                                     [self.matches addObject:taylor10];
+                                 }
+                             }];
+}
 
 @end
