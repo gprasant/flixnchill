@@ -17,13 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <animations/>
             </tableViewCellContentView>
             <animations/>
+            <connections>
+                <outlet property="messageLabel" destination="Yir-cm-XIV" id="buz-uB-Hve"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
