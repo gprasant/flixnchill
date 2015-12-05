@@ -8,6 +8,8 @@
 
 #import "ChatViewController.h"
 #import "MessageCell.h"
+#import "User.h"
+
 #import <PubNub/PubNub.h>
 
 @interface ChatViewController () <UITableViewDelegate, UITableViewDataSource, PNObjectEventListener>
@@ -95,8 +97,8 @@
 
 - (void)client:(PubNub *)client didReceiveMessage:(PNMessageResult *)message {
     // Handle new message stored in message.data.message
-
-    [self.messages addObject:message.data.message[@"text"]];
+    NSString *messageCellText = [NSString stringWithFormat:@"%@: %@", message.data.message[@"author"], message.data.message[@"text"]];
+    [self.messages addObject:messageCellText];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.messages.count - 1) inSection:0];
     [self.messagesTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
     [self scrollTableToBottom];
@@ -106,13 +108,15 @@
 }
 
 - (void) sendMessage: (NSString *)messageText {
-    if ([messageText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]) {
+    if ([[messageText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
         // empty message
         return;
     }
+    User * me = [User currentUser];
     NSLog(@"Attempting Message Send : %@", messageText);
     NSMutableDictionary *messageDictionary = [NSMutableDictionary dictionary];
-    messageDictionary[@"text"] = messageText;
+    messageDictionary[@"text"]   = messageText;
+    messageDictionary[@"author"] = me.name;
     [self.client publish: messageDictionary toChannel: @"my_channel" storeInHistory:YES
           withCompletion:^(PNPublishStatus *status) {
               if (!status.isError) {
@@ -123,7 +127,8 @@
               else {
                   
               }
-          }];
+          }
+     ];
 
 }
 #pragma mark END PubNub methods
