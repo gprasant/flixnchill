@@ -105,15 +105,13 @@
 }
 
 - (void)client:(PubNub *)client didReceiveMessage:(PNMessageResult *)message {
+    if ([message.data.message[@"author"] isEqualToString:[User currentUser].name]) {
+        return; // return if the currently received message is from self, as it would have already been added
+    }
     [self.messages addObject:message.data.message];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.messages.count - 1) inSection:0];
-    UITableViewRowAnimation direction = UITableViewRowAnimationLeft; // Left by default. Change if needed
-    if ([message.data.message[@"author"] isEqualToString: [User currentUser].name]) {
-        direction = UITableViewRowAnimationRight;
-    }
-    [self.messagesTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:direction];
+    [self.messagesTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     [self scrollTableToBottom];
-    // should use messagesTableView reloadRowsAtIndexPaths: ... method
     NSLog(@"Received message: %@ on channel %@ at %@", message.data.message,
           message.data.subscribedChannel, message.data.timetoken);
 }
@@ -140,6 +138,9 @@
               }
           }
      ];
+    [self.messages addObject:messageDictionary];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.messages.count - 1) inSection:0];
+    [self.messagesTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
 
 }
 #pragma mark END PubNub methods
