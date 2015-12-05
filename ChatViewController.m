@@ -80,10 +80,10 @@
     NSDictionary *message = self.messages[indexPath.row];
     if ([message[@"author"] isEqualToString:[User currentUser].name]) {
         cell.otherPersonMessageLabel.text = @"";
-        cell.myMessageLabel.text = message[@"text"];
+        cell.myMessageLabel.text = [NSString stringWithFormat:@"  %@  ", message[@"text"]];
     } else {
         cell.myMessageLabel.text = @"";
-        cell.otherPersonMessageLabel.text = message[@"text"];
+        cell.otherPersonMessageLabel.text = [NSString stringWithFormat:@"  %@  ", message[@"text"]];
     }
     
     return cell;
