@@ -63,6 +63,11 @@
     return self.messages.count;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
@@ -71,6 +76,11 @@
     MessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
     cell.messageLabel.text = self.messages[indexPath.row];
     return cell;
+}
+
+- (void)scrollTableToBottom {
+    int rowNumber = [self.messagesTableView numberOfRowsInSection:0];
+    if (rowNumber > 0) [self.messagesTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:rowNumber-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 #pragma mark END TableView methods
 
@@ -85,16 +95,11 @@
 
 - (void)client:(PubNub *)client didReceiveMessage:(PNMessageResult *)message {
     // Handle new message stored in message.data.message
-    if (message.data.actualChannel) {
-        // Message has been received on channel group stored in
-        // message.data.subscribedChannel
-    }
-    else {
-        // Message has been received on channel stored in
-        // message.data.subscribedChannel
-    }
+
     [self.messages addObject:message.data.message[@"text"]];
-    [self.messagesTableView reloadData];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.messages.count - 1) inSection:0];
+    [self.messagesTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+    [self scrollTableToBottom];
     // should use messagesTableView reloadRowsAtIndexPaths: ... method
     NSLog(@"Received message: %@ on channel %@ at %@", message.data.message,
           message.data.subscribedChannel, message.data.timetoken);
