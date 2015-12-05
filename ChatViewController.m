@@ -106,6 +106,10 @@
 }
 
 - (void) sendMessage: (NSString *)messageText {
+    if ([messageText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]) {
+        // empty message
+        return;
+    }
     NSLog(@"Attempting Message Send : %@", messageText);
     NSMutableDictionary *messageDictionary = [NSMutableDictionary dictionary];
     messageDictionary[@"text"] = messageText;
