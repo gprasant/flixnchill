@@ -106,6 +106,7 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     [UIView animateWithDuration:0.3 animations:^{
         self.contentView.center = CGPointMake(640, self.originalCenter.y);
     }];
+    // show new movie swipe view
     [self reset];
     [self bindWithNextMatch];
 }

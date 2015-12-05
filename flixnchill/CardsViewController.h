@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ThreeMoviesView.h"
 
 @interface CardsViewController : UIViewController
+@property (strong, nonatomic) IBOutlet ThreeMoviesView *movieCardsView;
 
+@property (weak, nonatomic) IBOutlet UIVisualEffectView *blurView;
 
 @end
 
