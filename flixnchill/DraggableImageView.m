@@ -80,7 +80,7 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
     } else if (sender.state == UIGestureRecognizerStateEnded) {
         
         if (translationX > 100) {
-            [self swipeRight];
+            [self.delegate onSwipeRight];
         } else if (translationX < -100) {
             [self swipeLeft];
         } else {

@@ -10,6 +10,33 @@
             <rect key="frame" x="0.0" y="0.0" width="280" height="500"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" id="JBf-4H-905" customClass="MovieDetailsView">
+                    <rect key="frame" x="0.0" y="0.0" width="280" height="500"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" id="TYB-O8-Rse" customClass="MovieDetailsView">
+                    <rect key="frame" x="0.0" y="0.0" width="280" height="500"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" id="Dpg-7k-C68" customClass="MovieDetailsView">
+                    <rect key="frame" x="0.0" y="0.0" width="280" height="500"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
                 <view contentMode="scaleToFill" id="t9G-Ut-aGl" customClass="UIImageView">
                     <rect key="frame" x="8" y="8" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -92,6 +119,10 @@
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" image="YES"/>
                     </accessibility>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="nnF-Ic-tak" appends="YES" id="nrg-7I-ghI"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" id="cI1-hj-bZ5" customClass="UIImageView">
                     <rect key="frame" x="102" y="192" width="77" height="114"/>
@@ -101,6 +132,10 @@
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" image="YES"/>
                     </accessibility>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="4bg-b3-xGY" appends="YES" id="8yK-JX-EHm"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" id="4pG-Zx-m1B" customClass="UIImageView">
                     <rect key="frame" x="102" y="309" width="77" height="114"/>
@@ -110,6 +145,10 @@
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" image="YES"/>
                     </accessibility>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="54Y-ly-vqn" appends="YES" id="Gve-Lq-ZBk"/>
+                    </connections>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIKE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uVf-35-O4U">
                     <rect key="frame" x="90" y="102" width="102" height="60"/>
@@ -190,7 +229,6 @@
                 <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
             </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="MoviePosterThree" destination="4pG-Zx-m1B" id="Lz6-2S-yQg"/>
                 <outlet property="doneButton" destination="RH0-dr-deC" id="d1c-F0-8PJ"/>
                 <outlet property="likeOne" destination="uVf-35-O4U" id="ipP-Uv-eWs"/>
                 <outlet property="likeOneButton" destination="hSI-4h-gCa" id="6yP-Jd-qYS"/>
@@ -200,7 +238,11 @@
                 <outlet property="likeTwoButton" destination="qmM-qK-UXW" id="tLm-QS-XFh"/>
                 <outlet property="matchName" destination="UAg-XT-SdU" id="Ukt-XZ-pKK"/>
                 <outlet property="matchProfilePic" destination="t9G-Ut-aGl" id="QJF-zb-MFm"/>
+                <outlet property="movieDetailsOne" destination="JBf-4H-905" id="Efj-nP-K9h"/>
+                <outlet property="movieDetailsThree" destination="Dpg-7k-C68" id="MUr-rE-voR"/>
+                <outlet property="movieDetailsTwo" destination="TYB-O8-Rse" id="tZ7-8W-jJd"/>
                 <outlet property="moviePosterOne" destination="Afy-0b-ctS" id="tVT-zQ-VEF"/>
+                <outlet property="moviePosterThree" destination="4pG-Zx-m1B" id="Dgn-Uj-Wc6"/>
                 <outlet property="moviePosterTwo" destination="cI1-hj-bZ5" id="gib-py-6ZY"/>
                 <outlet property="nopeOne" destination="lf4-fD-Fnb" id="fdF-3q-xKX"/>
                 <outlet property="nopeOneButton" destination="OUU-fR-Gui" id="ads-wW-fKW"/>
@@ -212,6 +254,21 @@
             </connections>
             <point key="canvasLocation" x="228" y="503"/>
         </view>
+        <tapGestureRecognizer id="nnF-Ic-tak">
+            <connections>
+                <action selector="onMoviePosterOneTap:" destination="iN0-l3-epB" id="Vbf-Fv-Tnn"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="4bg-b3-xGY">
+            <connections>
+                <action selector="onMoviePosterTwoTap:" destination="iN0-l3-epB" id="GwJ-Qe-h3w"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="54Y-ly-vqn">
+            <connections>
+                <action selector="onMoviePosterThreeTap:" destination="iN0-l3-epB" id="CEX-bV-mxa"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="like_button" width="196" height="196"/>

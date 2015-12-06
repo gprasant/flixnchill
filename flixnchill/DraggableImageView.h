@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "PotentialMatch.h"
 
+@protocol DraggableImageViewDelegate <NSObject>
+
+-(void)onSwipeRight;
+
+@end
+
 @interface DraggableImageView : UIView
+@property (assign) id<DraggableImageViewDelegate> delegate;
+
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ageLabel;
