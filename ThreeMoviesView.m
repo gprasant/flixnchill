@@ -100,6 +100,7 @@
         self.moviePosterOne.center = self.nopeButtonOneCenter;
         self.likeOne.alpha = 0;
     } completion:^(BOOL finished) {
+        self.likeOne.alpha = 0;
         [UIView animateWithDuration:.3 animations:^{
             self.nopeOne.alpha = 1;
         }];
@@ -111,8 +112,8 @@
     [UIView animateWithDuration:.3 animations:^{
         self.moviePosterTwo.center = self.nopeButtonTwoCenter;
         self.likeTwo.alpha = 0;
-
     } completion:^(BOOL finished) {
+        self.likeTwo.alpha = 0;
         [UIView animateWithDuration:.3 animations:^{
             self.nopeTwo.alpha = 1;
         }];
@@ -125,8 +126,8 @@
     [UIView animateWithDuration:.3 animations:^{
         self.MoviePosterThree.center = self.nopeButtonThreeCenter;
         self.likeThree.alpha = 0;
-
     } completion:^(BOOL finished) {
+        self.likeThree.alpha = 0;
         [UIView animateWithDuration:.3 animations:^{
             self.nopeThree.alpha = 1;
         }];
@@ -139,8 +140,8 @@
     [UIView animateWithDuration:.3 animations:^{
         self.moviePosterOne.center = self.likeButtonOneCenter;
         self.nopeOne.alpha = 0;
-
     } completion:^(BOOL finished) {
+        self.nopeOne.alpha = 0;
         [UIView animateWithDuration:.3 animations:^{
             self.likeOne.alpha = 1;
         }];
@@ -153,6 +154,7 @@
         self.moviePosterTwo.center = self.likeButtonTwoCenter;
         self.nopeTwo.alpha = 0;
     } completion:^(BOOL finished) {
+        self.nopeTwo.alpha = 0;
         [UIView animateWithDuration:.3 animations:^{
             self.likeTwo.alpha = 1;
         }];
@@ -165,8 +167,8 @@
     [UIView animateWithDuration:.3 animations:^{
         self.MoviePosterThree.center = self.likeButtonThreeCenter;
         self.nopeThree.alpha = 0;
-
     } completion:^(BOOL finished) {
+        self.nopeThree.alpha = 0;
         [UIView animateWithDuration:.3 animations:^{
             self.likeThree.alpha = 1;
         }];
