@@ -2,31 +2,52 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MessageCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="49" id="KGk-i7-Jjw" customClass="MessageCell">
+            <rect key="frame" x="0.0" y="0.0" width="523" height="49"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="523" height="48"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Hey Girl, I need you closure to me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yir-cm-XIV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Other Person's chat message " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfL-jL-Cr8">
+                        <rect key="frame" x="8" y="8" width="269" height="32"/>
                         <animations/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.16470588235294117" green="0.55686274509803924" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Chat Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQS-e9-RTl">
+                        <rect key="frame" x="374" y="8" width="141" height="32"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.86060891143106455" green="0.86060891143106455" blue="0.86060891143106455" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <animations/>
+                <constraints>
+                    <constraint firstItem="aQS-e9-RTl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="100" id="F1Z-RO-mSp"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EfL-jL-Cr8" secondAttribute="trailing" constant="100" id="IFb-lD-rWN"/>
+                    <constraint firstAttribute="bottom" secondItem="aQS-e9-RTl" secondAttribute="bottom" constant="8" id="Jud-a4-B89"/>
+                    <constraint firstItem="EfL-jL-Cr8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="TPD-Wq-CfQ"/>
+                    <constraint firstItem="EfL-jL-Cr8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="k0w-ix-E2p"/>
+                    <constraint firstItem="aQS-e9-RTl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="mnm-rU-rrp"/>
+                    <constraint firstAttribute="bottom" secondItem="EfL-jL-Cr8" secondAttribute="bottom" constant="8" id="nrr-eh-3cz"/>
+                    <constraint firstAttribute="trailing" secondItem="aQS-e9-RTl" secondAttribute="trailing" constant="8" id="xmY-25-ejm"/>
+                </constraints>
             </tableViewCellContentView>
             <animations/>
             <connections>
-                <outlet property="messageLabel" destination="Yir-cm-XIV" id="buz-uB-Hve"/>
+                <outlet property="myMessageLabel" destination="aQS-e9-RTl" id="vsc-8L-QvM"/>
+                <outlet property="otherPersonMessageLabel" destination="EfL-jL-Cr8" id="qJd-Xo-jiJ"/>
             </connections>
+            <point key="canvasLocation" x="371.5" y="405.5"/>
         </tableViewCell>
     </objects>
 </document>

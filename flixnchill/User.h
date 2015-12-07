@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) NSMutableArray *matches;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *email;
+@property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *profileImageUrl;
 
 - (void)addMatch:(PotentialMatch *)match;
