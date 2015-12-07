@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PotentialMatch.h"
 
 @interface ChatTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *matchImageView;
+
+@property (strong, nonatomic) PotentialMatch *match;
 
 @end

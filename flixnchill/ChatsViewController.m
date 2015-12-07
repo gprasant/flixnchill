@@ -41,7 +41,8 @@
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqual:@"chatSegue"] ) {
         ChatViewController *vc = (ChatViewController *)[segue destinationViewController];
-        vc.chatWith = self.selectedUser;
+        // Use sender._nameLabel._content here for the chatWithUserName.
+        vc.chatWith = [sender match];
     }
 }
 
@@ -59,13 +60,16 @@
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatCell"];
 	PotentialMatch *match = [[[User currentUser] matches] objectAtIndex:indexPath.row];
-	cell.nameLabel.text = match.name;
+    cell.match = match;
+    cell.nameLabel.text = match.name;
+    
 	[cell.matchImageView setImageWithURL:[NSURL URLWithString:match.photoUrlString]];
 	return cell;
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.selectedUser = [[[User currentUser] matches] objectAtIndex:indexPath.row];
+
 //    present ChatViewController here 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

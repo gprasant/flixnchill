@@ -12,11 +12,16 @@
 
 #import <PubNub/PubNub.h>
 
+const NSString *PUBNUB_PUB_KEY = @"pub-c-fcaa8727-17b2-40b6-a0cd-f153f2ac72df";
+const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
+
+
 @interface ChatViewController () <UITableViewDelegate, UITableViewDataSource, PNObjectEventListener>
 @property (weak, nonatomic) IBOutlet UILabel *chatWithLabel;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UITextField *chatTextField;
 @property (weak, nonatomic) IBOutlet UITableView *messagesTableView;
+@property (strong, nonatomic) NSString *channelName;
 
 @property (strong, nonatomic) NSMutableArray *messages;
 @property (nonatomic) PubNub *client;
@@ -60,6 +65,7 @@
     UINib *messageCell = [UINib nibWithNibName:@"MessageCell" bundle:nil];
     [self.messagesTableView registerNib:messageCell forCellReuseIdentifier:@"MessageCell"];
     self.messagesTableView.estimatedRowHeight = 100.0f;
+    self.messagesTableView.separatorColor = [UIColor clearColor];
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -97,10 +103,11 @@
 
 #pragma mark PubNub methods
 - (void) setupPubNub {
-    PNConfiguration *config = [PNConfiguration configurationWithPublishKey:@"demo" subscribeKey:@"demo"];
+    self.channelName = [self generateChannelName];
+    PNConfiguration *config = [PNConfiguration configurationWithPublishKey:PUBNUB_PUB_KEY subscribeKey:PUBNUB_SUB_KEY];
     self.client = [PubNub clientWithConfiguration:config];
     [self.client addListener:self];
-    [self.client subscribeToChannels:@[@"my_channel"] withPresence:YES];
+    [self.client subscribeToChannels:@[self.channelName] withPresence:YES];
     
 }
 
@@ -126,7 +133,7 @@
     NSMutableDictionary *messageDictionary = [NSMutableDictionary dictionary];
     messageDictionary[@"text"]   = messageText;
     messageDictionary[@"author"] = me.name;
-    [self.client publish: messageDictionary toChannel: @"my_channel" storeInHistory:YES
+    [self.client publish: messageDictionary toChannel: self.channelName storeInHistory:YES
           withCompletion:^(PNPublishStatus *status) {
               if (!status.isError) {
                   NSLog(@"Successfully sent message");
@@ -142,6 +149,17 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.messages.count - 1) inSection:0];
     [self.messagesTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
 
+}
+
+// Gives back a channel name for user1 &user2 to converse (user1Email:user2Email), s.t. user1Email < user2Email
+- (NSString *) generateChannelName {
+    NSString *myEmail = [User currentUser].email;
+    NSString *otherEmail = self.chatWith.email;
+    if ( [myEmail caseInsensitiveCompare:otherEmail] == NSOrderedAscending ) {
+        return [NSString stringWithFormat:@"%@:%@", myEmail, otherEmail];
+    } else {
+        return [NSString stringWithFormat:@"%@:%@", otherEmail, myEmail];
+    }
 }
 #pragma mark END PubNub methods
 

@@ -13,11 +13,13 @@
 
 -(id) initFromPFObject:(PFObject *)dictionary {
     if(self = [super init]) {
-        self.name = dictionary[@"Name"];
-        self.sex = dictionary[@"Sex"];
         self.age = dictionary[@"Age"];
-        self.tagline = dictionary[@"Tagline"];
+        self.email = dictionary[@"Email"];
+        self.firstName = dictionary[@"FirstName"];
+        self.name = dictionary[@"Name"];
         self.photoUrlString = dictionary[@"Photo"];
+        self.sex = dictionary[@"Sex"];
+        self.tagline = dictionary[@"Tagline"];
     }
     return self;
 }
