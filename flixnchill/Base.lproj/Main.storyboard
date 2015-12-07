@@ -167,7 +167,7 @@
                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="loginButton" destination="84p-cY-TRW" id="gaX-cm-cbO"/>
+                        <outlet property="loginButtonPlaceHolder" destination="84p-cY-TRW" id="rNl-1p-QLn"/>
                         <outlet property="placeHolderImageView" destination="MyR-wy-k25" id="WBo-u9-SG7"/>
                     </connections>
                 </viewController>

@@ -10,7 +10,7 @@
 #import "FLAnimatedImage.h"
 
 @interface LoginViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *loginButtonPlaceHolder;
 @property (weak, nonatomic) IBOutlet UIImageView *placeHolderImageView;
 
 @end
@@ -23,11 +23,10 @@
 	UIColor *netflixRed = [UIColor colorWithRed:(185/255.0) green:(9/255.0) blue:(11/255.0) alpha:1] ;
 	self.view.backgroundColor = netflixRed;
 	[self setupViews];
-	FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-	loginButton.center = self.loginButton.center;
-	[self.view addSubview:loginButton];
-	_fbLoginButton.readPermissions =
-	@[@"public_profile", @"email", @"user_friends"];
+	self.loginButton = [[FBSDKLoginButton alloc] init];
+	self.loginButton.center = self.loginButtonPlaceHolder.center;
+	[self.view addSubview:self.loginButton];
+	self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
 }
 
 - (void)didReceiveMemoryWarning {
