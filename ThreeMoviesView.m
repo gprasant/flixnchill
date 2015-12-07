@@ -8,9 +8,11 @@
 
 #import "ThreeMoviesView.h"
 #import "UIImageView+AFNetworking.h"
+#import "MovieDetailsView.h"
 #include <stdlib.h>
 
 @interface ThreeMoviesView()
+
 @property (nonatomic, assign) CGPoint nopeButtonOneCenter;
 @property (nonatomic, assign) CGPoint likeButtonOneCenter;
 @property (nonatomic, assign) CGPoint moviePosterOneOriginalCenter;
@@ -45,7 +47,7 @@
 
     self.nopeButtonThreeCenter = self.nopeThreeButton.center;
     self.likeButtonThreeCenter = self.likeThreeButton.center;
-    self.moviePosterThreeOriginalCenter = self.MoviePosterThree.center;
+    self.moviePosterThreeOriginalCenter = self.moviePosterThree.center;
 
     [self.doneButton addTarget:self.delegate action:@selector(onDoneTap) forControlEvents:UIControlEventTouchUpInside];
     [self.doneButton setTitle:@"Done" forState:UIControlStateNormal];
@@ -59,7 +61,7 @@
     
     self.moviePosterTwo.center = self.moviePosterTwoOriginalCenter;
 
-    self.MoviePosterThree.center = self.moviePosterThreeOriginalCenter;
+    self.moviePosterThree.center = self.moviePosterThreeOriginalCenter;
     
     self.likeOne.alpha = 0;
     self.likeTwo.alpha = 0;
@@ -78,21 +80,46 @@
     while (randThree == randTwo || randThree == randTwo) {
         randThree = arc4random_uniform(19);
     }
+
+    NSDictionary *movieOne = movies[randOne];
+    NSDictionary *movieTwo = movies[randTwo];
+    NSDictionary *movieThree = movies[randThree];
     
-    NSString *thumbnailString = movies[randOne][@"posters"][@"thumbnail"];
+    NSString *thumbnailString = movieOne[@"posters"][@"thumbnail"];
     NSURL *url = [NSURL URLWithString:thumbnailString];
     [self.moviePosterOne setImageWithURL:url];
 
-    NSString *thumbnailTwoString = movies[randTwo][@"posters"][@"thumbnail"];
+    NSString *thumbnailTwoString = movieTwo[@"posters"][@"thumbnail"];
     NSURL *urlTwo = [NSURL URLWithString:thumbnailTwoString];
     [self.moviePosterTwo setImageWithURL:urlTwo];
 
-    NSString *thumbnailThreeString = movies[randThree][@"posters"][@"thumbnail"];
+    NSString *thumbnailThreeString = movieThree[@"posters"][@"thumbnail"];
     NSURL *urlThree = [NSURL URLWithString:thumbnailThreeString];
-    [self.MoviePosterThree setImageWithURL:urlThree];
+    [self.moviePosterThree setImageWithURL:urlThree];
 
     self.matchName.text = draggableImageView.nameLabel.text;
     self.matchProfilePic.image = draggableImageView.profileImageView.image;
+    
+    MovieDetailsView *movieDetailsOne = [[[NSBundle mainBundle] loadNibNamed:@"MovieDetailsView" owner:self options:nil] objectAtIndex:0];
+    [movieDetailsOne setUpView:movieOne];
+    self.movieDetailsOne = movieDetailsOne;
+    [self addSubview:self.movieDetailsOne];
+    [self.movieDetailsOne setHidden:YES];
+    [self sendSubviewToBack:self.movieDetailsOne];
+
+    MovieDetailsView *movieDetailsTwo = [[[NSBundle mainBundle] loadNibNamed:@"MovieDetailsView" owner:self options:nil] objectAtIndex:0];
+    [movieDetailsTwo setUpView:movieTwo];
+    self.movieDetailsTwo = movieDetailsTwo;
+    [self addSubview:self.movieDetailsTwo];
+    [self.movieDetailsTwo setHidden:YES];
+    [self sendSubviewToBack:self.movieDetailsTwo];
+
+    MovieDetailsView *movieDetailsThree = [[[NSBundle mainBundle] loadNibNamed:@"MovieDetailsView" owner:self options:nil] objectAtIndex:0];
+    [movieDetailsThree setUpView:movieThree];
+    self.movieDetailsThree = movieDetailsThree;
+    [self addSubview:self.movieDetailsThree];
+    [self.movieDetailsThree setHidden:YES];
+    [self sendSubviewToBack:self.movieDetailsThree];
 }
 
 - (IBAction)onNopeTapOne:(id)sender {
@@ -100,6 +127,7 @@
         self.moviePosterOne.center = self.nopeButtonOneCenter;
         self.likeOne.alpha = 0;
     } completion:^(BOOL finished) {
+        self.likeOne.alpha = 0;
         [UIView animateWithDuration:.3 animations:^{
             self.nopeOne.alpha = 1;
         }];
@@ -111,8 +139,8 @@
     [UIView animateWithDuration:.3 animations:^{
         self.moviePosterTwo.center = self.nopeButtonTwoCenter;
         self.likeTwo.alpha = 0;
-
     } completion:^(BOOL finished) {
+        self.likeTwo.alpha = 0;
         [UIView animateWithDuration:.3 animations:^{
             self.nopeTwo.alpha = 1;
         }];
@@ -123,10 +151,10 @@
 
 - (IBAction)onNopeTapThree:(id)sender {
     [UIView animateWithDuration:.3 animations:^{
-        self.MoviePosterThree.center = self.nopeButtonThreeCenter;
+        self.moviePosterThree.center = self.nopeButtonThreeCenter;
         self.likeThree.alpha = 0;
-
     } completion:^(BOOL finished) {
+        self.likeThree.alpha = 0;
         [UIView animateWithDuration:.3 animations:^{
             self.nopeThree.alpha = 1;
         }];
@@ -139,8 +167,8 @@
     [UIView animateWithDuration:.3 animations:^{
         self.moviePosterOne.center = self.likeButtonOneCenter;
         self.nopeOne.alpha = 0;
-
     } completion:^(BOOL finished) {
+        self.nopeOne.alpha = 0;
         [UIView animateWithDuration:.3 animations:^{
             self.likeOne.alpha = 1;
         }];
@@ -153,6 +181,7 @@
         self.moviePosterTwo.center = self.likeButtonTwoCenter;
         self.nopeTwo.alpha = 0;
     } completion:^(BOOL finished) {
+        self.nopeTwo.alpha = 0;
         [UIView animateWithDuration:.3 animations:^{
             self.likeTwo.alpha = 1;
         }];
@@ -163,10 +192,10 @@
 
 - (IBAction)onLikeTapThree:(id)sender {
     [UIView animateWithDuration:.3 animations:^{
-        self.MoviePosterThree.center = self.likeButtonThreeCenter;
+        self.moviePosterThree.center = self.likeButtonThreeCenter;
         self.nopeThree.alpha = 0;
-
     } completion:^(BOOL finished) {
+        self.nopeThree.alpha = 0;
         [UIView animateWithDuration:.3 animations:^{
             self.likeThree.alpha = 1;
         }];
@@ -174,5 +203,30 @@
     }];
 
 }
+- (IBAction)onMoviePosterOneTap:(id)sender {
+    NSLog(@"poster one tap!");
+    [self.movieDetailsOne setHidden:NO];
+    [self bringSubviewToFront:self.movieDetailsOne];
+}
+- (IBAction)onMoviePosterTwoTap:(id)sender {
+    NSLog(@"poster two tap!");
+    [self.movieDetailsTwo setHidden:NO];
+    [self bringSubviewToFront:self.movieDetailsTwo];
+
+}
+
+- (IBAction)onMoviePosterThreeTap:(id)sender {
+    NSLog(@"poster three tap!");
+    [self.movieDetailsThree setHidden:NO];
+    [self bringSubviewToFront:self.movieDetailsThree];
+}
+
+//-(void)onDetailsDoneTap {
+//    NSLog(@"details done tapped");
+//    [self hideSubView:self.moviePosterOne];
+//    [self hideSubView:self.moviePosterTwo];
+//    [self hideSubView:self.MoviePosterThree];
+//}
+
 
 @end

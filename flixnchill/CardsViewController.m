@@ -15,8 +15,9 @@
 #import "UIImageView+AFNetworking.h"
 #import "AFNetworking.h"
 #import "ThreeMoviesView.h"
+#import "MovieDetailsView.h"
 
-@interface CardsViewController () <ThreeMoviesViewDelegate>
+@interface CardsViewController () <ThreeMoviesViewDelegate, MovieDetailsViewDelegate, DraggableImageViewDelegate>
 
 @property (strong, nonatomic) NSArray *movies;
 
@@ -45,8 +46,7 @@
     self.movieCardsView = [self setUpMoviesView];
 
     [self.view addSubview:self.movieCardsView];
-    [self.view sendSubviewToBack:self.movieCardsView];
-
+    [self hideSubView:self.movieCardsView];
 
 	UIColor *netflixRed = [UIColor colorWithRed:(185/255.0) green:(9/255.0) blue:(11/255.0) alpha:1] ;
 	self.view.backgroundColor = netflixRed;
@@ -116,14 +116,24 @@
 
 #pragma mark - END Gesture recognizers
 
+- (void)onSwipeRight {
+    [self onLikeTapped:nil];
+}
+
 - (ThreeMoviesView*)setUpMoviesView {
     ThreeMoviesView *threeMoviesView = [[[NSBundle mainBundle] loadNibNamed:@"ThreeMoviesView" owner:self options:nil] objectAtIndex:0];
     threeMoviesView.center = CGPointMake(160.0f, 310.0f);
     threeMoviesView.delegate = self;
+    threeMoviesView.movieDetailsOne.delegate = self;
+    threeMoviesView.movieDetailsTwo.delegate = self;
+    threeMoviesView.movieDetailsThree.delegate = self;
+    
+
     [threeMoviesView setHidden:YES];
 
     return threeMoviesView;
 }
+
 - (void)hideSubView:(UIView*)subview {
     [subview setHidden:YES];
     [self.view sendSubviewToBack:subview];
@@ -135,14 +145,27 @@
 }
 
 - (void)onDoneTap {
+    NSLog(@"3movies done tapped");
     [self hideSubView:self.blurView];
     [self hideSubView:self.movieCardsView];
 }
 
--(void) initSubViews {
-    [self.draggableCard bindWithNextMatch];
+-(void)onDetailsDoneTap {
+    NSLog(@"details done tapped");
+    [self.movieCardsView.movieDetailsOne setHidden:YES];
+    [self.movieCardsView sendSubviewToBack:self.movieCardsView.movieDetailsOne];
+
+    [self.movieCardsView.movieDetailsTwo setHidden:YES];
+    [self.movieCardsView sendSubviewToBack:self.movieCardsView.movieDetailsTwo];
+
+    [self.movieCardsView.movieDetailsThree setHidden:YES];
+    [self.movieCardsView sendSubviewToBack:self.movieCardsView.movieDetailsThree];
 }
 
+-(void) initSubViews {
+    [self.draggableCard bindWithNextMatch];
+    self.draggableCard.delegate = self;
+}
 
 - (BOOL) fetchMovies {
     __block BOOL successfulFetch = NO;

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UIImageView+AFNetworking.h"
 #import "DraggableImageView.h"
+#import "MovieDetailsView.h"
 
 @protocol ThreeMoviesViewDelegate <NSObject>
 
@@ -19,6 +20,10 @@
 @interface ThreeMoviesView : UIView
 @property (assign) id<ThreeMoviesViewDelegate> delegate;
 
+@property (strong, nonatomic) IBOutlet MovieDetailsView *movieDetailsOne;
+@property (strong, nonatomic) IBOutlet MovieDetailsView *movieDetailsTwo;
+@property (strong, nonatomic) IBOutlet MovieDetailsView *movieDetailsThree;
+
 @property (weak, nonatomic) IBOutlet UILabel *matchName;
 @property (weak, nonatomic) IBOutlet UIImageView *matchProfilePic;
 
@@ -26,7 +31,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *moviePosterOne;
 @property (weak, nonatomic) IBOutlet UIImageView *moviePosterTwo;
-@property (weak, nonatomic) IBOutlet UIImageView *MoviePosterThree;
+@property (weak, nonatomic) IBOutlet UIImageView *moviePosterThree;
 
 @property (weak, nonatomic) IBOutlet UIButton *nopeOneButton;
 @property (weak, nonatomic) IBOutlet UIButton *nopeTwoButton;
