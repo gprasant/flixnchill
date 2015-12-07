@@ -24,6 +24,7 @@
     [self setupViews];
 	self.nameAgeLabel.text = [NSString stringWithFormat:@"%@, %@", self.user.name, self.user.age];
 	self.taglineLabel.text = self.user.tagline;
+	[self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,10 +43,16 @@
 
 - (IBAction)onNopeTapped:(UITapGestureRecognizer *)sender {
     NSLog(@"ProfileViewController:Nope tapped");
+	
 }
 
 - (IBAction)onLikeTapped:(UITapGestureRecognizer *)sender {
     NSLog(@"ProfileViewController:Like tapped");
 }
+
+- (UIStatusBarStyle) preferredStatusBarStyle {
+	return UIStatusBarStyleLightContent;
+}
+
 #pragma mark - END Gesture recognizers
 @end

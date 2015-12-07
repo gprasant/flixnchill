@@ -10,6 +10,13 @@
 
 @implementation ChatTableViewCell
 
+
+-(void)layoutSubviews
+{
+	self.matchImageView.layer.cornerRadius = self.matchImageView.frame.size.width / 2;
+	self.matchImageView.clipsToBounds = YES;
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }

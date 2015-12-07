@@ -63,6 +63,7 @@
         }
     }];
 	[self.view bringSubviewToFront:self.draggableCard];
+	[self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -188,6 +189,10 @@
     }];
     
     return successfulFetch;
+}
+
+- (UIStatusBarStyle) preferredStatusBarStyle {
+	return UIStatusBarStyleLightContent;
 }
 
 @end

@@ -307,8 +307,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jessica" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8I-n9-N1K">
-                                                    <rect key="frame" x="70" y="8" width="196" height="45"/>
+                                                    <rect key="frame" x="70" y="8" width="196" height="45"/>                                                    
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="196" id="DGi-hq-7qv"/>
+                                                        <constraint firstAttribute="height" constant="40" id="mLh-zG-Ust"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -316,14 +320,30 @@
                                                     <rect key="frame" x="292" y="21" width="20" height="20"/>
                                                     <animations/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="h1i-s0-rZL"/>
+                                                        <constraint firstAttribute="width" constant="20" id="xGh-cP-Yh4"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jessica" translatesAutoresizingMaskIntoConstraints="NO" id="gFf-mG-8P1">
                                                     <rect key="frame" x="8" y="11" width="40" height="40"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="VY8-bg-5Zf"/>
+                                                        <constraint firstAttribute="height" constant="40" id="pFo-tJ-uVo"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <animations/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="o3i-Jp-8Em" firstAttribute="centerY" secondItem="wO4-mt-bFe" secondAttribute="centerY" id="G7c-Or-jF1"/>
+                                                <constraint firstItem="gFf-mG-8P1" firstAttribute="leading" secondItem="wO4-mt-bFe" secondAttribute="leading" constant="8" id="Q0P-Nz-XtI"/>
+                                                <constraint firstItem="gFf-mG-8P1" firstAttribute="centerY" secondItem="wO4-mt-bFe" secondAttribute="centerY" id="azC-2y-BnY"/>
+                                                <constraint firstAttribute="trailing" secondItem="o3i-Jp-8Em" secondAttribute="trailing" constant="8" id="cnW-RH-ppG"/>
+                                                <constraint firstItem="M8I-n9-N1K" firstAttribute="leading" secondItem="gFf-mG-8P1" secondAttribute="trailing" constant="8" id="fnR-SX-IIh"/>
+                                                <constraint firstItem="M8I-n9-N1K" firstAttribute="centerY" secondItem="wO4-mt-bFe" secondAttribute="centerY" id="sTF-XM-kFU"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
@@ -481,11 +501,23 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xw7-xq-00b">
+                                <rect key="frame" x="146" y="513" width="30" height="30"/>
+                            </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowleftwhiteonred" translatesAutoresizingMaskIntoConstraints="NO" id="2wT-de-2Ur">
+                                <rect key="frame" x="10" y="24" width="20" height="24"/>
+                                <animations/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1Nl-BI-lV9" appends="YES" id="udC-bn-bvG"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.71764707565307617" green="0.058823533356189728" blue="0.090196080505847931" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <connections>
+                        <outlet property="logoutPlaceholderbutton" destination="Xw7-xq-00b" id="KVU-wf-MaI"/>
                         <outlet property="profileImageView" destination="mPN-rX-fHS" id="ENe-Rr-lj4"/>
                         <outlet property="userNameLabel" destination="uC8-po-upd" id="213-RC-xiv"/>
                     </connections>
@@ -501,7 +533,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="32" height="32"/>
+        <image name="arrowleftwhiteonred" width="46" height="58"/>
         <image name="chatTransparent" width="56" height="50"/>
         <image name="forward" width="32" height="32"/>
         <image name="info_button" width="118" height="117"/>
@@ -509,7 +541,7 @@
         <image name="like_button" width="196" height="196"/>
         <image name="nav_like_button" width="68" height="68"/>
         <image name="nav_nope_button" width="68" height="68"/>
-        <image name="netflixnchilliconfat" width="200" height="68"/>
+        <image name="netflixnchillflat" width="2375" height="394"/>
         <image name="netflixnchilliconthin" width="113" height="68"/>
         <image name="nope_button" width="196" height="196"/>
         <image name="settingsTransparent" width="53" height="52"/>
