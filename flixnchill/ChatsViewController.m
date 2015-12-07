@@ -27,6 +27,7 @@
 	UIColor *netflixRed = [UIColor colorWithRed:(185/255.0) green:(9/255.0) blue:(11/255.0) alpha:1] ;
 	self.view.backgroundColor = netflixRed;
 	[self setupTableView];
+	[self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,6 +73,10 @@
 
 //    present ChatViewController here 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (UIStatusBarStyle) preferredStatusBarStyle {
+	return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - END TableView Methods

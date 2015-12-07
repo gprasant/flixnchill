@@ -27,6 +27,7 @@
 	self.loginButton.center = self.loginButtonPlaceHolder.center;
 	[self.view addSubview:self.loginButton];
 	self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
+	[self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,17 +38,10 @@
 -(void) setupViews {
     self.loginButton.layer.borderWidth = 1.0f;
     self.loginButton.layer.borderColor = [[UIColor blackColor] CGColor];
-    [self addTaylorGIF];
 }
 
--(void) addTaylorGIF {
-    FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
-	FLAnimatedImage *manWalkingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"taylorHeart" ofType:@"gif"]]];
-
-    imageView.animatedImage = manWalkingImage;
-    imageView.frame = self.placeHolderImageView.frame;
-    [self.view addSubview:imageView];
+- (UIStatusBarStyle) preferredStatusBarStyle {
+	return UIStatusBarStyleLightContent;
 }
-
 
 @end
