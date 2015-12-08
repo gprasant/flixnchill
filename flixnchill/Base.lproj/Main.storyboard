@@ -70,6 +70,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="3uV-Bm-J3k" appends="YES" id="KQv-v4-fjj"/>
+                                    <outletCollection property="gestureRecognizers" destination="Onp-20-c2P" appends="YES" id="5x4-Tj-j3Q"/>
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nope_button" id="Xm0-xb-pcv">
@@ -147,6 +148,11 @@
                 <tapGestureRecognizer numberOfTouchesRequired="2" id="OVz-yd-zz6">
                     <connections>
                         <action selector="onResetTapped:" destination="BYZ-38-t0r" id="CJ6-pb-W71"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Onp-20-c2P">
+                    <connections>
+                        <segue destination="q2W-bi-XA8" kind="modal" identifier="profileViewSegue" animates="NO" id="u2e-Qg-6s4"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -540,4 +546,7 @@
         <image name="settingsTransparent" width="53" height="52"/>
         <image name="taylorlogin" width="600" height="600"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="u2e-Qg-6s4"/>
+    </inferredMetricsTieBreakers>
 </document>
