@@ -122,6 +122,7 @@
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="nnF-Ic-tak" appends="YES" id="nrg-7I-ghI"/>
+                        <outletCollection property="gestureRecognizers" destination="Tnn-AH-SiW" appends="YES" id="0wW-cR-KhW"/>
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="cI1-hj-bZ5" customClass="UIImageView">
@@ -135,6 +136,7 @@
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="4bg-b3-xGY" appends="YES" id="8yK-JX-EHm"/>
+                        <outletCollection property="gestureRecognizers" destination="pDi-n9-vc8" appends="YES" id="M7n-Yg-SZd"/>
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" id="4pG-Zx-m1B" customClass="UIImageView">
@@ -148,6 +150,7 @@
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="54Y-ly-vqn" appends="YES" id="Gve-Lq-ZBk"/>
+                        <outletCollection property="gestureRecognizers" destination="N8Q-jd-NZm" appends="YES" id="7ns-g0-X6n"/>
                     </connections>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIKE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uVf-35-O4U">
@@ -269,6 +272,21 @@
                 <action selector="onMoviePosterThreeTap:" destination="iN0-l3-epB" id="CEX-bV-mxa"/>
             </connections>
         </tapGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="Tnn-AH-SiW">
+            <connections>
+                <action selector="onMovieOnePan:" destination="iN0-l3-epB" id="pzl-77-iZM"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="pDi-n9-vc8">
+            <connections>
+                <action selector="onMovieTwoPan:" destination="iN0-l3-epB" id="Rcf-5v-xlT"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="N8Q-jd-NZm">
+            <connections>
+                <action selector="onMovieThreePan:" destination="iN0-l3-epB" id="R3e-7f-Sds"/>
+            </connections>
+        </panGestureRecognizer>
     </objects>
     <resources>
         <image name="like_button" width="196" height="196"/>
