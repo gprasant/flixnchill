@@ -29,7 +29,7 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
 
 @implementation ChatViewController
 
-- (void)viewDidLoad {
+- (void) viewDidLoad {
     [self setupTableView];
     [self setupViews];
     [self setupPubNub];
@@ -38,12 +38,12 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void) didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onBackTapped:(id)sender {
+- (IBAction) onBackTapped:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -59,7 +59,7 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
     self.chatTextField.delegate = self;
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (BOOL) textFieldShouldReturn:(UITextField *)textField {
     [self.chatTextField resignFirstResponder];
     return NO;
 }
@@ -78,12 +78,11 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
     return self.messages.count;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
--(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
@@ -101,9 +100,13 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
     return cell;
 }
 
-- (void)scrollTableToBottom {
+- (void) scrollTableToBottomAnimated: (BOOL) animated {
     int rowNumber = [self.messagesTableView numberOfRowsInSection:0];
-    if (rowNumber > 0) [self.messagesTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:rowNumber-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    if (rowNumber > 0) [self.messagesTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:rowNumber-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:animated];
+}
+
+- (void) scrollTableToBottom {
+    [self scrollTableToBottomAnimated: NO];
 }
 #pragma mark END TableView methods
 
@@ -114,10 +117,21 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
     self.client = [PubNub clientWithConfiguration:config];
     [self.client addListener:self];
     [self.client subscribeToChannels:@[self.channelName] withPresence:YES];
-    
+    [self loadHistoryForChannel: self.channelName];
+}
+- (void) loadHistoryForChannel: (NSString *)channel {
+    [self.client historyForChannel:channel start:nil end:nil limit:100 withCompletion:^(PNHistoryResult *result, PNErrorStatus *status) {
+        if (!status.isError) {
+            NSLog(@"Loaded messages successfully : %@", result.data.messages);
+            [self.messages addObjectsFromArray:result.data.messages];
+            [self.messagesTableView reloadData];
+            [self scrollTableToBottomAnimated: NO];
+        }
+        NSLog(@"Message loading failed : %@", status.errorData);
+    }];
 }
 
-- (void)client:(PubNub *)client didReceiveMessage:(PNMessageResult *)message {
+- (void) client:(PubNub *)client didReceiveMessage:(PNMessageResult *)message {
     if ([message.data.message[@"author"] isEqualToString:[User currentUser].name]) {
         return; // return if the currently received message is from self, as it would have already been added
     }
@@ -154,7 +168,7 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
     [self.messages addObject:messageDictionary];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.messages.count - 1) inSection:0];
     [self.messagesTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
-
+    [self scrollTableToBottom];
 }
 
 // Gives back a channel name for user1 &user2 to converse (user1Email:user2Email), s.t. user1Email < user2Email
