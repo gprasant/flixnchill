@@ -86,7 +86,7 @@
 	User *user = [[User alloc] init];
 	NSString *userId = [[FBSDKAccessToken currentAccessToken] userID];
 	NSLog(@"User logged in with usedID = %@", [[FBSDKAccessToken currentAccessToken] userID]);
-	NSDictionary *params = @{@"fields": @"name,email,first_name"};
+	NSDictionary *params = @{@"fields": @"name,email,first_name,gender,location"};
 	
 	FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
 								  initWithGraphPath:userId
@@ -100,6 +100,8 @@
 		user.name = [data objectForKey:@"name"];
         user.email = [data objectForKey: @"email"];
         user.firstName = [data objectForKey: @"first_name"];
+		user.gender = [data objectForKey:@"gender"];
+		user.friends = @"44";
 	}];
 	
 	NSString *userPicture = [userId stringByAppendingString:@"/picture"];
