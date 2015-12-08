@@ -17,6 +17,7 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
 
 
 @interface ChatViewController () <UITableViewDelegate, UITableViewDataSource, PNObjectEventListener, UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *chatWithLabel;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UITextField *chatTextField;
@@ -67,21 +68,28 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
 
 - (void) registerForKeyboardNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWasShown)
+                                             selector:@selector(keyboardWasShown:)
                                                  name:UIKeyboardWillShowNotification
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillBeHidden)
+                                             selector:@selector(keyboardWillBeHidden:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
 }
 
-- (void) keyboardWasShown {
-
+- (void) keyboardWasShown: (NSNotification *)aNotification {
+    NSDictionary *info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(-kbSize.height, 0.0, kbSize.height, 0.0);
+    
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
 }
 
-- (void) keyboardWillBeHidden {
-
+- (void) keyboardWillBeHidden: (NSNotification *)aNotification {
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
 }
 
 #pragma mark TableView methods
@@ -183,7 +191,6 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
                   NSLog(@"Successfully sent message");
 
               }
-
               else {
                   
               }

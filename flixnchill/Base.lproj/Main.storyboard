@@ -448,6 +448,7 @@
                         <outlet property="chatTextField" destination="P9Y-UX-ZNs" id="dRe-y2-WCZ"/>
                         <outlet property="chatWithLabel" destination="HjJ-Bq-70k" id="8cA-fY-Pt4"/>
                         <outlet property="messagesTableView" destination="Y7m-Oo-YZ1" id="A6d-I0-NT3"/>
+                        <outlet property="scrollView" destination="rmW-ao-HJK" id="OAw-C9-NrI"/>
                         <outlet property="sendButton" destination="Zjn-Br-L5B" id="nY4-cC-AAM"/>
                     </connections>
                 </viewController>
