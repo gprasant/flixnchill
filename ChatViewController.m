@@ -122,12 +122,10 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
 - (void) loadHistoryForChannel: (NSString *)channel {
     [self.client historyForChannel:channel start:nil end:nil limit:100 withCompletion:^(PNHistoryResult *result, PNErrorStatus *status) {
         if (!status.isError) {
-            NSLog(@"Loaded messages successfully : %@", result.data.messages);
             [self.messages addObjectsFromArray:result.data.messages];
             [self.messagesTableView reloadData];
             [self scrollTableToBottomAnimated: NO];
         }
-        NSLog(@"Message loading failed : %@", status.errorData);
     }];
 }
 
