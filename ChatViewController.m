@@ -16,7 +16,7 @@ const NSString *PUBNUB_PUB_KEY = @"pub-c-fcaa8727-17b2-40b6-a0cd-f153f2ac72df";
 const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
 
 
-@interface ChatViewController () <UITableViewDelegate, UITableViewDataSource, PNObjectEventListener>
+@interface ChatViewController () <UITableViewDelegate, UITableViewDataSource, PNObjectEventListener, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *chatWithLabel;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UITextField *chatTextField;
@@ -56,6 +56,12 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
 
 -(void) setupViews {
     self.chatWithLabel.text = self.chatWith.name;
+    self.chatTextField.delegate = self;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.chatTextField resignFirstResponder];
+    return NO;
 }
 
 #pragma mark TableView methods
