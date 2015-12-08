@@ -55,6 +55,7 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
 }
 
 -(void) setupViews {
+    [self registerForKeyboardNotifications];
     self.chatWithLabel.text = self.chatWith.name;
     self.chatTextField.delegate = self;
 }
@@ -64,8 +65,29 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
     return NO;
 }
 
+- (void) registerForKeyboardNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+}
+
+- (void) keyboardWasShown {
+
+}
+
+- (void) keyboardWillBeHidden {
+
+}
+
 #pragma mark TableView methods
 -(void) setupTableView {
+    UITapGestureRecognizer *tapTableGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnTableView)];
+    [self.messagesTableView addGestureRecognizer:tapTableGR];
     self.messagesTableView.dataSource = self;
     self.messagesTableView.delegate = self;
     UINib *messageCell = [UINib nibWithNibName:@"MessageCell" bundle:nil];
@@ -107,6 +129,10 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
 
 - (void) scrollTableToBottom {
     [self scrollTableToBottomAnimated: NO];
+}
+
+- (void) didTapOnTableView {
+    [self.chatTextField resignFirstResponder];
 }
 #pragma mark END TableView methods
 
