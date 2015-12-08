@@ -97,7 +97,7 @@
     NSURL *urlThree = [NSURL URLWithString:thumbnailThreeString];
     [self.moviePosterThree setImageWithURL:urlThree];
 
-    self.matchName.text = draggableImageView.nameLabel.text;
+    self.matchName.text = draggableImageView.currentMatch.name;
     self.matchProfilePic.image = draggableImageView.profileImageView.image;
     
     MovieDetailsView *movieDetailsOne = [[[NSBundle mainBundle] loadNibNamed:@"MovieDetailsView" owner:self options:nil] objectAtIndex:0];
