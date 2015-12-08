@@ -12,6 +12,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "User.h"
 #import "SettingsTableViewCell.h"
+#import "LoginViewController.h"
 
 
 @interface SettingsViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -87,6 +88,9 @@
 		[[FBSDKLoginManager new] logOut];
 		NSLog(@"Did log out");
 		[self.myLoginButton setTitle: @"Log In" forState: UIControlStateNormal];
+		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+		LoginViewController *loginVC = (LoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+		[self presentViewController:loginVC animated:YES completion:nil];
 	} else {
 	
 		FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
