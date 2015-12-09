@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="tqA-wE-BMd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -122,7 +122,7 @@
                 <tapGestureRecognizer id="DZ9-27-TGH">
                     <connections>
                         <action selector="onMessagesTapped:" destination="BYZ-38-t0r" id="0f4-N4-vQg"/>
-                        <segue destination="pPO-en-aF9" kind="modal" identifier="chatsViewSegue" id="TZr-UW-wAc"/>
+                        <segue destination="pPO-en-aF9" kind="push" identifier="chatsViewSegue" id="TZr-UW-wAc"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="ogN-In-GTK">
@@ -156,7 +156,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="564" y="99"/>
+            <point key="canvasLocation" x="775" y="61"/>
         </scene>
         <!--LoginViewController-->
         <scene sceneID="Efd-kU-AJu">
@@ -225,7 +225,7 @@
                                     <action selector="onDoneTapped:" destination="q2W-bi-XA8" eventType="touchUpInside" id="UhR-dh-qaQ"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_nope_button" id="z3m-4T-yt7">
+                            <imageView hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_nope_button" id="z3m-4T-yt7">
                                 <rect key="frame" x="225" y="20" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
@@ -234,7 +234,7 @@
                                     <outletCollection property="gestureRecognizers" destination="gMO-Q7-uE6" appends="YES" id="BwM-Qt-JKs"/>
                                 </connections>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_like_button" id="98j-sm-0o3">
+                            <imageView hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_like_button" id="98j-sm-0o3">
                                 <rect key="frame" x="275" y="20" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
@@ -375,7 +375,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1140" y="52"/>
+            <point key="canvasLocation" x="1672" y="52"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="NEQ-ew-JbF">
@@ -465,7 +465,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1624" y="52"/>
+            <point key="canvasLocation" x="2156" y="52"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="yJA-uh-lYV">
@@ -566,7 +566,26 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="564" y="868"/>
+            <point key="canvasLocation" x="1135" y="679"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ek3-32-vmE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tqA-wE-BMd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KGC-sJ-gB6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oW2-PO-h5H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P7G-gO-uK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="243" y="61"/>
         </scene>
     </scenes>
     <resources>
