@@ -48,6 +48,7 @@ PODS:
   - FBSDKShareKit (4.8.0):
     - FBSDKCoreKit
   - FLAnimatedImage (1.0.8)
+  - MARKRangeSlider (0.2.0)
   - Parse (1.10.0):
     - Bolts/Tasks (~> 1.5)
   - PubNub (4.2.0):
@@ -62,6 +63,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - FBSDKShareKit
   - FLAnimatedImage (~> 1.0)
+  - MARKRangeSlider
   - Parse
   - PubNub (~> 4.0)
 
@@ -73,6 +75,7 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
   FBSDKShareKit: e7577ee3adf80fc04fb656dd133fbb522250672b
   FLAnimatedImage: f9422f796135aff80d8c00b2afc48015bb746e24
+  MARKRangeSlider: 5d97bb1127453ae7d8eceaa5122060abb666b82f
   Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
   PubNub: ec07d2fd89de3f958d776b6e9dc387009ca03129
 

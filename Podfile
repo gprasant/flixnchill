@@ -11,5 +11,6 @@ target 'flixnchill' do
     pod 'FBSDKCoreKit'
     pod 'FBSDKLoginKit'
     pod 'FBSDKShareKit'
+    pod 'MARKRangeSlider'
 end
 

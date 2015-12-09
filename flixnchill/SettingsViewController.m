@@ -13,6 +13,7 @@
 #import "User.h"
 #import "SettingsTableViewCell.h"
 #import "LoginViewController.h"
+#import "MARKRangeSlider.h"
 
 
 @interface SettingsViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -22,6 +23,8 @@
 @property (strong, nonatomic) UIButton *myLoginButton;
 @property (weak, nonatomic) IBOutlet UITableView *detailsTableView;
 @property (strong, nonatomic) NSMutableDictionary *userDetails;
+@property (strong, nonatomic) MARKRangeSlider *rangeSlider;
+@property (weak, nonatomic) IBOutlet UILabel *rangeSliderPlaceHolder;
 
 @end
 
@@ -65,6 +68,18 @@
 	self.userNameLabel.text = user.name;
 	[self setNeedsStatusBarAppearanceUpdate];
 
+	//init rect
+	self.rangeSlider = [[MARKRangeSlider alloc] initWithFrame:CGRectZero];
+	[self.rangeSlider addTarget:self
+						 action:@selector(rangeSliderValueDidChange:)
+			   forControlEvents:UIControlEventValueChanged];
+	self.rangeSlider.minimumValue = 18.0;
+	self.rangeSlider.maximumValue = 60.0;
+	self.rangeSlider.leftValue = 21.0;
+	self.rangeSlider.rightValue = 30.0;
+	self.rangeSlider.minimumDistance = 1.0;
+	[self.view addSubview:self.rangeSlider];
+	self.rangeSlider.center = self.rangeSlider.center;
 }
 
 
@@ -153,6 +168,10 @@
 	cell.KeyLabel.text = key;
 	cell.backgroundColor = [UIColor clearColor];
 	return cell;
+}
+
+- (void)rangeSliderValueDidChange:(MARKRangeSlider *)slider {
+	NSLog(@"%0.2f - %0.2f", slider.leftValue, slider.rightValue);
 }
 
 /*
