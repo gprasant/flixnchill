@@ -35,8 +35,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [self setupNavBar];
+}
+
+- (void) setupNavBar {
+    self.navigationController.navigationBar.hidden = YES;
+}
+
 - (IBAction)onBackTapped:(UITapGestureRecognizer *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

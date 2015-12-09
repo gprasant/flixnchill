@@ -66,6 +66,14 @@
 	[self setNeedsStatusBarAppearanceUpdate];
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [self setupNavBar];
+}
+
+- (void) setupNavBar {
+    self.navigationController.navigationBar.hidden = YES;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -78,7 +86,7 @@
 		pvc.image = self.draggableCard.profileImageView.image;
 		pvc.user = self.draggableCard.currentMatch;
     } else if ([segue.identifier isEqual: @"chatsViewSegue"]) {
-    
+        
     }
 }
 
