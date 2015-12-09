@@ -219,7 +219,7 @@
                                     <action selector="onDoneTapped:" destination="q2W-bi-XA8" eventType="touchUpInside" id="UhR-dh-qaQ"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_nope_button" id="z3m-4T-yt7">
+                            <imageView hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_nope_button" id="z3m-4T-yt7">
                                 <rect key="frame" x="225" y="20" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
@@ -228,7 +228,7 @@
                                     <outletCollection property="gestureRecognizers" destination="gMO-Q7-uE6" appends="YES" id="BwM-Qt-JKs"/>
                                 </connections>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_like_button" id="98j-sm-0o3">
+                            <imageView hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_like_button" id="98j-sm-0o3">
                                 <rect key="frame" x="275" y="20" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
