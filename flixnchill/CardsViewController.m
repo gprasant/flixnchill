@@ -16,6 +16,7 @@
 #import "AFNetworking.h"
 #import "ThreeMoviesView.h"
 #import "MovieDetailsView.h"
+#import "User.h"
 
 @interface CardsViewController () <ThreeMoviesViewDelegate, MovieDetailsViewDelegate, DraggableImageViewDelegate>
 
@@ -149,6 +150,22 @@
     NSLog(@"3movies done tapped");
     [self hideSubView:self.blurView];
     [self hideSubView:self.movieCardsView];
+    
+    PFObject *matchMovieInfo = [PFObject objectWithClassName:@"MatchMovieInfo"];
+    User *currentUser = [User currentUser];
+    matchMovieInfo[@"currentUser"] = currentUser.email;
+    matchMovieInfo[@"matchedUser"] = self.movieCardsView.matchId;
+    matchMovieInfo[[@"movie" stringByAppendingString:self.movieCardsView.movieDetailsOne.movieId]] = self.movieCardsView.movieChoiceOne;
+    matchMovieInfo[[@"movie" stringByAppendingString:self.movieCardsView.movieDetailsTwo.movieId]] = self.movieCardsView.movieChoiceTwo;
+    matchMovieInfo[[@"movie" stringByAppendingString:self.movieCardsView.movieDetailsThree.movieId]] = self.movieCardsView.movieChoiceThree;
+    
+    [matchMovieInfo saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"Saved movie match info!");
+        } else {
+            NSLog(error.description);
+        }
+    }];
 }
 
 -(void)onDetailsDoneTap {

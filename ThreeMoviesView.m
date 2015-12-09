@@ -60,10 +60,12 @@
 }
 
 - (void)setUpView:(NSArray*)movies withDraggableImageView:(DraggableImageView *)draggableImageView {
-    self.moviePosterOne.center = self.moviePosterOneOriginalCenter;
+    self.movieChoiceOne = @"unknown";
+    self.movieChoiceTwo = @"unknown";
+    self.movieChoiceThree = @"unknown";
     
+    self.moviePosterOne.center = self.moviePosterOneOriginalCenter;
     self.moviePosterTwo.center = self.moviePosterTwoOriginalCenter;
-
     self.moviePosterThree.center = self.moviePosterThreeOriginalCenter;
     
     self.likeOne.alpha = 0;
@@ -102,6 +104,7 @@
 
     self.matchName.text = draggableImageView.currentMatch.name;
     self.matchProfilePic.image = draggableImageView.profileImageView.image;
+    self.matchId = draggableImageView.currentMatch.email;
     
     MovieDetailsView *movieDetailsOne = [[[NSBundle mainBundle] loadNibNamed:@"MovieDetailsView" owner:self options:nil] objectAtIndex:0];
     [movieDetailsOne setUpView:movieOne];
@@ -135,7 +138,7 @@
             self.nopeOne.alpha = 1;
         }];
     }];
-
+    self.movieChoiceOne = @"nope";
 }
 
 - (IBAction)onNopeTapTwo:(id)sender {
@@ -149,7 +152,7 @@
         }];
 
     }];
-
+    self.movieChoiceTwo = @"nope";
 }
 
 - (IBAction)onNopeTapThree:(id)sender {
@@ -163,7 +166,7 @@
         }];
 
     }];
-
+    self.movieChoiceThree = @"nope";
 }
 
 - (IBAction)onLikeTapOne:(id)sender {
@@ -175,8 +178,8 @@
         [UIView animateWithDuration:.3 animations:^{
             self.likeOne.alpha = 1;
         }];
-
     }];
+    self.movieChoiceOne = @"like";
 }
 
 - (IBAction)onLikeTapTwo:(id)sender {
@@ -190,7 +193,7 @@
         }];
 
     }];
-
+    self.movieChoiceTwo = @"like";
 }
 
 - (IBAction)onLikeTapThree:(id)sender {
@@ -204,8 +207,9 @@
         }];
 
     }];
-
+    self.movieChoiceThree = @"like";
 }
+
 - (IBAction)onMoviePosterOneTap:(id)sender {
     NSLog(@"poster one tap!");
     [self.movieDetailsOne setHidden:NO];

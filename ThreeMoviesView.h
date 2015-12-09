@@ -20,12 +20,17 @@
 @interface ThreeMoviesView : UIView
 @property (assign) id<ThreeMoviesViewDelegate> delegate;
 
+@property (strong, nonatomic) NSString *movieChoiceOne;
+@property (strong, nonatomic) NSString *movieChoiceTwo;
+@property (strong, nonatomic) NSString *movieChoiceThree;
+
 @property (strong, nonatomic) IBOutlet MovieDetailsView *movieDetailsOne;
 @property (strong, nonatomic) IBOutlet MovieDetailsView *movieDetailsTwo;
 @property (strong, nonatomic) IBOutlet MovieDetailsView *movieDetailsThree;
 
 @property (weak, nonatomic) IBOutlet UILabel *matchName;
 @property (weak, nonatomic) IBOutlet UIImageView *matchProfilePic;
+@property (strong, nonatomic) NSString *matchId;
 
 @property (weak, nonatomic) IBOutlet UILabel *titleMessage;
 
