@@ -116,7 +116,7 @@
                 <tapGestureRecognizer id="AQV-Bl-QMV">
                     <connections>
                         <action selector="onSettingsButtonTapped:" destination="BYZ-38-t0r" id="J6t-Wh-YJg"/>
-                        <segue destination="j9i-iR-JBu" kind="modal" id="dqY-5M-fMB"/>
+                        <segue destination="j9i-iR-JBu" kind="modal" modalTransitionStyle="partialCurl" id="dqY-5M-fMB"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="DZ9-27-TGH">
@@ -308,7 +308,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PDf-kE-aFS" id="wO4-mt-bFe">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="65.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jessica" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M8I-n9-N1K">
@@ -521,7 +521,7 @@
                                         <rect key="frame" x="0.0" y="28" width="277" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rGo-8s-LDP" id="jH6-g8-qgn">
-                                            <rect key="frame" x="0.0" y="0.0" width="277" height="47"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="277" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HI!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNf-k8-b0P">
