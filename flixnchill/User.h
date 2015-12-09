@@ -16,6 +16,9 @@
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *profileImageUrl;
+@property (nonatomic, strong) NSString *gender;
+@property (nonatomic, strong) NSString *location;
+@property (nonatomic, strong) NSString *friends;
 
 - (void)addMatch:(PotentialMatch *)match;
 

@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0509F9471C1629460000E2C2 /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0509F9451C1629460000E2C2 /* SettingsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		05EDC5C01C0FAAB600592F92 /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EDC5B71C0FAAB600592F92 /* ChatTableViewCell.m */; };
 		05EDC5C31C0FAAB600592F92 /* PotentialMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EDC5BE1C0FAAB600592F92 /* PotentialMatch.m */; };
 		05EDC5C51C0FAB2600592F92 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EDC5C41C0FAB2600592F92 /* User.m */; };
-		125B0BEC1C05482100987D30 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 125B0BEB1C05482100987D30 /* Default-568h@2x.png */; };
+		125B0BEC1C05482100987D30 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		125B0BF81C0548C800987D30 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B0BEE1C0548C800987D30 /* SettingsViewController.m */; };
 		125B0BF91C0548C800987D30 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B0BF01C0548C800987D30 /* ProfileViewController.m */; };
 		125B0BFA1C0548C800987D30 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125B0BF21C0548C800987D30 /* LoginViewController.m */; };
@@ -37,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0509F9441C1629460000E2C2 /* SettingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsTableViewCell.h; path = flixnchill/SettingsTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		0509F9451C1629460000E2C2 /* SettingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsTableViewCell.m; path = flixnchill/SettingsTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		05EDC5B61C0FAAB600592F92 /* ChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatTableViewCell.h; path = flixnchill/ChatTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		05EDC5B71C0FAAB600592F92 /* ChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatTableViewCell.m; path = flixnchill/ChatTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		05EDC5B81C0FAAB600592F92 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = flixnchill/User.h; sourceTree = SOURCE_ROOT; };
@@ -141,6 +144,8 @@
 				385658251C13BAC700E21C68 /* MovieDetailsView.h */,
 				385658261C13BAC700E21C68 /* MovieDetailsView.m */,
 				385658281C13BAD600E21C68 /* MovieDetailsView.xib */,
+				0509F9441C1629460000E2C2 /* SettingsTableViewCell.h */,
+				0509F9451C1629460000E2C2 /* SettingsTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -298,13 +303,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				125B0C011C05490600987D30 /* DraggableImageView.xib in Resources */,
-				125B0BEC1C05482100987D30 /* Default-568h@2x.png in Resources */,
+				125B0BEC1C05482100987D30 /* (null) in Resources */,
 				385658241C129B3E00E21C68 /* ThreeMoviesView.xib in Resources */,
 				125B0C101C054C8B00987D30 /* Main.storyboard in Resources */,
 				125B0C111C054C8B00987D30 /* LaunchScreen.storyboard in Resources */,
 				125B0C061C05492D00987D30 /* Assets.xcassets in Resources */,
 				129A822B1C115DD600C92933 /* MessageCell.xib in Resources */,
-				125B0C131C0550ED00987D30 /* taylorHeart.gif in Resources */,
 				385658291C13BAD600E21C68 /* MovieDetailsView.xib in Resources */,
 				125B0C041C05492000987D30 /* Info.plist in Resources */,
 			);
@@ -379,6 +383,7 @@
 				125B0C021C05490600987D30 /* DraggableImageView.m in Sources */,
 				125B0C081C05498000987D30 /* main.m in Sources */,
 				12CDD26D1C0BB30E00C54CF0 /* NSMutableArray+Stack.m in Sources */,
+				0509F9471C1629460000E2C2 /* SettingsTableViewCell.m in Sources */,
 				129A822A1C115DD600C92933 /* MessageCell.m in Sources */,
 				127DBE061C10071E0059AB73 /* ChatViewController.m in Sources */,
 				125B0BFA1C0548C800987D30 /* LoginViewController.m in Sources */,
