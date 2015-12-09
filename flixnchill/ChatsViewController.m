@@ -43,7 +43,13 @@
     if([segue.identifier isEqual:@"chatSegue"] ) {
         ChatViewController *vc = (ChatViewController *)[segue destinationViewController];
         // Use sender._nameLabel._content here for the chatWithUserName.
+
+        vc.randOne = [sender match].randOne;
+        vc.randTwo = [sender match].randTwo;
+        vc.randThree = [sender match].randThree;
+
         vc.chatWith = [sender match];
+        vc.movies = self.movies;        
     }
 }
 

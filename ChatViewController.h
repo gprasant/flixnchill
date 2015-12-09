@@ -12,5 +12,9 @@
 @interface ChatViewController : UIViewController
 
 @property (strong, nonatomic) PotentialMatch *chatWith;
+@property (strong, nonatomic) NSArray *movies;
 
+@property (assign, nonatomic) int randOne;
+@property (assign, nonatomic) int randTwo;
+@property (assign, nonatomic) int randThree;
 @end

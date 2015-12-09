@@ -133,6 +133,16 @@ CGFloat _20_DEGREES = 0.111 * M_PI;
 
 -(void) match:(PotentialMatch *) new {
 	User *user = [User currentUser];
+    new.randOne = arc4random_uniform(19);
+    new.randTwo = arc4random_uniform(19);
+    while (new.randOne == new.randTwo) {
+        new.randTwo = arc4random_uniform(19);
+    }
+    new.randThree = arc4random_uniform(19);
+    while (new.randThree == new.randTwo || new.randThree == new.randOne) {
+        new.randThree = arc4random_uniform(19);
+    }
+
 	[user addMatch:new];
 }
 

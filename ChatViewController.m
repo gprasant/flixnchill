@@ -7,8 +7,11 @@
 //
 
 #import "ChatViewController.h"
+#import "UIImageView+AFNetworking.h"
 #import "MessageCell.h"
 #import "User.h"
+#import "MovieComparisonView.h"
+#import <Parse/Parse.h>
 
 #import <PubNub/PubNub.h>
 
@@ -26,6 +29,7 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
 
 @property (strong, nonatomic) NSMutableArray *messages;
 @property (nonatomic) PubNub *client;
+
 @end
 
 @implementation ChatViewController
@@ -36,7 +40,7 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
     [self setupPubNub];
     [super viewDidLoad];
     self.messages = [NSMutableArray array];
-    // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.
 }
 
 - (void) didReceiveMemoryWarning {
@@ -102,14 +106,22 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
     [self.messagesTableView registerNib:messageCell forCellReuseIdentifier:@"MessageCell"];
     self.messagesTableView.estimatedRowHeight = 100.0f;
     self.messagesTableView.separatorColor = [UIColor clearColor];
+    
+    UINib *movieComparisonCell = [UINib nibWithNibName:@"MovieComparisonView" bundle:nil];
+    [self.messagesTableView registerNib:movieComparisonCell forCellReuseIdentifier:@"MovieComparisonView"];
+
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.messages.count;
+    if (section == 0) {
+        return 1;
+    } else {
+        return self.messages.count;
+    }
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -117,22 +129,141 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
-    NSDictionary *message = self.messages[indexPath.row];
-    if ([message[@"author"] isEqualToString:[User currentUser].name]) {
-        cell.otherPersonMessageLabel.text = @"";
-        cell.myMessageLabel.text = [NSString stringWithFormat:@"  %@  ", message[@"text"]];
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        MovieComparisonView *comparisonView = [tableView dequeueReusableCellWithIdentifier:@"MovieComparisonView"];
+        comparisonView.matchLikedLabel.text = [NSString stringWithFormat:@"  %@ prefers:  ", self.chatWith.name];
+        //set up movie comparison
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"MatchMovieInfo"];
+        [query whereKey:@"currentUser" equalTo:[User currentUser].email];
+        [query whereKey:@"matchedUser" equalTo:self.chatWith.email];
+        [query orderByDescending:@"createdAt"];
+        [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+            if (!error) {
+                NSLog(@"%@", object.objectId);
+                NSString *movieOneWithChoice = object[@"movieOne"];
+                NSString *movieOneChoice = [movieOneWithChoice substringToIndex:4];
+                NSString *movieOneId = [movieOneWithChoice substringFromIndex:4];
+                
+                NSString *movieTwoWithChoice = object[@"movieTwo"];
+                NSString *movieTwoChoice = [movieTwoWithChoice substringToIndex:4];
+                NSString *movieTwoId = [movieTwoWithChoice substringFromIndex:4];
+                
+                NSString *movieThreeWithChoice = object[@"movieThree"];
+                NSString *movieThreeChoice = [movieThreeWithChoice substringToIndex:4];
+                NSString *movieThreeId = [movieThreeWithChoice substringFromIndex:4];
+                
+                if ([movieOneChoice isEqualToString:@"like"]) {
+                    comparisonView.youMovieChoiceOne.image = [UIImage imageNamed: @"nav_like_button"];
+                } else if ([movieOneChoice isEqualToString:@"nope"]) {
+                    comparisonView.youMovieChoiceOne.image = [UIImage imageNamed: @"nav_nope_button"];
+                }
+                comparisonView.youMovieChoiceOne.alpha = 0.7f;
+
+                if ([movieTwoChoice isEqualToString:@"like"]) {
+                    comparisonView.youMovieChoiceTwo.image = [UIImage imageNamed: @"nav_like_button"];
+                } else if ([movieTwoChoice isEqualToString:@"nope"]) {
+                    comparisonView.youMovieChoiceTwo.image = [UIImage imageNamed: @"nav_nope_button"];
+                }
+                comparisonView.youMovieChoiceTwo.alpha = 0.7f;
+
+                if ([movieThreeChoice isEqualToString:@"like"]) {
+                    comparisonView.youMovieChoiceThree.image = [UIImage imageNamed: @"nav_like_button"];
+                } else if ([movieThreeChoice isEqualToString:@"nope"]) {
+                    comparisonView.youMovieChoiceThree.image = [UIImage imageNamed: @"nav_nope_button"];
+                }
+                comparisonView.youMovieChoiceThree.alpha = 0.7f;
+                
+                int i = 0;
+                for (NSDictionary *movie in self.movies) {
+                    if (movie[@"id"] == movieOneId) {
+                        NSString *thumbnailString = movie[@"posters"][@"thumbnail"];
+                        NSURL *url = [NSURL URLWithString:thumbnailString];
+                        [comparisonView.youMovieOne setImageWithURL:url];
+                    }
+                    
+                    if (movie[@"id"] == movieTwoId) {
+                        NSString *thumbnailString = movie[@"posters"][@"thumbnail"];
+                        NSURL *url = [NSURL URLWithString:thumbnailString];
+                        [comparisonView.youMovieTwo setImageWithURL:url];
+                    }
+                    
+                    if (movie[@"id"] == movieThreeId) {
+                        NSString *thumbnailString = movie[@"posters"][@"thumbnail"];
+                        NSURL *url = [NSURL URLWithString:thumbnailString];
+                        [comparisonView.youMovieThree setImageWithURL:url];
+                    }
+                    
+                    if (self.randOne == i) {
+                        NSString *thumbnailString = movie[@"posters"][@"thumbnail"];
+                        NSURL *url = [NSURL URLWithString:thumbnailString];
+                        [comparisonView.matchMovieOne setImageWithURL:url];
+                        if (self.randTwo < 10) {
+                            comparisonView.matchMovieChoiceOne.image = [UIImage imageNamed: @"nav_like_button"];
+                        } else {
+                            comparisonView.matchMovieChoiceOne.image = [UIImage imageNamed: @"nav_nope_button"];
+                        }
+                        comparisonView.matchMovieChoiceOne.alpha = 0.7f;
+                    }
+
+                    if (self.randTwo == i) {
+                        NSString *thumbnailString = movie[@"posters"][@"thumbnail"];
+                        NSURL *url = [NSURL URLWithString:thumbnailString];
+                        [comparisonView.matchMovieTwo setImageWithURL:url];
+                        if (self.randThree < 10) {
+                            comparisonView.matchMovieChoiceTwo.image = [UIImage imageNamed: @"nav_like_button"];
+                        } else {
+                            comparisonView.matchMovieChoiceTwo.image = [UIImage imageNamed: @"nav_nope_button"];
+                        }
+                        comparisonView.matchMovieChoiceTwo.alpha = 0.7f;
+                    }
+
+                    if (self.randThree == i) {
+                        NSString *thumbnailString = movie[@"posters"][@"thumbnail"];
+                        NSURL *url = [NSURL URLWithString:thumbnailString];
+                        [comparisonView.matchMovieThree setImageWithURL:url];
+                        if (self.randOne < 10) {
+                            comparisonView.matchMovieChoiceThree.image = [UIImage imageNamed: @"nav_like_button"];
+                        } else {
+                            comparisonView.matchMovieChoiceThree.image = [UIImage imageNamed: @"nav_nope_button"];
+                        }
+                        comparisonView.matchMovieChoiceThree.alpha = 0.7f;
+                    }
+
+                    i = i+1;
+                }
+
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
+        
+        
+        
+        return comparisonView;
     } else {
-        cell.myMessageLabel.text = @"";
-        cell.otherPersonMessageLabel.text = [NSString stringWithFormat:@"  %@  ", message[@"text"]];
+        MessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
+        NSDictionary *message = self.messages[indexPath.row];
+        if ([message[@"author"] isEqualToString:[User currentUser].name]) {
+            cell.otherPersonMessageLabel.text = @"";
+            cell.myMessageLabel.text = [NSString stringWithFormat:@"  %@  ", message[@"text"]];
+        } else {
+            cell.myMessageLabel.text = @"";
+            cell.otherPersonMessageLabel.text = [NSString stringWithFormat:@"  %@  ", message[@"text"]];
+        }
+        
+        return cell;
     }
-    
-    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0;
 }
 
 - (void) scrollTableToBottomAnimated: (BOOL) animated {
-    int rowNumber = [self.messagesTableView numberOfRowsInSection:0];
-    if (rowNumber > 0) [self.messagesTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:rowNumber-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:animated];
+    int rowNumber = [self.messagesTableView numberOfRowsInSection:1];
+    if (rowNumber > 0) [self.messagesTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:rowNumber-1 inSection:1] atScrollPosition:UITableViewScrollPositionBottom animated:animated];
 }
 
 - (void) scrollTableToBottom {
@@ -168,7 +299,7 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
         return; // return if the currently received message is from self, as it would have already been added
     }
     [self.messages addObject:message.data.message];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.messages.count - 1) inSection:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.messages.count - 1) inSection:1];
     [self.messagesTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     [self scrollTableToBottom];
     NSLog(@"Received message: %@ on channel %@ at %@", message.data.message,
@@ -197,7 +328,7 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
           }
      ];
     [self.messages addObject:messageDictionary];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.messages.count - 1) inSection:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.messages.count - 1) inSection:1];
     [self.messagesTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
     [self scrollTableToBottom];
 }
