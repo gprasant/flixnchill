@@ -16,6 +16,8 @@
 #import "AFNetworking.h"
 #import "ThreeMoviesView.h"
 #import "MovieDetailsView.h"
+#import "User.h"
+#import "ChatsViewController.h"
 
 @interface CardsViewController () <ThreeMoviesViewDelegate, MovieDetailsViewDelegate, DraggableImageViewDelegate>
 
@@ -86,7 +88,8 @@
 		pvc.image = self.draggableCard.profileImageView.image;
 		pvc.user = self.draggableCard.currentMatch;
     } else if ([segue.identifier isEqual: @"chatsViewSegue"]) {
-        
+        ChatsViewController *chatsVC = segue.destinationViewController;
+        chatsVC.movies = self.movies;
     }
 }
 
@@ -157,6 +160,22 @@
     NSLog(@"3movies done tapped");
     [self hideSubView:self.blurView];
     [self hideSubView:self.movieCardsView];
+    
+    PFObject *matchMovieInfo = [PFObject objectWithClassName:@"MatchMovieInfo"];
+    User *currentUser = [User currentUser];
+    matchMovieInfo[@"currentUser"] = currentUser.email;
+    matchMovieInfo[@"matchedUser"] = self.movieCardsView.matchId;
+    matchMovieInfo[@"movieOne"] = [self.movieCardsView.movieChoiceOne stringByAppendingString:self.movieCardsView.movieDetailsOne.movieId];
+    matchMovieInfo[@"movieTwo"] = [self.movieCardsView.movieChoiceTwo stringByAppendingString:self.movieCardsView.movieDetailsTwo.movieId];
+    matchMovieInfo[@"movieThree"] = [self.movieCardsView.movieChoiceThree stringByAppendingString:self.movieCardsView.movieDetailsThree.movieId];
+    
+    [matchMovieInfo saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"Saved movie match info!");
+        } else {
+            NSLog(error.description);
+        }
+    }];
 }
 
 -(void)onDetailsDoneTap {
@@ -183,7 +202,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+        //NSLog(@"JSON: %@", responseObject);
         NSError *jsonError = nil;
 
         NSDictionary *responseDictionary =

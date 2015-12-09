@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ChatsViewController : UIViewController
-
+@property (strong, nonatomic) NSArray *movies;
 @end

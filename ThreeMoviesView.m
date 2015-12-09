@@ -12,6 +12,9 @@
 #include <stdlib.h>
 
 @interface ThreeMoviesView()
+@property (nonatomic, assign) CGPoint currentlyPanningOriginalCenter;
+@property (nonatomic, assign) CGPoint currentlyPanningOriginalCenterTwo;
+@property (nonatomic, assign) CGPoint currentlyPanningOriginalCenterThree;
 
 @property (nonatomic, assign) CGPoint nopeButtonOneCenter;
 @property (nonatomic, assign) CGPoint likeButtonOneCenter;
@@ -57,10 +60,12 @@
 }
 
 - (void)setUpView:(NSArray*)movies withDraggableImageView:(DraggableImageView *)draggableImageView {
-    self.moviePosterOne.center = self.moviePosterOneOriginalCenter;
+    self.movieChoiceOne = @"none";
+    self.movieChoiceTwo = @"none";
+    self.movieChoiceThree = @"none";
     
+    self.moviePosterOne.center = self.moviePosterOneOriginalCenter;
     self.moviePosterTwo.center = self.moviePosterTwoOriginalCenter;
-
     self.moviePosterThree.center = self.moviePosterThreeOriginalCenter;
     
     self.likeOne.alpha = 0;
@@ -77,7 +82,7 @@
         randTwo = arc4random_uniform(19);
     }
     int randThree = arc4random_uniform(19);
-    while (randThree == randTwo || randThree == randTwo) {
+    while (randThree == randTwo || randThree == randOne) {
         randThree = arc4random_uniform(19);
     }
 
@@ -97,8 +102,9 @@
     NSURL *urlThree = [NSURL URLWithString:thumbnailThreeString];
     [self.moviePosterThree setImageWithURL:urlThree];
 
-    self.matchName.text = draggableImageView.nameLabel.text;
+    self.matchName.text = draggableImageView.currentMatch.name;
     self.matchProfilePic.image = draggableImageView.profileImageView.image;
+    self.matchId = draggableImageView.currentMatch.email;
     
     MovieDetailsView *movieDetailsOne = [[[NSBundle mainBundle] loadNibNamed:@"MovieDetailsView" owner:self options:nil] objectAtIndex:0];
     [movieDetailsOne setUpView:movieOne];
@@ -132,7 +138,7 @@
             self.nopeOne.alpha = 1;
         }];
     }];
-
+    self.movieChoiceOne = @"nope";
 }
 
 - (IBAction)onNopeTapTwo:(id)sender {
@@ -146,7 +152,7 @@
         }];
 
     }];
-
+    self.movieChoiceTwo = @"nope";
 }
 
 - (IBAction)onNopeTapThree:(id)sender {
@@ -160,7 +166,7 @@
         }];
 
     }];
-
+    self.movieChoiceThree = @"nope";
 }
 
 - (IBAction)onLikeTapOne:(id)sender {
@@ -172,8 +178,8 @@
         [UIView animateWithDuration:.3 animations:^{
             self.likeOne.alpha = 1;
         }];
-
     }];
+    self.movieChoiceOne = @"like";
 }
 
 - (IBAction)onLikeTapTwo:(id)sender {
@@ -187,7 +193,7 @@
         }];
 
     }];
-
+    self.movieChoiceTwo = @"like";
 }
 
 - (IBAction)onLikeTapThree:(id)sender {
@@ -201,8 +207,9 @@
         }];
 
     }];
-
+    self.movieChoiceThree = @"like";
 }
+
 - (IBAction)onMoviePosterOneTap:(id)sender {
     NSLog(@"poster one tap!");
     [self.movieDetailsOne setHidden:NO];
@@ -219,6 +226,87 @@
     NSLog(@"poster three tap!");
     [self.movieDetailsThree setHidden:NO];
     [self bringSubviewToFront:self.movieDetailsThree];
+}
+
+- (IBAction)onMovieOnePan:(UIPanGestureRecognizer *)sender {
+    CGPoint translation = [sender translationInView:self];
+    
+    CGFloat translationX = translation.x;
+    
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        self.currentlyPanningOriginalCenter = self.moviePosterOne.center;
+    } else if (sender.state == UIGestureRecognizerStateChanged) {
+
+        if ( (self.currentlyPanningOriginalCenter.x + translationX) < self.nopeButtonOneCenter.x) {
+            self.moviePosterOne.center = CGPointMake(self.nopeButtonOneCenter.x, self.currentlyPanningOriginalCenter.y);
+        } else if ((self.currentlyPanningOriginalCenter.x + translationX) > self.likeButtonOneCenter.x) {
+            self.moviePosterOne.center = CGPointMake(self.likeButtonOneCenter.x, self.currentlyPanningOriginalCenter.y);
+        } else {
+            self.moviePosterOne.center = CGPointMake(self.currentlyPanningOriginalCenter.x + translationX, self.currentlyPanningOriginalCenter.y);
+        }
+    } else if (sender.state == UIGestureRecognizerStateEnded) {
+        if (translationX < 0) {
+            [self onNopeTapOne:nil];
+        }
+        if (translationX > 0) {
+            [self onLikeTapOne:nil];
+        }
+    }
+}
+
+- (IBAction)onMovieTwoPan:(UIPanGestureRecognizer *)sender {
+    CGPoint translation = [sender translationInView:self];
+    
+    CGFloat translationX = translation.x;
+    
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        self.currentlyPanningOriginalCenter = self.moviePosterTwo.center;
+    } else if (sender.state == UIGestureRecognizerStateChanged) {
+        
+        if ( (self.currentlyPanningOriginalCenter.x + translationX) < self.nopeButtonTwoCenter.x) {
+            self.moviePosterTwo.center = CGPointMake(self.nopeButtonTwoCenter.x, self.currentlyPanningOriginalCenter.y);
+        } else if ((self.currentlyPanningOriginalCenter.x + translationX) > self.likeButtonTwoCenter.x) {
+            self.moviePosterTwo.center = CGPointMake(self.likeButtonTwoCenter.x, self.currentlyPanningOriginalCenter.y);
+        } else {
+            self.moviePosterTwo.center = CGPointMake(self.currentlyPanningOriginalCenter.x + translationX, self.currentlyPanningOriginalCenter.y);
+        }
+        
+    } else if (sender.state == UIGestureRecognizerStateEnded) {
+        if (translationX < 0) {
+            [self onNopeTapTwo:nil];
+        }
+        if (translationX > 0) {
+            [self onLikeTapTwo:nil];
+        }
+    }
+
+}
+- (IBAction)onMovieThreePan:(UIPanGestureRecognizer *)sender {
+    CGPoint translation = [sender translationInView:self];
+    
+    CGFloat translationX = translation.x;
+    
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        self.currentlyPanningOriginalCenter = self.moviePosterThree.center;
+    } else if (sender.state == UIGestureRecognizerStateChanged) {
+        
+        if ( (self.currentlyPanningOriginalCenter.x + translationX) < self.nopeButtonThreeCenter.x) {
+            self.moviePosterThree.center = CGPointMake(self.nopeButtonThreeCenter.x, self.currentlyPanningOriginalCenter.y);
+        } else if ((self.currentlyPanningOriginalCenter.x + translationX) > self.likeButtonThreeCenter.x) {
+            self.moviePosterThree.center = CGPointMake(self.likeButtonThreeCenter.x, self.currentlyPanningOriginalCenter.y);
+        } else {
+            self.moviePosterThree.center = CGPointMake(self.currentlyPanningOriginalCenter.x + translationX, self.currentlyPanningOriginalCenter.y);
+        }
+        
+    } else if (sender.state == UIGestureRecognizerStateEnded) {
+        if (translationX < 0) {
+            [self onNopeTapThree:nil];
+        }
+        if (translationX > 0) {
+            [self onLikeTapThree:nil];
+        }
+    }
+
 }
 
 //-(void)onDetailsDoneTap {

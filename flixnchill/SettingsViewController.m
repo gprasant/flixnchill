@@ -11,13 +11,17 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "UIImageView+AFNetworking.h"
 #import "User.h"
+#import "SettingsTableViewCell.h"
+#import "LoginViewController.h"
 
 
-@interface SettingsViewController ()
+@interface SettingsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *logoutPlaceholderbutton;
 @property (strong, nonatomic) UIButton *myLoginButton;
+@property (weak, nonatomic) IBOutlet UITableView *detailsTableView;
+@property (strong, nonatomic) NSMutableDictionary *userDetails;
 
 @end
 
@@ -25,6 +29,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	[self setupTableView];
 	UIColor *netflixRed = [UIColor colorWithRed:(185/255.0) green:(9/255.0) blue:(11/255.0) alpha:1] ;
 	self.view.backgroundColor = netflixRed;
 	// Do any additional setup after loading the view.
@@ -83,11 +88,14 @@
 		[[FBSDKLoginManager new] logOut];
 		NSLog(@"Did log out");
 		[self.myLoginButton setTitle: @"Log In" forState: UIControlStateNormal];
+		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+		LoginViewController *loginVC = (LoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+		[self presentViewController:loginVC animated:YES completion:nil];
 	} else {
 	
 		FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
 		[login
-		 logInWithReadPermissions: @[@"public_profile"]
+		 logInWithReadPermissions: @[@"public_profile", @"email", @"user_friends"]
 		 fromViewController:self
 		 handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
 			 if (error) {
@@ -100,6 +108,51 @@
 			 }
 		 }];
 	}
+}
+
+#pragma mark - BEGIN TableView Methods
+- (void) setupTableView {
+	self.detailsTableView.delegate = self;
+	self.detailsTableView.dataSource = self;
+	self.detailsTableView.opaque = NO;
+	self.detailsTableView.backgroundColor = [UIColor clearColor];
+	self.detailsTableView.backgroundView  = nil;
+
+
+}
+
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	if(!self.userDetails){
+		self.userDetails = [[NSMutableDictionary alloc]init];
+		User *user = [User currentUser];
+		if(user.gender){
+			[self.userDetails setValue:user.gender forKey:@"Gender"];
+		}
+		if(user.location){
+			[self.userDetails setValue:user.location forKey:@"Location"];
+		}
+		if(user.matches){
+			[self.userDetails setValue:[NSString stringWithFormat:@"%d",[user.matches count]] forKey:@"Matches"];
+		}
+		if(user.friends){
+			[self.userDetails setValue:user.friends forKey:@"Friends flixin' & chillin'"];
+		}
+	}
+	return [self.userDetails count];
+}
+
+-(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	SettingsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingsCell"];
+	if(!cell){
+		cell = [[SettingsTableViewCell alloc] init];
+	}
+	NSArray *keys=[self.userDetails allKeys];
+	NSString *key = [keys objectAtIndex:[indexPath row]];
+	cell.ValueLabel.text = [self.userDetails valueForKey:key];
+	cell.KeyLabel.text = key;
+	cell.backgroundColor = [UIColor clearColor];
+	return cell;
 }
 
 /*

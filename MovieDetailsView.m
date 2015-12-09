@@ -36,6 +36,7 @@
                                       @"The SpongeBob Movie: Sponge Out of Water": @"TGjbpO1toTc",
                                       @"Chappie": @"l6bmTNadhJE"};
 
+    self.movieId = movie[@"id"];
     self.movieTilteLabel.text = [NSString stringWithFormat:@"%@ (%@)", movie[@"title"], movie[@"year"]];
     self.movieSummaryLabel.text = movie[@"synopsis"];
     [self.movieSummaryLabel sizeToFit];
