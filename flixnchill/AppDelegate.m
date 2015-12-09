@@ -101,7 +101,21 @@
         user.email = [data objectForKey: @"email"];
         user.firstName = [data objectForKey: @"first_name"];
 		user.gender = [data objectForKey:@"gender"];
-		user.friends = @"44";
+	}];
+	
+	
+	NSDictionary *friendsParams = @{@"fields": @"total_count"};
+	NSString *userFriends = [userId stringByAppendingString:@"/friends"];
+	FBSDKGraphRequest *friendsRequest = [[FBSDKGraphRequest alloc]
+								  initWithGraphPath:userFriends
+								  parameters:params
+								  HTTPMethod:@"GET"];
+	[friendsRequest startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+										  id result,
+										  NSError *error) {
+		NSDictionary *data = (NSDictionary *)result;
+		int count = [[data objectForKey:@"data"] count];
+		user.friends = [NSString stringWithFormat:@"%d",count];
 	}];
 	
 	NSString *userPicture = [userId stringByAppendingString:@"/picture"];

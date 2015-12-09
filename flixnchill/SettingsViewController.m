@@ -133,10 +133,10 @@
 			[self.userDetails setValue:user.location forKey:@"Location"];
 		}
 		if(user.matches){
-			[self.userDetails setValue:[NSString stringWithFormat:@"%d",[user.matches count]] forKey:@"matches"];
+			[self.userDetails setValue:[NSString stringWithFormat:@"%d",[user.matches count]] forKey:@"Matches"];
 		}
 		if(user.friends){
-			[self.userDetails setValue:user.friends forKey:@"Friends on NF&C"];
+			[self.userDetails setValue:user.friends forKey:@"Friends flixin' & chillin'"];
 		}
 	}
 	return [self.userDetails count];
