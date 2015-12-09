@@ -26,6 +26,7 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
 @property (weak, nonatomic) IBOutlet UITextField *chatTextField;
 @property (weak, nonatomic) IBOutlet UITableView *messagesTableView;
 @property (strong, nonatomic) NSString *channelName;
+@property (weak, nonatomic) IBOutlet UIView *header;
 
 @property (strong, nonatomic) NSMutableArray *messages;
 @property (nonatomic) PubNub *client;
@@ -43,13 +44,21 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
         // Do any additional setup after loading the view.
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [self setupNavBar];
+}
+
 - (void) didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 - (IBAction) onBackTapped:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void) setupNavBar {
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (IBAction)sendButtonTapped:(id)sender {
@@ -60,9 +69,15 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
 }
 
 -(void) setupViews {
+    UIColor *netflixRed = [UIColor colorWithRed:(185/255.0) green:(9/255.0) blue:(11/255.0) alpha:1] ;
+    self.header.backgroundColor = netflixRed;
     [self registerForKeyboardNotifications];
     self.chatWithLabel.text = self.chatWith.name;
     self.chatTextField.delegate = self;
+    // HACK : TO Push the Content Up beyond the border
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(-20.0, 0.0, 0.0, 0.0);
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {

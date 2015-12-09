@@ -41,6 +41,7 @@
 
 - (void) setupNavBar {
     self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 
 - (IBAction)onBackTapped:(UITapGestureRecognizer *)sender {
