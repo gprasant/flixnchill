@@ -17,6 +17,7 @@
 @interface MovieDetailsView : UIView
 @property (assign) id<MovieDetailsViewDelegate> delegate;
 
+@property (strong, nonatomic) NSString *movieId;
 @property (weak, nonatomic) IBOutlet UILabel *movieTilteLabel;
 @property (weak, nonatomic) IBOutlet UIWebView *movieTrailerView;
 @property (weak, nonatomic) IBOutlet UIScrollView *summaryLabelContainer;
