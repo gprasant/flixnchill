@@ -176,19 +176,19 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
                 
                 int i = 0;
                 for (NSDictionary *movie in self.movies) {
-                    if (movie[@"id"] == movieOneId) {
+                    if ([movie[@"id"] isEqualToString:movieOneId]) {
                         NSString *thumbnailString = movie[@"posters"][@"thumbnail"];
                         NSURL *url = [NSURL URLWithString:thumbnailString];
                         [comparisonView.youMovieOne setImageWithURL:url];
                     }
                     
-                    if (movie[@"id"] == movieTwoId) {
+                    if ([movie[@"id"] isEqualToString:movieTwoId]) {
                         NSString *thumbnailString = movie[@"posters"][@"thumbnail"];
                         NSURL *url = [NSURL URLWithString:thumbnailString];
                         [comparisonView.youMovieTwo setImageWithURL:url];
                     }
                     
-                    if (movie[@"id"] == movieThreeId) {
+                    if ([movie[@"id"] isEqualToString:movieThreeId]) {
                         NSString *thumbnailString = movie[@"posters"][@"thumbnail"];
                         NSURL *url = [NSURL URLWithString:thumbnailString];
                         [comparisonView.youMovieThree setImageWithURL:url];
