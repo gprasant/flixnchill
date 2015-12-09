@@ -13,7 +13,7 @@
 - (void)awakeFromNib {
     // Initialization code
     self.myMessageLabel.clipsToBounds = self.otherPersonMessageLabel.clipsToBounds = YES;
-    self.myMessageLabel.layer.cornerRadius = self.otherPersonMessageLabel.layer.cornerRadius = 5.0f;
+    self.myMessageLabel.layer.cornerRadius = self.otherPersonMessageLabel.layer.cornerRadius = 13.0f;
 
 }
 

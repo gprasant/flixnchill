@@ -30,10 +30,12 @@
 		129A822B1C115DD600C92933 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 129A82291C115DD600C92933 /* MessageCell.xib */; };
 		12CDD2691C0A7CE500C54CF0 /* FlixNChillClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CDD2681C0A7CE500C54CF0 /* FlixNChillClient.m */; };
 		12CDD26D1C0BB30E00C54CF0 /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CDD26C1C0BB30E00C54CF0 /* NSMutableArray+Stack.m */; };
+		383206EF1C17E189002AF8F3 /* MovieComparisonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 383206EE1C17E189002AF8F3 /* MovieComparisonView.m */; };
 		385658221C129AFC00E21C68 /* ThreeMoviesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 385658211C129AFC00E21C68 /* ThreeMoviesView.m */; };
 		385658241C129B3E00E21C68 /* ThreeMoviesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385658231C129B3E00E21C68 /* ThreeMoviesView.xib */; };
 		385658271C13BAC700E21C68 /* MovieDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 385658261C13BAC700E21C68 /* MovieDetailsView.m */; };
 		385658291C13BAD600E21C68 /* MovieDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385658281C13BAD600E21C68 /* MovieDetailsView.xib */; };
+		38F680A71C17E147008DC857 /* MovieComparisonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F680A61C17E147008DC857 /* MovieComparisonView.xib */; };
 		A53ECE82159ADF71582E5680 /* libPods-flixnchill.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55ADC3ACE91F63E33786B639 /* libPods-flixnchill.a */; };
 /* End PBXBuildFile section */
 
@@ -77,12 +79,15 @@
 		12CDD2681C0A7CE500C54CF0 /* FlixNChillClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlixNChillClient.m; sourceTree = SOURCE_ROOT; };
 		12CDD26B1C0BB30E00C54CF0 /* NSMutableArray+Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Stack.h"; sourceTree = SOURCE_ROOT; };
 		12CDD26C1C0BB30E00C54CF0 /* NSMutableArray+Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Stack.m"; sourceTree = SOURCE_ROOT; };
+		383206ED1C17E189002AF8F3 /* MovieComparisonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieComparisonView.h; sourceTree = SOURCE_ROOT; };
+		383206EE1C17E189002AF8F3 /* MovieComparisonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieComparisonView.m; sourceTree = SOURCE_ROOT; };
 		385658201C129AFC00E21C68 /* ThreeMoviesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeMoviesView.h; sourceTree = SOURCE_ROOT; };
 		385658211C129AFC00E21C68 /* ThreeMoviesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeMoviesView.m; sourceTree = SOURCE_ROOT; };
 		385658231C129B3E00E21C68 /* ThreeMoviesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreeMoviesView.xib; sourceTree = SOURCE_ROOT; };
 		385658251C13BAC700E21C68 /* MovieDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailsView.h; sourceTree = SOURCE_ROOT; };
 		385658261C13BAC700E21C68 /* MovieDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsView.m; sourceTree = SOURCE_ROOT; };
 		385658281C13BAD600E21C68 /* MovieDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieDetailsView.xib; sourceTree = SOURCE_ROOT; };
+		38F680A61C17E147008DC857 /* MovieComparisonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieComparisonView.xib; sourceTree = SOURCE_ROOT; };
 		55ADC3ACE91F63E33786B639 /* libPods-flixnchill.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-flixnchill.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97FCE4F5AFA3CF984770BD1 /* Pods-flixnchill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flixnchill.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flixnchill/Pods-flixnchill.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +151,9 @@
 				385658281C13BAD600E21C68 /* MovieDetailsView.xib */,
 				0509F9441C1629460000E2C2 /* SettingsTableViewCell.h */,
 				0509F9451C1629460000E2C2 /* SettingsTableViewCell.m */,
+				383206ED1C17E189002AF8F3 /* MovieComparisonView.h */,
+				383206EE1C17E189002AF8F3 /* MovieComparisonView.m */,
+				38F680A61C17E147008DC857 /* MovieComparisonView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -304,6 +312,7 @@
 			files = (
 				125B0C011C05490600987D30 /* DraggableImageView.xib in Resources */,
 				125B0BEC1C05482100987D30 /* (null) in Resources */,
+				38F680A71C17E147008DC857 /* MovieComparisonView.xib in Resources */,
 				385658241C129B3E00E21C68 /* ThreeMoviesView.xib in Resources */,
 				125B0C101C054C8B00987D30 /* Main.storyboard in Resources */,
 				125B0C111C054C8B00987D30 /* LaunchScreen.storyboard in Resources */,
@@ -371,6 +380,7 @@
 			files = (
 				05EDC5C31C0FAAB600592F92 /* PotentialMatch.m in Sources */,
 				125B0BF81C0548C800987D30 /* SettingsViewController.m in Sources */,
+				383206EF1C17E189002AF8F3 /* MovieComparisonView.m in Sources */,
 				125B0C151C05537C00987D30 /* AppDelegate.m in Sources */,
 				125B0BF91C0548C800987D30 /* ProfileViewController.m in Sources */,
 				125B0BFB1C0548C800987D30 /* ChatsViewController.m in Sources */,

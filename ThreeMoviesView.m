@@ -60,9 +60,9 @@
 }
 
 - (void)setUpView:(NSArray*)movies withDraggableImageView:(DraggableImageView *)draggableImageView {
-    self.movieChoiceOne = @"unknown";
-    self.movieChoiceTwo = @"unknown";
-    self.movieChoiceThree = @"unknown";
+    self.movieChoiceOne = @"none";
+    self.movieChoiceTwo = @"none";
+    self.movieChoiceThree = @"none";
     
     self.moviePosterOne.center = self.moviePosterOneOriginalCenter;
     self.moviePosterTwo.center = self.moviePosterTwoOriginalCenter;
@@ -82,7 +82,7 @@
         randTwo = arc4random_uniform(19);
     }
     int randThree = arc4random_uniform(19);
-    while (randThree == randTwo || randThree == randTwo) {
+    while (randThree == randTwo || randThree == randOne) {
         randThree = arc4random_uniform(19);
     }
 

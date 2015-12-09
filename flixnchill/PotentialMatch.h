@@ -20,6 +20,9 @@
 @property (strong, nonatomic) NSString *sex;
 @property (strong, nonatomic) NSString *tagline;
 
+@property (assign, nonatomic) int randOne;
+@property (assign, nonatomic) int randTwo;
+@property (assign, nonatomic) int randThree;
 
 //methods
 -(id) initFromPFObject:(PFObject *)dictionary;

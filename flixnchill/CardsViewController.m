@@ -17,6 +17,7 @@
 #import "ThreeMoviesView.h"
 #import "MovieDetailsView.h"
 #import "User.h"
+#import "ChatsViewController.h"
 
 @interface CardsViewController () <ThreeMoviesViewDelegate, MovieDetailsViewDelegate, DraggableImageViewDelegate>
 
@@ -79,7 +80,8 @@
 		pvc.image = self.draggableCard.profileImageView.image;
 		pvc.user = self.draggableCard.currentMatch;
     } else if ([segue.identifier isEqual: @"chatsViewSegue"]) {
-    
+        ChatsViewController *chatsVC = segue.destinationViewController;
+        chatsVC.movies = self.movies;
     }
 }
 
@@ -155,9 +157,9 @@
     User *currentUser = [User currentUser];
     matchMovieInfo[@"currentUser"] = currentUser.email;
     matchMovieInfo[@"matchedUser"] = self.movieCardsView.matchId;
-    matchMovieInfo[[@"movie" stringByAppendingString:self.movieCardsView.movieDetailsOne.movieId]] = self.movieCardsView.movieChoiceOne;
-    matchMovieInfo[[@"movie" stringByAppendingString:self.movieCardsView.movieDetailsTwo.movieId]] = self.movieCardsView.movieChoiceTwo;
-    matchMovieInfo[[@"movie" stringByAppendingString:self.movieCardsView.movieDetailsThree.movieId]] = self.movieCardsView.movieChoiceThree;
+    matchMovieInfo[@"movieOne"] = [self.movieCardsView.movieChoiceOne stringByAppendingString:self.movieCardsView.movieDetailsOne.movieId];
+    matchMovieInfo[@"movieTwo"] = [self.movieCardsView.movieChoiceTwo stringByAppendingString:self.movieCardsView.movieDetailsTwo.movieId];
+    matchMovieInfo[@"movieThree"] = [self.movieCardsView.movieChoiceThree stringByAppendingString:self.movieCardsView.movieDetailsThree.movieId];
     
     [matchMovieInfo saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
