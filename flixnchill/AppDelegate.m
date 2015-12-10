@@ -75,10 +75,12 @@
 	return setup;
 }
 
-- (void)startStandardView{
+- (void) startStandardView{
+
 	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 	CardsViewController *cardsVC = (CardsViewController *)[storyboard instantiateViewControllerWithIdentifier:@"CardsViewController"];
-	self.window.rootViewController = cardsVC;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:cardsVC];
+	self.window.rootViewController = navController;
 	[self.window makeKeyAndVisible];
 }
 
