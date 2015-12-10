@@ -69,17 +69,19 @@
 	[self setNeedsStatusBarAppearanceUpdate];
 
 	//init rect
-	self.rangeSlider = [[MARKRangeSlider alloc] initWithFrame:CGRectZero];
+	CGRect aRect = CGRectMake(self.rangeSliderPlaceHolder.frame.origin.x, self.rangeSliderPlaceHolder.frame.origin.y, self.rangeSliderPlaceHolder.frame.size.width, self.rangeSliderPlaceHolder.frame.size.height);
+	self.rangeSlider = [[MARKRangeSlider alloc] initWithFrame:aRect];
 	[self.rangeSlider addTarget:self
 						 action:@selector(rangeSliderValueDidChange:)
 			   forControlEvents:UIControlEventValueChanged];
-	self.rangeSlider.minimumValue = 18.0;
-	self.rangeSlider.maximumValue = 60.0;
+	self.rangeSlider.minimumValue = 16.0;
+	self.rangeSlider.maximumValue = 55.0;
 	self.rangeSlider.leftValue = 21.0;
 	self.rangeSlider.rightValue = 30.0;
 	self.rangeSlider.minimumDistance = 1.0;
 	[self.view addSubview:self.rangeSlider];
 	self.rangeSlider.center = self.rangeSlider.center;
+	self.rangeSlider.
 }
 
 
@@ -171,7 +173,7 @@
 }
 
 - (void)rangeSliderValueDidChange:(MARKRangeSlider *)slider {
-	NSLog(@"%0.2f - %0.2f", slider.leftValue, slider.rightValue);
+	NSLog(@"%0.0f - %0.0f", slider.leftValue +15.0, slider.rightValue +15.0);
 }
 
 /*
