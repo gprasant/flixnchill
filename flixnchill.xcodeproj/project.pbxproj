@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0509F9471C1629460000E2C2 /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0509F9451C1629460000E2C2 /* SettingsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		0509F9471C1629460000E2C2 /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0509F9451C1629460000E2C2 /* SettingsTableViewCell.m */; };
 		05EDC5C01C0FAAB600592F92 /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EDC5B71C0FAAB600592F92 /* ChatTableViewCell.m */; };
 		05EDC5C31C0FAAB600592F92 /* PotentialMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EDC5BE1C0FAAB600592F92 /* PotentialMatch.m */; };
 		05EDC5C51C0FAB2600592F92 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EDC5C41C0FAB2600592F92 /* User.m */; };
