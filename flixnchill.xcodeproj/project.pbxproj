@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		0509F9471C1629460000E2C2 /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0509F9451C1629460000E2C2 /* SettingsTableViewCell.m */; };
+=======
+		0509F9471C1629460000E2C2 /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0509F9451C1629460000E2C2 /* SettingsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		0576343B1C1A0289008AD06F /* colorMARKRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0576343A1C1A0289008AD06F /* colorMARKRangeSlider.m */; settings = {ASSET_TAGS = (); }; };
+>>>>>>> Add in range slider
 		05EDC5C01C0FAAB600592F92 /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EDC5B71C0FAAB600592F92 /* ChatTableViewCell.m */; };
 		05EDC5C31C0FAAB600592F92 /* PotentialMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EDC5BE1C0FAAB600592F92 /* PotentialMatch.m */; };
 		05EDC5C51C0FAB2600592F92 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EDC5C41C0FAB2600592F92 /* User.m */; };
@@ -42,6 +47,8 @@
 /* Begin PBXFileReference section */
 		0509F9441C1629460000E2C2 /* SettingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsTableViewCell.h; path = flixnchill/SettingsTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		0509F9451C1629460000E2C2 /* SettingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsTableViewCell.m; path = flixnchill/SettingsTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		057634391C1A0289008AD06F /* colorMARKRangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = colorMARKRangeSlider.h; sourceTree = SOURCE_ROOT; };
+		0576343A1C1A0289008AD06F /* colorMARKRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = colorMARKRangeSlider.m; sourceTree = SOURCE_ROOT; };
 		05EDC5B61C0FAAB600592F92 /* ChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatTableViewCell.h; path = flixnchill/ChatTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		05EDC5B71C0FAAB600592F92 /* ChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatTableViewCell.m; path = flixnchill/ChatTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		05EDC5B81C0FAAB600592F92 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = flixnchill/User.h; sourceTree = SOURCE_ROOT; };
@@ -109,6 +116,15 @@
 			children = (
 			);
 			name = Library;
+			sourceTree = "<group>";
+		};
+		057634381C1A025B008AD06F /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				057634391C1A0289008AD06F /* colorMARKRangeSlider.h */,
+				0576343A1C1A0289008AD06F /* colorMARKRangeSlider.m */,
+			);
+			name = Controls;
 			sourceTree = "<group>";
 		};
 		125B0BED1C05489B00987D30 /* Controllers */ = {
@@ -179,6 +195,7 @@
 		125B84691BFE8589000273F7 /* flixnchill */ = {
 			isa = PBXGroup;
 			children = (
+				057634381C1A025B008AD06F /* Controls */,
 				12CDD26A1C0BB2DB00C54CF0 /* Categories */,
 				12CDD2661C0A7CC200C54CF0 /* Network */,
 				12CDD2621C0A26B400C54CF0 /* Models */,
@@ -397,6 +414,7 @@
 				129A822A1C115DD600C92933 /* MessageCell.m in Sources */,
 				127DBE061C10071E0059AB73 /* ChatViewController.m in Sources */,
 				125B0BFA1C0548C800987D30 /* LoginViewController.m in Sources */,
+				0576343B1C1A0289008AD06F /* colorMARKRangeSlider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

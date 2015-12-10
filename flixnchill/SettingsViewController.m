@@ -13,17 +13,18 @@
 #import "User.h"
 #import "SettingsTableViewCell.h"
 #import "LoginViewController.h"
-#import "MARKRangeSlider.h"
+#import "colorMARKRangeSlider.h"
 
 
 @interface SettingsViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *ageRangeLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *logoutPlaceholderbutton;
 @property (strong, nonatomic) UIButton *myLoginButton;
 @property (weak, nonatomic) IBOutlet UITableView *detailsTableView;
 @property (strong, nonatomic) NSMutableDictionary *userDetails;
-@property (strong, nonatomic) MARKRangeSlider *rangeSlider;
+@property (strong, nonatomic) colorMARKRangeSlider *rangeSlider;
 @property (weak, nonatomic) IBOutlet UILabel *rangeSliderPlaceHolder;
 
 @end
@@ -70,18 +71,19 @@
 
 	//init rect
 	CGRect aRect = CGRectMake(self.rangeSliderPlaceHolder.frame.origin.x, self.rangeSliderPlaceHolder.frame.origin.y, self.rangeSliderPlaceHolder.frame.size.width, self.rangeSliderPlaceHolder.frame.size.height);
-	self.rangeSlider = [[MARKRangeSlider alloc] initWithFrame:aRect];
+	self.rangeSlider = [[colorMARKRangeSlider alloc] initWithFrame:aRect];
 	[self.rangeSlider addTarget:self
 						 action:@selector(rangeSliderValueDidChange:)
 			   forControlEvents:UIControlEventValueChanged];
-	self.rangeSlider.minimumValue = 16.0;
-	self.rangeSlider.maximumValue = 55.0;
-	self.rangeSlider.leftValue = 21.0;
-	self.rangeSlider.rightValue = 30.0;
-	self.rangeSlider.minimumDistance = 1.0;
+	//self.rangeSlider.minimumValue = 16.0; -- doesnt work
+	self.rangeSlider.maximumValue = 29.0;
+	self.rangeSlider.leftValue = 0.0;
+	self.rangeSlider.rightValue = 9.0;
+	self.rangeSlider.minimumDistance = 0.0;
 	[self.view addSubview:self.rangeSlider];
 	self.rangeSlider.center = self.rangeSlider.center;
-	self.rangeSlider.
+	[self.rangeSlider setForegroundColor:[UIColor whiteColor]];
+
 }
 
 
@@ -173,7 +175,11 @@
 }
 
 - (void)rangeSliderValueDidChange:(MARKRangeSlider *)slider {
-	NSLog(@"%0.0f - %0.0f", slider.leftValue +15.0, slider.rightValue +15.0);
+	float left = slider.leftValue +21.0;
+	float right = slider.rightValue +21.0;
+	NSLog(@"%0.0f-%0.0f", left, right);
+	NSString *toDisplay = [NSString stringWithFormat:@"%0.0f-%0.0f", left, right];
+	self.ageRangeLabel.text = toDisplay;
 }
 
 /*
