@@ -68,6 +68,15 @@
 	[self setNeedsStatusBarAppearanceUpdate];
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [self setupNavBar];
+}
+
+- (void) setupNavBar {
+    self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
