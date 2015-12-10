@@ -74,10 +74,10 @@ const NSString *PUBNUB_SUB_KEY = @"sub-c-ead124cc-99d6-11e5-9a49-02ee2ddab7fe";
     [self registerForKeyboardNotifications];
     self.chatWithLabel.text = self.chatWith.name;
     self.chatTextField.delegate = self;
-    // HACK : TO Push the Content Up beyond the border
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(-20.0, 0.0, 0.0, 0.0);
-    self.scrollView.contentInset = contentInsets;
-    self.scrollView.scrollIndicatorInsets = contentInsets;
+// HACK : TO Push the Content Up beyond the border
+//    UIEdgeInsets contentInsets = UIEdgeInsetsMake(-20.0, 0.0, 0.0, 0.0);
+//    self.scrollView.contentInset = contentInsets;
+//    self.scrollView.scrollIndicatorInsets = contentInsets;
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {

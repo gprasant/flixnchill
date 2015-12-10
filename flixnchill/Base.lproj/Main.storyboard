@@ -311,7 +311,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="F0E2539E-A3F7-48CA-BAFA-4FE74DB45FCC" id="o3i-Jp-8Em">
+                                                <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AD00538A-64E9-4AA3-A188-4F1640FC17FC" id="o3i-Jp-8Em">
                                                     <rect key="frame" x="292" y="21" width="20" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
@@ -363,6 +363,7 @@
                         <animations/>
                         <color key="backgroundColor" red="0.7137255072593689" green="0.058823533356189728" blue="0.090196080505847931" alpha="1" colorSpace="deviceRGB"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="XAo-ds-Gou"/>
                     <connections>
                         <outlet property="chatsTableView" destination="9rL-jL-TaO" id="Znr-hi-Pbk"/>
@@ -449,8 +450,9 @@
                             </scrollView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="A8Z-wj-q0j"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -599,8 +601,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Chat" width="256" height="256"/>
-        <image name="F0E2539E-A3F7-48CA-BAFA-4FE74DB45FCC" width="32" height="32">
+        <image name="AD00538A-64E9-4AA3-A188-4F1640FC17FC" width="32" height="32">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -738,6 +739,7 @@ NwBFAEsAVABbAGgAbwB3AHkAfgCAAIIAhwCSAJQAlgCYAJ0AoACiAKQApgCoAK0AxADGAMgd2h3fHeod
 AAAAAAAAPgAAAAAAAAAAAAAAAAAAHqc
 </mutableData>
         </image>
+        <image name="Chat" width="256" height="256"/>
         <image name="arrowleftwhiteonred" width="46" height="58"/>
         <image name="flixnchillbanner" width="610" height="118"/>
         <image name="gear" width="256" height="256"/>
